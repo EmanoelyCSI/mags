@@ -26,6 +26,8 @@ class CreatePostosTable extends Migration
             $table->string('bico');
             $table->string('turno');
             $table->string('cicloTurno');
+            $table->integer('contrato_id');
+            // $table->integer('gerente_id');
             $table->timestamps();
             //falta: contrato_id e gerente_id
         });

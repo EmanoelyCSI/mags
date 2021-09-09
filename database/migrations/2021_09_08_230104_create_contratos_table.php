@@ -22,6 +22,7 @@ class CreateContratosTable extends Migration
             $table->string('cell');
             $table->string('tel')->nullable();
             $table->string('address');
+            // $table->integer('proprietario_id');
             $table->timestamps();
             // Falta o status 
         });

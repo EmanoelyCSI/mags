@@ -17,9 +17,10 @@ class CreateLeiturasTable extends Migration
             $table->id();
             // $table->string('name')->nullable();
             $table->string('bomba');
-            $table->string('bico');
-            $table->string('turno');
+            $table->integer('bico_id');
+            $table->integer('turno_id');
             $table->string('leitura');
+            // $table->integer('gerente_id');
             $table->timestamps();
         });
     }
