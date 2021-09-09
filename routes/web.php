@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ContratoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +35,16 @@ Route::get('/user/{id}/edit', [UserController::class, 'edit'])->name('dashboard.
 Route::put('/user/{id}', [UserController::class, 'update'])->name('dashboard.update');
 
 Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('dashboard.destroy');
+
+// ------------------------ CONTRATOS ------------------------
+Route::get('/contrato', [ContratoController::class, 'index'])->name('contrato.index');
+
+Route::get('/contrato/create', [ContratoController::class, 'create'])->name('contrato.create');
+Route::post('/contrato/create', [ContratoController::class, 'store'])->name('contrato.store');
+
+Route::get('/contrato/{id}', [ContratoController::class, 'show'])->name('contrato.show');
+
+Route::get('/contrato/{id}/edit', [ContratoController::class, 'edit'])->name('contrato.edit');
+Route::put('/contrato/{id}', [ContratoController::class, 'update'])->name('contrato.update');
+
+Route::delete('/contrato/{id}', [ContratoController::class, 'destroy'])->name('contrato.destroy');
