@@ -42,5 +42,7 @@
  
     {{ Form::close() }}
 
+    <a href="{{ URL::to('contrato/') }}">Voltar</a>
+    
 </body>
 </html>

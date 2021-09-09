@@ -91,9 +91,11 @@ class ContratoController extends Controller
      * @param  \App\Models\Contrato  $contrato
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contrato $contrato)
+    public function edit($id)
     {
-        //
+        //Editar Contrato
+        $contrato = Contrato::findOrFail($id);
+        return view('contrato.edit', ['contrato' => $contrato]);
     }
 
     /**
@@ -103,9 +105,37 @@ class ContratoController extends Controller
      * @param  \App\Models\Contrato  $contrato
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contrato $contrato)
+    public function update(Request $request, $id)
     {
         //
+        $message = [
+            'cnpj.required' => 'O campo CNPJ é obrigatório!',
+            'cnpj.min' => 'O campo CNPJ precisa ter no mínimo :min caracteres!',
+            'name.required' => 'O campo nome é obrigatório!',
+            'name.min' => 'O campo nome precisa ter no mínimo :min caracteres!',
+            'email.required' => 'O campo Email é obrigatório!', 
+            'cell.required' => 'O campo Celular é obrigatório!', 
+            'cell.min' => 'O campo Celular precisa ter no mínimo :min caracteres!', 
+        ];
+ 
+        $validateData = $request->validate([
+            'cnpj'      => 'required|min:14', // o mínimo de 14 caracteres e o campo não pode ser vazio
+            'name' =>  'required|min:10', //o campo não pode ser vazio e ter o mínimo de 10 caracteres para criar o nome 
+            'email' =>  'required', //o campo não pode ser vazio 
+            'cell' =>  'required|min:9', //o campo não pode ser vazio  
+         ], $message);
+
+         $contrato = Contrato::findOrFail($id);
+         $contrato->cnpj =    $request->cnpj;
+         $contrato->name =    $request->name;
+         $contrato->email =   $request->email;
+         $contrato->cell =    $request->cell;
+         $contrato->tel =     $request->tel;
+         $contrato->address = $request->address;
+         $contrato->save();
+  
+         return redirect()->route('contrato.index')->with('message', 'Contrato editado com sucesso!');
+
     }
 
     /**
@@ -114,8 +144,13 @@ class ContratoController extends Controller
      * @param  \App\Models\Contrato  $contrato
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contrato $contrato)
+    public function destroy($id)
     {
-        //
+        //Deletar contrato
+        // dd('DESTROY');
+        $contrato = Contrato::findOrFail($id);
+        $contrato->delete();
+ 
+        return redirect()->route('contrato.index')->with('message', 'Contrato excluído com sucesso!');
     }
 }

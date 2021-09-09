@@ -8,6 +8,11 @@
 </head>
 <body>
    
+    <script>
+        function ConfirmDelete() {
+            return confirm('Tem certeza que deseja excluir este registro?');
+        }
+    </script>
 
     <table class="table no-margin">
         <thead>
@@ -15,6 +20,8 @@
                 <th>id</th>
                 <th>CNPJ</th>
                 <th>Nome</th>
+                <th></th>
+                <th></th>
                 <th></th>
 
             </tr>
@@ -29,6 +36,18 @@
                 <td>
                     <a href="{{ URL::to('contrato/' . $value->id) }}">Visualizar</a>
                 </td>
+
+                <td>
+                    <a href="{{ URL::to('contrato/' . $value->id . '/edit') }}">Editar</a>
+                </td>
+
+                <td>        
+                    {{ Form::open(array('url' => 'contrato/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
+                    {{ Form::hidden('_method', 'DELETE') }}
+                    {{ Form::submit('Excluir', array('class' => 'btn btn-danger')) }}
+                    {{ Form::close() }}
+                </td>
+
             </tr>
            @endforeach
  
@@ -42,11 +61,7 @@
             <div> {{ Session::get('message') }} </div>      
         @endif
 
-    <tbody>
- 
-     
-
-      </tbody>
+    
 
 </body>
 </html>
