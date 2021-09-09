@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Editar Contrato</title>
+    <title>Editar Posto</title>
 </head>
 <body>
     
@@ -18,25 +18,37 @@
         </div>
     @endif
 
-    {{ Form::model($contrato, array('route' => array('contrato.update', $contrato->id), 'method' => 'PUT' )) }}
+    {{ Form::model($posto, array('route' => array('posto.update', $posto->id), 'method' => 'PUT' )) }}
  
     {{ Form::label('cnpj', 'CNPJ') }}
-    {{ Form::text('cnpj', $contrato->cnpj) }}
+    {{ Form::text('cnpj', $posto->cnpj) }}
     <br/>
     {{ Form::label('name', 'Nome') }}
-    {{ Form::text('name',  $contrato->name) }}
+    {{ Form::text('name',  $posto->name) }}
     <br/>
     {{ Form::label('email', 'Email') }}
-    {{ Form::text('email',  $contrato->email) }}
+    {{ Form::text('email',  $posto->email) }}
     <br/>
     {{ Form::label('cell', 'Celular') }}
-    {{ Form::text('cell', $contrato->cell) }}
+    {{ Form::text('cell', $posto->cell) }}
     <br/>
     {{ Form::label('tel', 'Telefone') }}
-    {{ Form::text('tel',  $contrato->tel) }}
+    {{ Form::text('tel',  $posto->tel) }}
     <br/>
     {{ Form::label('address', 'Endereço') }}
-    {{ Form::text('address',  $contrato->address) }}
+    {{ Form::text('address',  $posto->address) }}
+    <br/>
+    {{ Form::label('bomba', 'Bomba') }}
+    {{ Form::text('bomba', $posto->bomba) }}
+    <br/>
+    {{ Form::label('bico', 'Bico') }}
+    {{ Form::text('bico', $posto->bico) }}
+    <br/>
+    {{ Form::label('turno', 'Quantidade de Turnos') }}
+    {{ Form::text('turno', $posto->turno) }}
+    <br/>
+    {{ Form::label('cicloTurno', 'Ciclo do Turno') }}
+    {{ Form::text('cicloTurno', $posto->cicloTurno) }}
     <br/>
     {{ Form::submit('Enviar') }}
  
@@ -46,7 +58,7 @@
         <div> {{ Session::get('message') }} </div>      
     @endif
     
-    <a href="{{ URL::to('contrato/') }}">Voltar</a>
+    <a href="{{ URL::to('posto/') }}">Voltar</a>
 
 </body>
 </html>

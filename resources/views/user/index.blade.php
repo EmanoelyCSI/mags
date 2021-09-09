@@ -35,7 +35,7 @@
                 </td>
 
                 <td>                                 
-                    {{ Form::open(array('url' => 'user/' . $value->id, 'onsubmit' => 'return ConfirmeDelete()')) }}
+                    {{ Form::open(array('url' => 'user/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
                     {{ Form::hidden('_method', 'DELETE') }}
                     {{ Form::submit('Excluir', array('class' => 'btn btn-danger')) }}
                     {{ Form::close() }}

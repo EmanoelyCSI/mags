@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Visualizar</title>
+    <title>Visualizar Posto</title>
 </head>
 <body>
     
         <h2>Visualizar</h2>
     <ul>
-        <li>ID:                   {{ $contrato->id }}        </li>
-        <li>CNPJ:                 {{ $contrato->cnpj }}      </li>
-        <li>Nome:                 {{ $contrato->name }}      </li>
-        <li>Email:                {{ $contrato->email }}     </li>
-        <li>Celular:              {{ $contrato->cell }}      </li>
-        <li>Telefone:             {{ $contrato->tel }}       </li>
-        <li>Endereço:             {{ $contrato->address }}   </li>
-        <li>Criação:              {{ Carbon\Carbon::parse($contrato->create_at)->format('d/m/Y H:i') }} </li>
-        <li>Última modificação:   {{ Carbon\Carbon::parse($contrato->update_at)->format('d/m/Y H:i') }} </li>
+        <li>ID:                   {{ $posto->id }}          </li>
+        <li>CNPJ:                 {{ $posto->cnpj }}        </li>
+        <li>Nome:                 {{ $posto->name }}        </li>
+        <li>Email:                {{ $posto->email }}       </li>
+        <li>Celular:              {{ $posto->cell }}        </li>
+        <li>Telefone:             {{ $posto->tel }}         </li>
+        <li>Endereço:             {{ $posto->address }}     </li>
+        <li>Bomba:                {{ $posto->bomba  }}      </li>
+        <li>Bico:                 {{ $posto->bico  }}       </li>
+        <li>Quantidade de Turnos: {{ $posto->turno  }}      </li>
+        <li>Ciclo do Turno:       {{ $posto->cicloTurno }}  </li>
+        <li>Criação:              {{ Carbon\Carbon::parse($posto->create_at)->format('d/m/Y H:i') }} </li>
+        <li>Última modificação:   {{ Carbon\Carbon::parse($posto->update_at)->format('d/m/Y H:i') }} </li>
     </ul>
     
-    <a href="{{ URL::to('contrato/') }}">Voltar</a>
+    <a href="{{ URL::to('posto/') }}">Voltar</a>
 </body>
 </html>

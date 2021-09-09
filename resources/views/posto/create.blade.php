@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Criar Contrato</title>
+    <title>Criar Posto</title>
 </head>
 <body>
     
@@ -18,7 +18,7 @@
         </div>
     @endif
 
-    {{ Form::open(array('url' => '/contrato/create')) }}
+    {{ Form::open(array('url' => '/posto/create')) }}
  
     {{ Form::label('cnpj', 'CNPJ') }}
     {{ Form::text('cnpj', null) }}
@@ -35,14 +35,24 @@
     {{ Form::label('tel', 'Telefone') }}
     {{ Form::text('tel', null) }}
     <br/>
-    {{ Form::label('address', 'Endereço') }}
-    {{ Form::text('address', null) }}
+    {{ Form::label('bomba', 'Bomba') }}
+    {{ Form::text('bomba', null) }}
+    <br/>
+    {{ Form::label('bico', 'Bico') }}
+    {{ Form::text('bico', null) }}
+    <br/>
+    {{ Form::label('turno', 'Quantidade de Turnos') }}
+    {{ Form::text('turno', null) }}
+    <br/>
+    {{ Form::label('cicloTurno', 'Ciclo do Turno') }}
+    {{ Form::text('cicloTurno', null) }}
     <br/>
     {{ Form::submit('Enviar') }}
  
     {{ Form::close() }}
 
-    <a href="{{ URL::to('contrato/') }}">Voltar</a>
+    <a href="{{ URL::to('posto/') }}">Voltar</a>
     
 </body>
 </html>
+

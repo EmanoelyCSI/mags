@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\ContratoSeeder;
+use Database\Seeders\PostoSeeder;
+
+
 
 
 class DatabaseSeeder extends Seeder
@@ -18,6 +21,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             ContratoSeeder::class,
+            PostoSeeder::class,
             UserSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();

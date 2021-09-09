@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Listando Contratos</title>
+    <title>Listando Posto</title>
 </head>
 <body>
    
@@ -28,21 +28,21 @@
         </thead>
         <tbody>
  
-          @foreach($contratos as $key => $value)
+          @foreach($posto as $key => $value)
             <tr>
                 <td>{{ $value->id }}</td>
                 <td>{{ $value->cnpj}}</td>
                 <td>{{ $value->name}}</td>
                 <td>
-                    <a href="{{ URL::to('contrato/' . $value->id) }}">Visualizar</a>
+                    <a href="{{ URL::to('posto/' . $value->id) }}">Visualizar</a>
                 </td>
 
                 <td>
-                    <a href="{{ URL::to('contrato/' . $value->id . '/edit') }}">Editar</a>
+                    <a href="{{ URL::to('posto/' . $value->id . '/edit') }}">Editar</a>
                 </td>
 
                 <td>        
-                    {{ Form::open(array('url' => 'contrato/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
+                    {{ Form::open(array('url' => 'posto/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
                     {{ Form::hidden('_method', 'DELETE') }}
                     {{ Form::submit('Excluir', array('class' => 'btn btn-danger')) }}
                     {{ Form::close() }}
@@ -55,7 +55,7 @@
     </table>
 
         {{-- Botão para criar contrato --}}
-        <a href="{{ URL::to('contrato/create') }}"><h2>Criar</h2></a>
+        <a href="{{ URL::to('posto/create') }}"><h2>Criar</h2></a>
 
         @if (Session::has('message'))
             <div> {{ Session::get('message') }} </div>      
