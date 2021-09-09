@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Editar Contrato</title>
+    <title>Editar Leitura</title>
 </head>
 <body>
     
@@ -18,26 +18,24 @@
         </div>
     @endif
 
-    {{ Form::model($contrato, array('route' => array('contrato.update', $contrato->id), 'method' => 'PUT' )) }}
+    {{ Form::model($leitura, array('route' => array('leitura.update', $leitura->id), 'method' => 'PUT' )) }}
  
-    {{ Form::label('cnpj', 'CNPJ') }}
-    {{ Form::text('cnpj', $contrato->cnpj) }}
+    {{-- {{ Form::label('name', 'Nome') }} --}}
+    {{-- {{ Form::text('name', $leitura->name) }} --}}
     <br/>
-    {{ Form::label('name', 'Nome') }}
-    {{ Form::text('name',  $contrato->name) }}
+    {{ Form::label('bomba', 'Bomba') }}
+    {{ Form::text('bomba', $leitura->bomba) }}
     <br/>
-    {{ Form::label('email', 'Email') }}
-    {{ Form::text('email',  $contrato->email) }}
+    {{ Form::label('bico', 'Bico') }}
+    {{ Form::text('bico', $leitura->bico) }}
     <br/>
-    {{ Form::label('cell', 'Celular') }}
-    {{ Form::text('cell', $contrato->cell) }}
+    {{ Form::label('turno', 'Turno') }}
+    {{ Form::text('turno', $leitura->turno) }}
     <br/>
-    {{ Form::label('tel', 'Telefone') }}
-    {{ Form::text('tel',  $contrato->tel) }}
+    {{ Form::label('leitura', 'Leitura') }}
+    {{ Form::text('leitura',  $leitura->leitura) }}
     <br/>
-    {{ Form::label('address', 'Endereço') }}
-    {{ Form::text('address',  $contrato->address) }}
-    <br/>
+
     {{ Form::submit('Enviar') }}
  
     {{ Form::close() }}
@@ -46,7 +44,7 @@
         <div> {{ Session::get('message') }} </div>      
     @endif
     
-    <a href="{{ URL::to('contrato/') }}">Voltar</a>
+    <a href="{{ URL::to('leitura/') }}">Voltar</a>
 
 </body>
 </html>

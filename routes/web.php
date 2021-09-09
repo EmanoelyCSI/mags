@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContratoController;
 use App\Http\Controllers\PostoController;
+use App\Http\Controllers\LeituraController;
+
 
 
 /*
@@ -62,3 +64,16 @@ Route::get('/posto/{id}/edit', [PostoController::class, 'edit'])->name('posto.ed
 Route::put('/posto/{id}', [PostoController::class, 'update'])->name('posto.update');
 
 Route::delete('/posto/{id}', [PostoController::class, 'destroy'])->name('posto.destroy');
+
+// ------------------------ LEITURAS ------------------------
+Route::get('/leitura', [LeituraController::class, 'index'])->name('leitura.index');
+
+Route::get('/leitura/create', [LeituraController::class, 'create'])->name('leitura.create');
+Route::post('/leitura/create', [LeituraController::class, 'store'])->name('leitura.store');
+
+Route::get('/leitura/{id}', [LeituraController::class, 'show'])->name('leitura.show');
+
+Route::get('/leitura/{id}/edit', [LeituraController::class, 'edit'])->name('leitura.edit');
+Route::put('/leitura/{id}', [LeituraController::class, 'update'])->name('leitura.update');
+
+Route::delete('/leitura/{id}', [LeituraController::class, 'destroy'])->name('leitura.destroy');

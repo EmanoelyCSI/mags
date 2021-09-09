@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Criar Contrato</title>
+    <title>Criar Leitura</title>
 </head>
 <body>
     
@@ -18,31 +18,29 @@
         </div>
     @endif
 
-    {{ Form::open(array('url' => '/contrato/create')) }}
+    {{ Form::open(array('url' => '/leitura/create')) }}
  
-    {{ Form::label('cnpj', 'CNPJ') }}
-    {{ Form::text('cnpj', null) }}
+    {{-- {{ Form::label('name', 'Nome') }} --}}
+    {{-- {{ Form::text('name', null) }} --}}
     <br/>
-    {{ Form::label('name', 'Nome') }}
-    {{ Form::text('name', null) }}
+    {{ Form::label('bomba', 'Bomba') }}
+    {{ Form::text('bomba', null) }}
     <br/>
-    {{ Form::label('email', 'Email') }}
-    {{ Form::text('email', null) }}
+    {{ Form::label('bico', 'Bico') }}
+    {{ Form::text('bico', null) }}
     <br/>
-    {{ Form::label('cell', 'Celular') }}
-    {{ Form::text('cell', null) }}
+    {{ Form::label('turno', 'Turno') }}
+    {{ Form::text('turno', null) }}
     <br/>
-    {{ Form::label('tel', 'Telefone') }}
-    {{ Form::text('tel', null) }}
+    {{ Form::label('leitura', 'Leitura') }}
+    {{ Form::text('leitura', null) }}
     <br/>
-    {{ Form::label('address', 'Endereço') }}
-    {{ Form::text('address', null) }}
-    <br/>
+
     {{ Form::submit('Enviar') }}
  
     {{ Form::close() }}
 
-    <a href="{{ URL::to('contrato/') }}">Voltar</a>
+    <a href="{{ URL::to('leitura/') }}">Voltar</a>
     
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Listando Contratos</title>
+    <title>Listando Leituras</title>
 </head>
 <body>
    
@@ -17,36 +17,37 @@
     <table class="table no-margin">
         <thead>
             <tr>
-                <th>id</th>
-                <th>CNPJ</th>
-                <th>Nome</th>
+                <th>Posto</th>
+                <th>Data</th>
+                <th>Status</th>
                 <th></th>
                 <th></th>
-                <th></th>
+               
 
             </tr>
         </thead>
         <tbody>
  
-          @foreach($contratos as $key => $value)
+          @foreach($leitura as $key => $value)
             <tr>
-                <td>{{ $value->id }}</td>
-                <td>{{ $value->cnpj}}</td>
-                <td>{{ $value->name}}</td>
+                {{-- <td>{{ $value->name }}</td> --}}
+                <td>{{ $value->updated_at }}</td>
+                <td></td>
+                <td></td>
                 <td>
-                    <a href="{{ URL::to('contrato/' . $value->id) }}">Visualizar</a>
+                    <a href="{{ URL::to('leitura/' . $value->id) }}">Visualizar</a>
                 </td>
 
                 <td>
-                    <a href="{{ URL::to('contrato/' . $value->id . '/edit') }}">Editar</a>
+                    <a href="{{ URL::to('leitura/' . $value->id . '/edit') }}">Editar</a>
                 </td>
 
-                <td>        
-                    {{ Form::open(array('url' => 'contrato/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
+                {{-- <td>        
+                    {{ Form::open(array('url' => 'leitura/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
                     {{ Form::hidden('_method', 'DELETE') }}
                     {{ Form::submit('Excluir', array('class' => 'btn btn-danger')) }}
                     {{ Form::close() }}
-                </td>
+                </td> --}}
 
             </tr>
            @endforeach
@@ -55,7 +56,7 @@
     </table>
 
         {{-- Botão para criar contrato --}}
-        <a href="{{ URL::to('contrato/create') }}"><h2>Criar</h2></a>
+        <a href="{{ URL::to('leitura/create') }}"><h2>Criar</h2></a>
 
         @if (Session::has('message'))
             <div> {{ Session::get('message') }} </div>      

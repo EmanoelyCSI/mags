@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\ContratoSeeder;
 use Database\Seeders\PostoSeeder;
+use Database\Seeders\LeituraSeeder;
 
 
 
@@ -22,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ContratoSeeder::class,
             PostoSeeder::class,
+            LeituraSeeder::class,
             UserSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();

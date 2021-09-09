@@ -18,7 +18,7 @@ class ContratoSeeder extends Seeder
         Contrato::create([
             'cnpj'=>'07.739.067/0001-91',
             'name'=> 'João Pereira dos Santos',
-            'email'=> ' joãosantos-contato@gmail.com',
+            'email'=> ' joãosantos.contato@gmail.com',
             'cell'=>'2198645-8261',
             'tel'=>'212546-8965',
             'address'=>'R. Estácio de Sá, 87 - Estácio, Rio de Janeiro - RJ, 20211-270'
@@ -27,7 +27,7 @@ class ContratoSeeder extends Seeder
         Contrato::create([
             'cnpj'=>'05.418.078/0001-92',
             'name'=> 'Marcos da Silva dos Santos',
-            'email'=> ' marcos_silva_contato@gmail.com',
+            'email'=> ' marcos.silva_contato@gmail.com',
             'cell'=>'2198745-8272',
             'tel'=>'212545-8875',
             'address'=>'R. Maia de Lacerda, 36 - Estácio Rio de Janeiro - RJ 20250-001'

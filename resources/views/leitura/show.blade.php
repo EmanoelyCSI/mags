@@ -10,17 +10,16 @@
     
         <h2>Visualizar</h2>
     <ul>
-        <li>ID:                   {{ $contrato->id }}        </li>
-        <li>CNPJ:                 {{ $contrato->cnpj }}      </li>
-        <li>Nome:                 {{ $contrato->name }}      </li>
-        <li>Email:                {{ $contrato->email }}     </li>
-        <li>Celular:              {{ $contrato->cell }}      </li>
-        <li>Telefone:             {{ $contrato->tel }}       </li>
-        <li>Endereço:             {{ $contrato->address }}   </li>
-        <li>Criação:              {{ Carbon\Carbon::parse($contrato->create_at)->format('d/m/Y H:i') }} </li>
-        <li>Última modificação:   {{ Carbon\Carbon::parse($contrato->update_at)->format('d/m/Y H:i') }} </li>
+        <li>Criação:              {{ Carbon\Carbon::parse($leitura->create_at)->format('d/m/Y H:i') }} </li>
+        <li>Última modificação:   {{ Carbon\Carbon::parse($leitura->update_at)->format('d/m/Y H:i') }} </li>
+        {{-- <li>Nome:                 {{ $leitura->name }}      </li> --}}
+        <li>Bomba:                {{ $leitura->bomba }}     </li>
+        <li>Bico:                 {{ $leitura->bico  }}     </li>
+        <li>Turno:                {{ $leitura->turno }}     </li>
+        <li>Leitura:              {{ $leitura->bomba }}     </li>
+
     </ul>
     
-    <a href="{{ URL::to('contrato/') }}">Voltar</a>
+    <a href="{{ URL::to('leitura/') }}">Voltar</a>
 </body>
 </html>
