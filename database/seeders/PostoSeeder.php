@@ -26,6 +26,7 @@ class PostoSeeder extends Seeder
             'bico'=>'2',
             'turno'=>'4',
             'cicloTurno'=>'6 horas',
+            'contrato_id' => '1',
         ]);
 
         Posto::create([
@@ -39,6 +40,7 @@ class PostoSeeder extends Seeder
             'bico'=>'2',
             'turno'=>'3',
             'cicloTurno'=>'8 horas',
+            'contrato_id' => '1',
         ]);
     }
 }
