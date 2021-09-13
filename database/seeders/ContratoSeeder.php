@@ -14,7 +14,6 @@ class ContratoSeeder extends Seeder
      */
     public function run()
     {
-        //
         Contrato::create([
             'cnpj'      => '07.739.067/0001-91',
             'name'      => 'João Pereira dos Santos',

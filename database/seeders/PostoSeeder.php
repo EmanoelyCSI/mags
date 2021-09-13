@@ -14,7 +14,6 @@ class PostoSeeder extends Seeder
      */
     public function run()
     {
-        //
         Posto::create([
             'cnpj'        => '07.739.067/0001-91',
             'name'        => 'Shell Estácio',
@@ -40,7 +39,7 @@ class PostoSeeder extends Seeder
             'bico'          => '2',
             'turno'         => '3',
             'cicloTurno'    => '8 horas',
-            'contrato_id'   => '1',
+            'contrato_id'   => '2',
         ]);
     }
 }

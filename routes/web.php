@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContratoController;
 use App\Http\Controllers\PostoController;
 use App\Http\Controllers\LeituraController;
+use App\Http\Controllers\BombaController;
+use App\Http\Controllers\BicoController;
 
 
 
@@ -77,3 +79,30 @@ Route::get('/leitura/{id}/edit', [LeituraController::class, 'edit'])->name('leit
 Route::put('/leitura/{id}', [LeituraController::class, 'update'])->name('leitura.update');
 
 Route::delete('/leitura/{id}', [LeituraController::class, 'destroy'])->name('leitura.destroy');
+
+// ------------------------ BOMBAS ------------------------
+Route::get('/bomba', [BombaController::class, 'index'])->name('bomba.index');
+
+Route::get('/bomba/create', [BombaController::class, 'create'])->name('bomba.create');
+Route::post('/bomba/create', [BombaController::class, 'store'])->name('bomba.store');
+
+Route::get('/bomba/{id}', [BombaController::class, 'show'])->name('bomba.show');
+
+Route::get('/bomba/{id}/edit', [BombaController::class, 'edit'])->name('bomba.edit');
+Route::put('/bomba/{id}', [BombaController::class, 'update'])->name('bomba.update');
+
+Route::delete('/bomba/{id}', [BombaController::class, 'destroy'])->name('bomba.destroy');
+
+
+// ------------------------ BICOS ------------------------
+Route::get('/bico', [BicoController::class, 'index'])->name('bico.index');
+
+Route::get('/bico/create', [BicoController::class, 'create'])->name('bico.create');
+Route::post('/bico/create', [BicoaController::class, 'store'])->name('bico.store');
+
+Route::get('/bico/{id}', [BicoController::class, 'show'])->name('bico.show');
+
+Route::get('/bico/{id}/edit', [BicoController::class, 'edit'])->name('bico.edit');
+Route::put('/bico/{id}', [BicoController::class, 'update'])->name('bico.update');
+
+Route::delete('/bico/{id}', [BicoController::class, 'destroy'])->name('bico.destroy');
