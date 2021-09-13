@@ -43,37 +43,29 @@ class PostoController extends Controller
     {
         // Armazenar Postos
         $message = [
-            'cnpj.required' => 'O campo CNPJ é obrigatório!',
-            'cnpj.min' => 'O campo CNPJ precisa ter no mínimo :min caracteres!',
-            'name.required' => 'O campo nome é obrigatório!',
-            'name.min' => 'O campo nome precisa ter no mínimo :min caracteres!',
-            'email.required' => 'O campo Email é obrigatório!', 
-            'cell.required' => 'O campo Celular é obrigatório!', 
-            'cell.min' => 'O campo Celular precisa ter no mínimo :min caracteres!', 
+            'cnpj.required'     => 'O campo CNPJ é obrigatório!',
+            'cnpj.min'          => 'O campo CNPJ precisa ter no mínimo :min caracteres!',
+            'name.required'     => 'O campo nome é obrigatório!',
+            'name.min'          => 'O campo nome precisa ter no mínimo :min caracteres!',
+            'email.required'    => 'O campo Email é obrigatório!', 
+            'cell.required'     => 'O campo Celular é obrigatório!', 
+            'cell.min'          => 'O campo Celular precisa ter no mínimo :min caracteres!', 
         ];
  
         $validateData = $request->validate([
-            'cnpj'      => 'required|min:14', // o mínimo de 14 caracteres e o campo não pode ser vazio
-            'name' =>  'required|min:10', //o campo não pode ser vazio e ter o mínimo de 10 caracteres para criar o nome 
-            'email' =>  'required', //o campo não pode ser vazio 
-            'cell' =>  'required|min:9', //o campo não pode ser vazio
-            'bomba' =>  'required', //o campo não pode ser vazio
-            'bico' =>  'required', //o campo não pode ser vazio 
-            'turno' =>  'required', //o campo não pode ser vazio  
-            'cicloTurno' =>  'required' //o campo não pode ser vazio  
+            'cnpj'          =>  'required|min:14',  // o mínimo de 14 caracteres e o campo não pode ser vazio
+            'name'          =>  'required|min:10',  //o campo não pode ser vazio e ter o mínimo de 10 caracteres para criar o nome 
+            'email'         =>  'required',         //o campo não pode ser vazio 
+            'cell'          =>  'required|min:9',             
          ], $message);
 
         $posto = new Posto;
-        $posto->cnpj =    $request->cnpj;
-        $posto->name =    $request->name;
-        $posto->email =   $request->email;
-        $posto->cell =    $request->cell;
-        $posto->tel =     $request->tel;
-        $posto->address = $request->address;
-        $posto->bomba =      $request->bomba;
-        $posto->bico =       $request->bico;
-        $posto->turno =      $request->turno;
-        $posto->cicloTurno = $request->cicloTurno;
+        $posto->cnpj        =   $request->cnpj;
+        $posto->name        =   $request->name;
+        $posto->email       =   $request->email;
+        $posto->cell        =   $request->cell;
+        $posto->tel         =   $request->tel;
+        $posto->address     =   $request->address;
         $posto->save();
  
         return redirect()->route('posto.index')->with('message', 'Posto criado com sucesso!');
@@ -118,41 +110,45 @@ class PostoController extends Controller
     {
         //
         $message = [
-            'cnpj.required' => 'O campo CNPJ é obrigatório!',
-            'cnpj.min' => 'O campo CNPJ precisa ter no mínimo :min caracteres!',
-            'name.required' => 'O campo nome é obrigatório!',
-            'name.min' => 'O campo nome precisa ter no mínimo :min caracteres!',
-            'email.required' => 'O campo Email é obrigatório!', 
-            'cell.required' => 'O campo Celular é obrigatório!', 
-            'cell.min' => 'O campo Celular precisa ter no mínimo :min caracteres!',
-            'bomba.required' => 'O campo Bomba é obrigatório!',
-            'bico.required' => 'O campo Bico é obrigatório!',
-            'turno.required' => 'O campo Turno é obrigatório!',
+            'cnpj.required'       => 'O campo CNPJ é obrigatório!',
+            'cnpj.min'            => 'O campo CNPJ precisa ter no mínimo :min caracteres!',
+            'name.required'       => 'O campo nome é obrigatório!',
+            'name.min'            => 'O campo nome precisa ter no mínimo :min caracteres!',
+            'email.required'      => 'O campo Email é obrigatório!', 
+            'cell.required'       => 'O campo Celular é obrigatório!', 
+            'cell.min'            => 'O campo Celular precisa ter no mínimo :min caracteres!',
+            'bomba.required'      => 'O campo Bomba é obrigatório!',
+            'bico.required'       => 'O campo Bico é obrigatório!',
+            'turno.required'      => 'O campo Turno é obrigatório!',
             'cicloTurno.required' => 'O campo Ciclo do Turno é obrigatório!', 
         ];
  
         $validateData = $request->validate([
-            'cnpj'      => 'required|min:14', // o mínimo de 14 caracteres e o campo não pode ser vazio
-            'name' =>  'required|min:10', //o campo não pode ser vazio e ter o mínimo de 10 caracteres para criar o nome 
-            'email' =>  'required', //o campo não pode ser vazio 
-            'cell' =>  'required|min:9', //o campo não pode ser vazio e ter o mínimo de 9 caracteres
-            'bomba' =>  'required', //o campo não pode ser vazio
-            'bico' =>  'required', //o campo não pode ser vazio 
-            'turno' =>  'required', //o campo não pode ser vazio  
-            'cicloTurno' =>  'required' //o campo não pode ser vazio  
+            'cnpj'           =>  'required|min:14',  // o mínimo de 14 caracteres e o campo não pode ser vazio
+            'name'           =>  'required|min:10', // o campo não pode ser vazio e ter o mínimo de 10 caracteres para criar o nome 
+            'email'          =>  'required',        // o campo não pode ser vazio 
+            'cell'           =>  'required|min:9', 
+            'contrato_id'    =>  'required',
+            'gerente_id'     =>  'required',
+            'bomba_id'       =>  'required', 
+            'bico_id'        =>  'required', 
+            'turno_id'       =>  'required', 
+            'cicloTurno'     =>  'required' 
          ], $message);
 
         $posto = Posto::findOrFail($id);
-        $posto->cnpj =       $request->cnpj;
-        $posto->name =       $request->name;
-        $posto->email =      $request->email;
-        $posto->cell =       $request->cell;
-        $posto->tel =        $request->tel;
-        $posto->address =    $request->address;
-        $posto->bomba =      $request->bomba;
-        $posto->bico =       $request->bico;
-        $posto->turno =      $request->turno;
-        $posto->cicloTurno = $request->cicloTurno;
+        $posto->cnpj        =   $request->cnpj;
+        $posto->name        =   $request->name;
+        $posto->email       =   $request->email;
+        $posto->cell        =   $request->cell;
+        $posto->tel         =   $request->tel;
+        $posto->address     =   $request->address;
+        $posto->contrato_id =   $request->contrato_id;
+        $posto->gerente_id  =   $request->gerente_id;
+        $posto->bomba_id    =   $request->bomba_id;
+        $posto->bico_id     =   $request->bico_id;
+        $posto->turno_id    =   $request->turno_id;
+        $posto->cicloTurno  =   $request->cicloTurno;
         $posto->save();
  
         return redirect()->route('posto.index')->with('message', 'Posto editado com sucesso!');

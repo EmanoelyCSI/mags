@@ -38,14 +38,20 @@
     {{ Form::label('address', 'Endereço') }}
     {{ Form::text('address',  $posto->address) }}
     <br/>
-    {{ Form::label('bomba', 'Bomba') }}
-    {{ Form::text('bomba', $posto->bomba) }}
+    {{ Form::label('contrato_id', 'Contrato') }}
+    {{ Form::text('contrato_id', $posto->contrato_id) }}
     <br/>
-    {{ Form::label('bico', 'Bico') }}
-    {{ Form::text('bico', $posto->bico) }}
+    {{ Form::label('gerente_id', 'Gerente') }}
+    {{ Form::text('gerente_id', $posto->gerente_id) }}
     <br/>
-    {{ Form::label('turno', 'Quantidade de Turnos') }}
-    {{ Form::text('turno', $posto->turno) }}
+    {{ Form::label('bomba_id', 'Bomba') }}
+    {{ Form::text('bomba_id', $posto->bomba_id) }}
+    <br/>
+    {{ Form::label('bico_id', 'Bico') }}
+    {{ Form::text('bico_id', $posto->bico_id) }}
+    <br/>
+    {{ Form::label('turno_id', 'Quantidade de Turnos') }}
+    {{ Form::text('turno_id', $posto->turno_id) }}
     <br/>
     {{ Form::label('cicloTurno', 'Ciclo do Turno') }}
     {{ Form::text('cicloTurno', $posto->cicloTurno) }}

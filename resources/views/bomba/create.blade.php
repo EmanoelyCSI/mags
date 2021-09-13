@@ -29,6 +29,9 @@
     {{ Form::label('modelo', 'Modelo') }}
     {{ Form::text('modelo', null) }}
     <br/>
+    {{ Form::label('posto_id', 'Posto') }}
+    {{ Form::text('posto_id', $bomba->posto_id) }}
+    <br/>
 
     {{ Form::submit('Enviar') }}
  

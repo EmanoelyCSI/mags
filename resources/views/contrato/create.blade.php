@@ -26,6 +26,9 @@
     {{ Form::label('name', 'Nome') }}
     {{ Form::text('name', null) }}
     <br/>
+    {{ Form::label('proprietario_id', 'Proprietário') }}
+    {{ Form::text('proprietario_id', null) }}
+    <br/>
     {{ Form::label('email', 'Email') }}
     {{ Form::text('email', null) }}
     <br/>
@@ -38,6 +41,7 @@
     {{ Form::label('address', 'Endereço') }}
     {{ Form::text('address', null) }}
     <br/>
+
     {{ Form::submit('Enviar') }}
  
     {{ Form::close() }}

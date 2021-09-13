@@ -23,14 +23,14 @@
     {{-- {{ Form::label('name', 'Nome') }} --}}
     {{-- {{ Form::text('name', null) }} --}}
     <br/>
-    {{ Form::label('bomba', 'Bomba') }}
-    {{ Form::text('bomba', null) }}
+    {{ Form::label('bomba_id', 'Bomba') }}
+    {{ Form::text('bomba_id', null) }}
     <br/>
-    {{ Form::label('bico', 'Bico') }}
-    {{ Form::text('bico', null) }}
+    {{ Form::label('bico_id', 'Bico') }}
+    {{ Form::text('bico_id', null) }}
     <br/>
-    {{ Form::label('turno', 'Turno') }}
-    {{ Form::text('turno', null) }}
+    {{ Form::label('turno_id', 'Turno') }}
+    {{ Form::text('turno_id', null) }}
     <br/>
     {{ Form::label('leitura', 'Leitura') }}
     {{ Form::text('leitura', null) }}

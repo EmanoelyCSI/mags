@@ -35,18 +35,13 @@
     {{ Form::label('tel', 'Telefone') }}
     {{ Form::text('tel', null) }}
     <br/>
-    {{ Form::label('bomba', 'Bomba') }}
-    {{ Form::text('bomba', null) }}
+    {{ Form::label('address', 'Endereço') }}
+    {{ Form::text('address', null) }}
     <br/>
-    {{ Form::label('bico', 'Bico') }}
-    {{ Form::text('bico', null) }}
+    {{ Form::label('contrato_id', 'Contrato') }}
+    {{ Form::text('contrato_id', $posto->contrato_id) }}
     <br/>
-    {{ Form::label('turno', 'Quantidade de Turnos') }}
-    {{ Form::text('turno', null) }}
-    <br/>
-    {{ Form::label('cicloTurno', 'Ciclo do Turno') }}
-    {{ Form::text('cicloTurno', null) }}
-    <br/>
+
     {{ Form::submit('Enviar') }}
  
     {{ Form::close() }}

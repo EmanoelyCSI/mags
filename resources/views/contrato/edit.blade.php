@@ -26,6 +26,9 @@
     {{ Form::label('name', 'Nome') }}
     {{ Form::text('name',  $contrato->name) }}
     <br/>
+    {{ Form::label('proprietario_id', 'Proprietário') }}
+    {{ Form::text('proprietario_id', $contrato->proprietario_id) }}
+    <br/>
     {{ Form::label('email', 'Email') }}
     {{ Form::text('email',  $contrato->email) }}
     <br/>

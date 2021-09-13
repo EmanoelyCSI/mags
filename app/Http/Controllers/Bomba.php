@@ -43,20 +43,23 @@ class BombaController extends Controller
     {
         // Armazenar Bombas
         $message = [
-            'bomba.required' => 'O campo Bomba é obrigatório!',
-            'modelo.required' => 'O campo Modelo é obrigatório!',
+            'bomba.required'    => 'O campo Bomba é obrigatório!',
+            'modelo.required'   => 'O campo Modelo é obrigatório!',
+            'posto_id.required' => 'O campo Posto é obrigatório!',
         ];
  
         $validateData = $request->validate([
-            'bomba' =>  'required', //o campo não pode ser vazio
-            'modelo' =>  'required', //o campo não pode ser vazio 
+            'bomba'    =>  'required', //o campo não pode ser vazio
+            'modelo'   =>  'required', //o campo não pode ser vazio 
+            'posto_id' =>  'required', //o campo não pode ser vazio 
  
          ], $message);
 
         $bomba = new Bomba;
-        $bomba->name =          $request->name;
-        $bomba->bomba =         $request->bomba;
-        $bomba->modelo =        $request->bico;
+        $bomba->name      =  $request->name;
+        $bomba->bomba     =  $request->bomba;
+        $bomba->modelo    =  $request->modelo;
+        $bomba->posto_id  =  $request->posto_id;
         $bomba->save();
  
         return redirect()->route('bomba.index')->with('message', 'Bomba criada com sucesso!');
@@ -101,19 +104,22 @@ class BombaController extends Controller
     {
        // Armazenar Bombas
        $message = [
-        'bomba.required' => 'O campo Bomba é obrigatório!',
-        'modelo.required' => 'O campo Modelo é obrigatório!',
+        'bomba.required'    => 'O campo Bomba é obrigatório!',
+        'modelo.required'   => 'O campo Modelo é obrigatório!',
+        'posto_id.required' => 'O campo Modelo é obrigatório!',
     ];
 
     $validateData = $request->validate([
-        'bomba' =>  'required', //o campo não pode ser vazio
-        'modelo'  =>  'required', //o campo não pode ser vazio 
+        'bomba'     =>  'required', //o campo não pode ser vazio
+        'modelo'    =>  'required', //o campo não pode ser vazio
+        'posto_id'  =>  'required', //o campo não pode ser vazio 
      ], $message);
 
     $bomba = Bomba::findOrFail($id);
-    $bomba->nome   =      $request->nome;
-    $bomba->bomba  =      $request->bomba;
-    $bomba->modelo =      $request->bico;
+    $bomba->nome      =   $request->nome;
+    $bomba->bomba     =   $request->bomba;
+    $bomba->modelo    =   $request->modelo;
+    $bomba->posto_id  =   $request->posto_id;
     $bomba->save();
 
     return redirect()->route('bomba.index')->with('message', 'Bomba editada com sucesso!');

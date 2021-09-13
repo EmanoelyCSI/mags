@@ -43,26 +43,26 @@ class LeituraController extends Controller
     {
         // Armazenar Leituras
         $message = [
-            'bomba.required' => 'O campo Bomba é obrigatório!',
-            'bico.required' => 'O campo Bico é obrigatório!',
-            'turno.required' => 'O campo Turno é obrigatório!', 
-            'leitura.required' => 'O campo Leitura é obrigatório!', 
-            'leitura.min' => 'O campo Leitura precisa ter no mínimo :min caracteres!', 
+            'bomba_id.required' => 'O campo Bomba é obrigatório!',
+            'bico_id.required'  => 'O campo Bico é obrigatório!',
+            'turno_id.required' => 'O campo Turno é obrigatório!', 
+            'leitura.required'  => 'O campo Leitura é obrigatório!', 
+            'leitura.min'       => 'O campo Leitura precisa ter no mínimo :min caracteres!', 
         ];
  
         $validateData = $request->validate([
-            'bomba' =>  'required', //o campo não pode ser vazio
-            'bico' =>  'required', //o campo não pode ser vazio 
-            'turno' =>  'required', //o campo não pode ser vazio  
-            'leitura' =>  'required|min:6' //o campo não pode ser vazio e deve ter no mínimo 6 caracteres  
+            'bomba_id'  =>  'required', //o campo não pode ser vazio
+            'bico_id'   =>  'required', //o campo não pode ser vazio 
+            'turno_id'  =>  'required', //o campo não pode ser vazio  
+            'leitura'   =>  'required|min:6' //o campo não pode ser vazio e deve ter no mínimo 6 caracteres  
          ], $message);
 
         $leitura = new Leitura;
-        // $leitura->name =       $request->name;
-        $leitura->bomba =      $request->bomba;
-        $leitura->bico =       $request->bico;
-        $leitura->turno =      $request->turno;
-        $leitura->leitura =    $request->leitura;
+        // $leitura->name   =  $request->name;
+        $leitura->bomba_id  =  $request->bomba_id;
+        $leitura->bico_id   =  $request->bico_id;
+        $leitura->turno_id  =  $request->turno_id;
+        $leitura->leitura   =  $request->leitura;
         $leitura->save();
  
         return redirect()->route('leitura.index')->with('message', 'Leitura criado com sucesso!');
@@ -107,25 +107,25 @@ class LeituraController extends Controller
     {
        // Armazenar Leituras
        $message = [
-        'bomba.required' => 'O campo Bomba é obrigatório!',
-        'bico.required' => 'O campo Bico é obrigatório!',
-        'turno.required' => 'O campo Turno é obrigatório!', 
-        'leitura.required' => 'O campo Leitura é obrigatório!', 
-        'leitura.min' => 'O campo Leitura precisa ter no mínimo :min caracteres!', 
+        'bomba_id.required' => 'O campo Bomba é obrigatório!',
+        'bico_id.required'  => 'O campo Bico é obrigatório!',
+        'turno_id.required' => 'O campo Turno é obrigatório!', 
+        'leitura.required'  => 'O campo Leitura é obrigatório!', 
+        'leitura.min'       => 'O campo Leitura precisa ter no mínimo :min caracteres!', 
     ];
 
     $validateData = $request->validate([
-        'bomba' =>  'required', //o campo não pode ser vazio
-        'bico' =>  'required', //o campo não pode ser vazio 
-        'turno' =>  'required', //o campo não pode ser vazio  
-        'leitura' =>  'required|min:6' //o campo não pode ser vazio e deve ter no mínimo 6 caracteres  
+        'bomba_id'  =>  'required', //o campo não pode ser vazio
+        'bico_id'   =>  'required', //o campo não pode ser vazio 
+        'turno_id'  =>  'required', //o campo não pode ser vazio  
+        'leitura'   =>  'required|min:6' //o campo não pode ser vazio e deve ter no mínimo 6 caracteres  
      ], $message);
 
     $leitura = Leitura::findOrFail($id);
-    $leitura->bomba =      $request->bomba;
-    $leitura->bico =       $request->bico;
-    $leitura->turno =      $request->turno;
-    $leitura->leitura =    $request->leitura;
+    $leitura->bomba_id  =   $request->bomba_id;
+    $leitura->bico_id   =   $request->bico_id;
+    $leitura->turno_id  =   $request->turno_id;
+    $leitura->leitura   =   $request->leitura;
     $leitura->save();
 
     return redirect()->route('leitura.index')->with('message', 'Leitura editada com sucesso!');

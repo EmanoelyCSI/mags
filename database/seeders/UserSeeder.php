@@ -32,7 +32,7 @@ class UserSeeder extends Seeder
             'cell'      =>  '2199742047',
             'tel'       =>  '2181937183',
             'password'  =>  Hash::make('87654321'),
-            'perfil'    =>  'administrador',
+            'perfil'    =>  'proprietario',
         ]);
 
         User::create([

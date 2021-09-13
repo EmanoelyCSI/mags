@@ -23,14 +23,14 @@
     {{-- {{ Form::label('name', 'Nome') }} --}}
     {{-- {{ Form::text('name', $leitura->name) }} --}}
     <br/>
-    {{ Form::label('bomba', 'Bomba') }}
-    {{ Form::text('bomba', $leitura->bomba) }}
+    {{ Form::label('bomba_id', 'Bomba') }}
+    {{ Form::text('bomba_id', $leitura->bomba_id) }}
     <br/>
-    {{ Form::label('bico', 'Bico') }}
-    {{ Form::text('bico', $leitura->bico) }}
+    {{ Form::label('bico_id', 'Bico') }}
+    {{ Form::text('bico_id', $leitura->bico_id) }}
     <br/>
-    {{ Form::label('turno', 'Turno') }}
-    {{ Form::text('turno', $leitura->turno) }}
+    {{ Form::label('turno_id', 'Turno') }}
+    {{ Form::text('turno_id', $leitura->turno_id) }}
     <br/>
     {{ Form::label('leitura', 'Leitura') }}
     {{ Form::text('leitura',  $leitura->leitura) }}
