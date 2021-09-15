@@ -23,9 +23,6 @@
     {{ Form::label('name', 'Nome') }}
     {{ Form::text('name', $bomba->name) }}
     <br/>
-    {{ Form::label('bomba', 'Bomba') }}
-    {{ Form::text('bomba', $bomba->bomba) }}
-    <br/>
     {{ Form::label('modelo', 'Modelo') }}
     {{ Form::text('modelo', $bomba->modelo) }}
     <br/>

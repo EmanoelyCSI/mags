@@ -12,7 +12,7 @@
     <ul>
         <li>ID:                   {{ $bomba->id    }}     </li>
         <li>Nome:                 {{ $bomba->name  }}     </li>
-        <li>Bomba:                {{ $bomba->bomba }}     </li>
+        <li>Modelo:               {{ $bomba->modelo }}     </li>
         <li>Bico:                 {{ $bomba->bico  }}     </li>
         <li>Criação:              {{ Carbon\Carbon::parse($bomba->create_at)->format('d/m/Y H:i') }} </li>
         <li>Última modificação:   {{ Carbon\Carbon::parse($bomba->update_at)->format('d/m/Y H:i') }} </li>

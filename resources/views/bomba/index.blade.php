@@ -26,7 +26,7 @@
         </thead>
         <tbody>
  
-          @foreach($leitura as $key => $value)
+          @foreach($bomba as $key => $value)
             <tr>
                 <td>{{ $value->id }}</td>
                 <td>{{ $value->modelo }}</td>

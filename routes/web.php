@@ -98,7 +98,7 @@ Route::delete('/bomba/{id}', [BombaController::class, 'destroy'])->name('bomba.d
 Route::get('/bico', [BicoController::class, 'index'])->name('bico.index');
 
 Route::get('/bico/create', [BicoController::class, 'create'])->name('bico.create');
-Route::post('/bico/create', [BicoaController::class, 'store'])->name('bico.store');
+Route::post('/bico/create', [BicoController::class, 'store'])->name('bico.store');
 
 Route::get('/bico/{id}', [BicoController::class, 'show'])->name('bico.show');
 

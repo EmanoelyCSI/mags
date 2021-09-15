@@ -18,7 +18,7 @@ class ContratoSeeder extends Seeder
             'cnpj'            => '07.739.067/0001-91',
             'name'            => 'João Pereira dos Santos',
             'proprietario_id' => '1',
-            'email'           => 'joãosantos.contato@gmail.com',
+            'email'           => 'joão_santos.contato@gmail.com',
             'cell'            => '2198645-8261',
             'tel'             => '212546-8965',
             'address'         => 'R. Estácio de Sá, 87 - Estácio, Rio de Janeiro - RJ, 20211-270'

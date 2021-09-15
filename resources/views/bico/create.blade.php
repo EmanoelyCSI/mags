@@ -24,7 +24,9 @@
     {{ Form::text('name', null) }}
     <br/>
     {{ Form::label('bomba_id', 'Bomba') }}
-    {{ Form::text('bomba_id', $bico->bomba_id) }}
+    {{ Form::text('bomba_id', null) }}  
+    {{-- Mudar de null para bomba_id --}}
+    
     <br/>
  
 

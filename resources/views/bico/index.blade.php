@@ -26,7 +26,7 @@
         </thead>
         <tbody>
  
-          @foreach($leitura as $key => $value)
+          @foreach($bico as $key => $value)
             <tr>
                 <td>{{ $value->id }}</td>
                 <td>{{ $value->name }}</td>

@@ -23,15 +23,13 @@
     {{ Form::label('name', 'Nome') }}
     {{ Form::text('name', null) }}
     <br/>
-    {{ Form::label('bomba', 'Bomba') }}
-    {{ Form::text('bomba', null) }}
-    <br/>
     {{ Form::label('modelo', 'Modelo') }}
     {{ Form::text('modelo', null) }}
     <br/>
     {{ Form::label('posto_id', 'Posto') }}
-    {{ Form::text('posto_id', $bomba->posto_id) }}
+    {{ Form::text('posto_id', null) }}
     <br/>
+    {{-- Mudar para posto_id --}}
 
     {{ Form::submit('Enviar') }}
  

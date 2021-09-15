@@ -13,8 +13,8 @@
         <li>ID:                   {{ $bico->id    }}     </li>
         <li>Nome:                 {{ $bico->name  }}     </li>
         <li>Bomba:                {{ $bico->bomba_id }}     </li>
-        <li>Criação:              {{ Carbon\Carbon::parse($bomba->create_at)->format('d/m/Y H:i') }} </li>
-        <li>Última modificação:   {{ Carbon\Carbon::parse($bomba->update_at)->format('d/m/Y H:i') }} </li>
+        <li>Criação:              {{ Carbon\Carbon::parse($bico->create_at)->format('d/m/Y H:i') }} </li>
+        <li>Última modificação:   {{ Carbon\Carbon::parse($bico->update_at)->format('d/m/Y H:i') }} </li>
 
 
     </ul>

@@ -23,7 +23,7 @@ class CreatePostosTable extends Migration
             $table->string('tel')->nullable();
             $table->string('address');
             $table->integer('contrato_id');
-            $table->integer('gerente_id');
+            // $table->integer('gerente_id');
             $table->string('bomba');
             $table->string('bico');
             $table->string('turno');

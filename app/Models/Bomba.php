@@ -8,6 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Bomba extends Model
 {
     use HasFactory;
-
-  
 }

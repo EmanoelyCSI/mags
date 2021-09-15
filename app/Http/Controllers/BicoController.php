@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bico;
 use Illuminate\Http\Request;
 
-class BombaController extends Controller
+class BicoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,10 @@ class BombaController extends Controller
      */
     public function index()
     {
-        // Listar todos as Bombas
+        // Listar todos os Bicos
         $bicos= Bico::orderBy('id', 'ASC')->get();
         //dd($bicos);
         return view('bico.index', ['bico' => $bicos]);
-
     }
 
     /**
@@ -30,7 +29,6 @@ class BombaController extends Controller
     {
         //Criar Bico
         return view('bico.create');
-
     }
 
     /**
@@ -41,34 +39,32 @@ class BombaController extends Controller
      */
     public function store(Request $request)
     {
-        // Armazenar Bicos
-
         $bico = new Bico;
-        $bico->name     =      $request->name;
-        $bico->bomba_id =      $request->bomba_id;
+        $bico->name     =   $request->name;
+        $bico->bomba_id =   $request->bomba_id;
         $bico->save();
- 
+
         return redirect()->route('bico.index')->with('message', 'Bico criado com sucesso!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Posto  $posto
+     * @param  \App\Models\Bico  $bico
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-         //Visualizar Bicos
-         $bico = Bico::findOrFail($id);
-         // dd($bico);
-         return view('bico.show', ['bico' => $bico]);
+        //Visualizar Bicos
+        $bico = Bico::findOrFail($id);
+        // dd($bico);
+        return view('bico.show', ['bico' => $bico]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Posto  $posto
+     * @param  \App\Models\Bico  $bico
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -76,19 +72,18 @@ class BombaController extends Controller
         //Editar Bico
         $bico = Bico::findOrFail($id);
         return view('bico.edit', ['bico' => $bico]);
-    
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Posto  $posto
+     * @param  \App\Models\Bico  $bico
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-       // Armazenar Bicos
+        // Armazenar Bicos
 
     $bico = Bico::findOrFail($id);
     $bico->name     =      $request->name;
@@ -96,17 +91,16 @@ class BombaController extends Controller
     $bico->save();
 
     return redirect()->route('bico.index')->with('message', 'Bico editado com sucesso!');
-
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Posto  $posto
+     * @param  \App\Models\Bico  $bico
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Bico $bico)
     {
-        
+        //
     }
 }

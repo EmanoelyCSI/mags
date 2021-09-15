@@ -18,7 +18,6 @@ class BombaController extends Controller
         $bombas= Bomba::orderBy('id', 'ASC')->get();
         //dd($bombas);
         return view('bomba.index', ['bomba' => $bombas]);
-
     }
 
     /**
@@ -30,7 +29,6 @@ class BombaController extends Controller
     {
         //Criar Bomba
         return view('bomba.create');
-
     }
 
     /**
@@ -68,41 +66,40 @@ class BombaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Posto  $posto
+     * @param  \App\Models\Bomba  $bomba
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-         //Visualizar Bombas
-         $bomba = Bomba::findOrFail($id);
-         // dd($posto);
-         return view('bomba.show', ['bomba' => $bomba]);
+        //Visualizar Bombas
+        $bomba = Bomba::findOrFail($id);
+        // dd($posto);
+        return view('bomba.show', ['bomba' => $bomba]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Posto  $posto
+     * @param  \App\Models\Bomba  $bomba
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //Editar Bomba
+         //Editar Bomba
         $bomba = Bomba::findOrFail($id);
         return view('bomba.edit', ['bomba' => $bomba]);
-    
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Posto  $posto
+     * @param  \App\Models\Bomba  $bomba
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-       // Armazenar Bombas
+        // Armazenar Bombas
        $message = [
         'bomba.required'    => 'O campo Bomba é obrigatório!',
         'modelo.required'   => 'O campo Modelo é obrigatório!',
@@ -123,17 +120,16 @@ class BombaController extends Controller
     $bomba->save();
 
     return redirect()->route('bomba.index')->with('message', 'Bomba editada com sucesso!');
-
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Posto  $posto
+     * @param  \App\Models\Bomba  $bomba
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Bomba $bomba)
     {
-        
+        //
     }
 }
