@@ -24,7 +24,8 @@
     {{-- {{ Form::text('name', $leitura->name) }} --}}
     <br/>
     {{ Form::label('bomba_id', 'Bomba') }}
-    {{ Form::text('bomba_id', $leitura->bomba_id) }}
+    {{ Form::select('bomba_id', $bombas) }}
+
     <br/>
     {{ Form::label('bico_id', 'Bico') }}
     {{ Form::text('bico_id', $leitura->bico_id) }}

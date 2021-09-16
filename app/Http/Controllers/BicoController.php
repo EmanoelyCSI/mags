@@ -29,6 +29,11 @@ class BicoController extends Controller
     {
         //Criar Bico
         return view('bico.create');
+
+        $bombas = Bomba::pluck('name', 'id');
+
+        return view('bico.create',['bombas' => $bombas]);    
+
     }
 
     /**
@@ -72,6 +77,11 @@ class BicoController extends Controller
         //Editar Bico
         $bico = Bico::findOrFail($id);
         return view('bico.edit', ['bico' => $bico]);
+
+        $bombas = Bomba::pluck('name', 'id');
+		return view('bico.edit',['bico' => $bico, 'bomba' => $bombas]);
+
+
     }
 
     /**
@@ -86,8 +96,8 @@ class BicoController extends Controller
         // Armazenar Bicos
 
     $bico = Bico::findOrFail($id);
-    $bico->name     =      $request->name;
-    $bico->bomba_id =      $request->bomba_id;
+    $bico->name         =    $request->name;
+    $bico->bomba_id     =    $request->bomba_id;
     $bico->save();
 
     return redirect()->route('bico.index')->with('message', 'Bico editado com sucesso!');

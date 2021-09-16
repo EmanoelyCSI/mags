@@ -31,6 +31,10 @@ class LeituraController extends Controller
         //Criar posto
         return view('leitura.create');
 
+        $bombas = Bomba::pluck('name', 'id');
+        return view('leitura.create',['bombas' => $bombas]);
+
+
     }
 
     /**
@@ -93,6 +97,9 @@ class LeituraController extends Controller
         //Editar Leitura
         $leitura = Leitura::findOrFail($id);
         return view('leitura.edit', ['leitura' => $leitura]);
+
+        $bombas = Bomba::pluck('nome', 'id');
+		return view('leitura.edit',['leitura' => $leitura, 'bombas' => $bombas]);
     
     }
 

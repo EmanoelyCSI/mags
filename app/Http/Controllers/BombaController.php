@@ -55,7 +55,6 @@ class BombaController extends Controller
 
         $bomba = new Bomba;
         $bomba->name      =  $request->name;
-        $bomba->bomba     =  $request->bomba;
         $bomba->modelo    =  $request->modelo;
         $bomba->posto_id  =  $request->posto_id;
         $bomba->save();
@@ -113,8 +112,7 @@ class BombaController extends Controller
      ], $message);
 
     $bomba = Bomba::findOrFail($id);
-    $bomba->nome      =   $request->nome;
-    $bomba->bomba     =   $request->bomba;
+    $bomba->name      =   $request->name;
     $bomba->modelo    =   $request->modelo;
     $bomba->posto_id  =   $request->posto_id;
     $bomba->save();

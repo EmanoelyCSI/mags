@@ -23,8 +23,8 @@
     {{ Form::label('name', 'Nome') }}
     {{ Form::text('name', $bico->name) }}
     <br/>
-    {{ Form::label('bomba_id', 'Bomba') }}
-    {{ Form::text('bomba_id', $bico->bomba_id) }}
+    {{ Form::label('bomba', 'Bomba') }}
+	{{ Form::select('bomba_id', $bombas) }}
     <br/>
  
 

@@ -30,7 +30,7 @@
             <tr>
                 <td>{{ $value->id }}</td>
                 <td>{{ $value->name }}</td>
-                <td>{{ $value->bomba_id }}</td>
+                {{-- <td>{{ $value->bomba->name }}</td> --}}
                 <td></td>
                 <td>
                     <a href="{{ URL::to('bico/' . $value->id) }}">Visualizar</a>

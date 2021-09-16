@@ -20,7 +20,7 @@
                 <th>id</th>
                 <th>CNPJ</th>
                 <th>Nome</th>
-                <th></th>
+                <th>Contrato</th>
                 <th></th>
                 <th></th>
 
@@ -33,6 +33,8 @@
                 <td>{{ $value->id }}</td>
                 <td>{{ $value->cnpj}}</td>
                 <td>{{ $value->name}}</td>
+                <td>{{ $value->contrato->name }}</td>
+
                 <td>
                     <a href="{{ URL::to('posto/' . $value->id) }}">Visualizar</a>
                 </td>
