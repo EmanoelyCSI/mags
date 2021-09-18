@@ -13,13 +13,13 @@
         <li>ID:                   {{ $posto->id }}                  </li>
         <li>CNPJ:                 {{ $posto->cnpj }}                </li>
         <li>Nome:                 {{ $posto->name }}                </li>
-        <li>Contrato:             {{$posto->contrato->name }}       </li>
+        <li>Contrato:             {{ $posto->contrato->name }}      </li>
         <li>Email:                {{ $posto->email }}               </li>
         <li>Celular:              {{ $posto->cell }}                </li>
         <li>Telefone:             {{ $posto->tel }}                 </li>
         <li>Endereço:             {{ $posto->address }}             </li>
-        <li>Bomba:                {{ $posto->bomba  }}              </li>
-        <li>Bico:                 {{ $posto->bico  }}               </li>
+        <li>Bomba:                {{ $posto->bomba }}               </li>
+        <li>Bico:                 {{ $posto->bico}}                 </li>
         <li>Quantidade de Turnos: {{ $posto->turno  }}              </li>
         <li>Ciclo do Turno:       {{ $posto->cicloTurno }}          </li>
         <li>Criação:              {{ Carbon\Carbon::parse($posto->create_at)->format('d/m/Y H:i') }} </li>

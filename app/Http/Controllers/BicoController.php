@@ -15,7 +15,7 @@ class BicoController extends Controller
     public function index()
     {
         // Listar todos os Bicos
-        $bicos= Bico::orderBy('id', 'ASC')->get();
+        $bicos = Bico::orderBy('id', 'ASC')->get();
         //dd($bicos);
         return view('bico.index', ['bico' => $bicos]);
     }
@@ -28,11 +28,9 @@ class BicoController extends Controller
     public function create()
     {
         //Criar Bico
-        return view('bico.create');
-
-        $bombas = Bomba::pluck('name', 'id');
-
-        return view('bico.create',['bombas' => $bombas]);    
+        $bomba = Bomba::pluck('name', 'id');
+        return view('bico.create', ['bomba' => $bomba]);
+       
 
     }
 

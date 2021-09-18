@@ -13,10 +13,10 @@
         <li>Criação:              {{ Carbon\Carbon::parse($leitura->create_at)->format('d/m/Y H:i') }} </li>
         <li>Última modificação:   {{ Carbon\Carbon::parse($leitura->update_at)->format('d/m/Y H:i') }} </li>
         {{-- <li>Nome:                 {{ $leitura->name }}      </li> --}}
-        <li>Bomba:                {{ $leitura->bomba->name }}     </li>
-        <li>Bico:                 {{ $leitura->bico->name  }}     </li>
-        <li>Turno:                {{ $leitura->turno_id }}     </li>
-        <li>Leitura:              {{ $leitura->leitura  }}     </li>
+        <li>Bomba:                {{ $leitura->bomba->name}}     </li>
+        <li>Bico:                 {{ $leitura->bico->name }}     </li>
+        <li>Turno:                {{ $leitura->turno }}       </li>
+        <li>Leitura:              {{ $leitura->leitura  }}       </li>
 
     </ul>
     

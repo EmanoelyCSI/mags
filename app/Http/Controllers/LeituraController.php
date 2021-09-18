@@ -15,7 +15,7 @@ class LeituraController extends Controller
     public function index()
     {
         // Listar todos as Leituras
-        $leituras= Leitura::orderBy('updated_at', 'ASC')->get();
+        $leituras = Leitura::orderBy('updated_at', 'ASC')->get();
         //dd($postos);
         return view('leitura.index', ['leitura' => $leituras]);
 
@@ -96,13 +96,12 @@ class LeituraController extends Controller
     {
         //Editar Leitura
         $leitura = Leitura::findOrFail($id);
-        return view('leitura.edit', ['leitura' => $leitura]);
+        $bombas  = Bomba::pluck('name', 'id');
+        $bicos   = Bico::pluck('name', 'id');
+        return view('leitura.edit', ['leitura' => $leitura, 'bombas' => $bombas, 'bicos' => $bicos]);
 
-        $bombas = Bomba::pluck('nome', 'id');
-		return view('leitura.edit',['leitura' => $leitura, 'bombas' => $bombas]);
-    
     }
-
+    
     /**
      * Update the specified resource in storage.
      *

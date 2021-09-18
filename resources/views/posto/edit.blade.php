@@ -39,16 +39,16 @@
     {{ Form::text('address',  $posto->address) }}
     <br/>
     {{ Form::label('contrato_id', 'Contrato') }}
-    {{ Form::text('contrato_id', $posto->contrato_id) }}
+    {{ Form::text('contrato_id', $postos->contrato->name) }}
     <br/>
     {{ Form::label('gerente_id', 'Gerente') }}
     {{ Form::text('gerente_id', $posto->gerente_id) }}
     <br/>
     {{ Form::label('bomba_id', 'Bomba') }}
-    {{ Form::text('bomba_id', $posto->bomba_id) }}
+    {{ Form::text('bomba_id', $posto->bomba->name) }}
     <br/>
     {{ Form::label('bico_id', 'Bico') }}
-    {{ Form::text('bico_id', $posto->bico_id) }}
+    {{ Form::text('bico_id', $posto->bico->name) }}
     <br/>
     {{ Form::label('turno_id', 'Quantidade de Turnos') }}
     {{ Form::text('turno_id', $posto->turno_id) }}
