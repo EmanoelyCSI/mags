@@ -108,4 +108,4 @@ Route::put('/bico/{id}', [BicoController::class, 'update'])->name('bico.update')
 Route::delete('/bico/{id}', [BicoController::class, 'destroy'])->name('bico.destroy');
 
 
-// TURNOS
+// ------------------------ TURNOS ------------------------
