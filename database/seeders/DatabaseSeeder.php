@@ -9,6 +9,8 @@ use Database\Seeders\PostoSeeder;
 use Database\Seeders\LeituraSeeder;
 use Database\Seeders\BombaSeeder;
 use Database\Seeders\BicoSeeder;
+use Database\Seeders\TurnoSeeder;
+
 
 
 
@@ -25,6 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ContratoSeeder::class,
             PostoSeeder::class,
+            TurnoSeeder::class,
             LeituraSeeder::class,
             BombaSeeder::class,
             BicoSeeder::class,

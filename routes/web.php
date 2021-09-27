@@ -7,6 +7,7 @@ use App\Http\Controllers\PostoController;
 use App\Http\Controllers\LeituraController;
 use App\Http\Controllers\BombaController;
 use App\Http\Controllers\BicoController;
+use App\Http\Controllers\TurnoController;
 
 
 
@@ -109,3 +110,14 @@ Route::delete('/bico/{id}', [BicoController::class, 'destroy'])->name('bico.dest
 
 
 // ------------------------ TURNOS ------------------------
+Route::get('/turno', [TurnoController::class, 'index'])->name('turno.index');
+
+Route::get('/turno/create', [TurnoController::class, 'create'])->name('turno.create');
+Route::post('/turno/create', [TurnoController::class, 'store'])->name('turno.store');
+
+Route::get('/turno/{id}', [TurnoController::class, 'show'])->name('turno.show');
+
+Route::get('/turno/{id}/edit', [TurnoController::class, 'edit'])->name('turno.edit');
+Route::put('/turno/{id}', [TurnoController::class, 'update'])->name('turno.update');
+
+Route::delete('/turno/{id}', [TurnoController::class, 'destroy'])->name('turno.destroy');

@@ -72,7 +72,7 @@ class BombaController extends Controller
     {
         //Visualizar Bombas
         $bomba = Bomba::findOrFail($id);
-        // dd($posto);
+        // dd($bomba);
         return view('bomba.show', ['bomba' => $bomba]);
     }
 
