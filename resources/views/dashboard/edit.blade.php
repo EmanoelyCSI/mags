@@ -17,7 +17,7 @@
             </div>
         @endif
     
-        {{ Form::model($user, array('route' => array('user.update', $user->id), 'method' => 'PUT' )) }}
+        {{ Form::model($user, array('route' => array('dashboard.update', $user->id), 'method' => 'PUT' )) }}
     
         {{ Form::label('name', 'Nome') }}
         {{ Form::text('name', $user->name) }}

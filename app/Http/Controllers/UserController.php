@@ -17,7 +17,7 @@ class UserController extends Controller
         //Listar contas de administrador
         $users = User::orderBy('name', 'ASC')->get();
         // dd($users);
-        return view('user.index', ['users'=> $users]);
+        return view('dashboard.index', ['users'=> $users]);
     }
 
     /**
@@ -52,7 +52,7 @@ class UserController extends Controller
         //
         $user = User::findOrFail($id);
         // dd($user);
-        return view('user.show', ['user' => $user]);
+        return view('dashboard.show', ['user' => $user]);
     }
 
     /**
@@ -65,7 +65,7 @@ class UserController extends Controller
     {
         //
         $user = User::findOrFail($id);
-        return view('user.edit', ['user' => $user]);
+        return view('dashboard.edit', ['user' => $user]);
     }
 
     /**
@@ -93,7 +93,7 @@ class UserController extends Controller
         $user->cell = $request->cell;
         $user->save();
  
-        return redirect()->route('user.index')->with('message', 'Usuário editado com sucesso!');
+        return redirect()->route('dashboard.index')->with('message', 'Usuário editado com sucesso!');
     }
 
     /**
@@ -108,6 +108,6 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
 
-        return redirect()->route('user.index')->with('message', 'Usuário excluído com sucesso!');
+        return redirect()->route('dashboard.index')->with('message', 'Usuário excluído com sucesso!');
     }
 }
