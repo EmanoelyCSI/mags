@@ -17,7 +17,6 @@
         <li>Celular:              {{ $contrato->cell }}      </li>
         <li>Telefone:             {{ $contrato->tel }}       </li>
         <li>Endereço:             {{ $contrato->address }}   </li>
-        <li>Posto:                {{ $contrato->}}           </li>
         <li>Criação:              {{ Carbon\Carbon::parse($contrato->create_at)->format('d/m/Y H:i') }} </li>
         <li>Última modificação:   {{ Carbon\Carbon::parse($contrato->update_at)->format('d/m/Y H:i') }} </li>
     </ul>

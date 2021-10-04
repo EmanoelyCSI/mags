@@ -17,17 +17,17 @@ class BicoSeeder extends Seeder
     {
         Bico::create([
             'name'        => 'Bico 1',
-            // 'bomba_id'    => '1',
+            'bomba_id'    => '1',
         ]);
 
         Bico::create([
             'name'        => 'Bico 2',
-            // 'bomba_id'    => '2',
+            'bomba_id'    => '2',
         ]);
 
         Bico::create([
             'name'        => 'Bico 3',
-            // 'bomba_id'    => '3',
+            'bomba_id'    => '3',
         ]);
     }
 }

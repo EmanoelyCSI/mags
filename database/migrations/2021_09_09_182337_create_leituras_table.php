@@ -16,8 +16,8 @@ class CreateLeiturasTable extends Migration
         Schema::create('leituras', function (Blueprint $table) {
             $table->id();
             // $table->string('name')->nullable();
-            // $table->integer('bomba_id');
-            // $table->integer('bico_id');
+            $table->integer('bomba_id');
+            $table->integer('bico_id');
             // $table->integer('turno_id');
             $table->string('leitura');
             // $table->integer('gerente_id');

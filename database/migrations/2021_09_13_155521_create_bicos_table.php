@@ -16,7 +16,7 @@ class CreateBicosTable extends Migration
         Schema::create('bicos', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            // $table->integer('bomba_id');
+            $table->integer('bomba_id');
             $table->timestamps();
         });
     }

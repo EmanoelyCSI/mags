@@ -13,4 +13,16 @@ class Bomba extends Model
     return $this->belongsTo(Posto::class, 'bomba_id', 'id');
     }
 
+//-----------------------------------------------------------
+    public function bico()
+    {
+    return $this->hasMany(Bico::class, 'bomba_id', 'id');
+    }
+
+//-----------------------------------------------------------
+    public function leituraBomba()
+    {
+    return $this->hasOne(Leitura::class, 'bomba_id', 'id');
+    }
+    
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bico;
+use App\Models\Bomba;
 use Illuminate\Http\Request;
 
 class BicoController extends Controller
