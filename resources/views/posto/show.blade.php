@@ -13,12 +13,15 @@
         <li>ID:                   {{ $posto->id }}                  </li>
         <li>CNPJ:                 {{ $posto->cnpj }}                </li>
         <li>Nome:                 {{ $posto->name }}                </li>
-        <li>Contrato:             {{ $posto->contrato->name }}      </li>
+        <li>Contrato - CNPJ:      {{ $posto->contrato->cnpj }}      </li>
+        <li>Contrato - Nome:      {{ $posto->contrato->name }}      </li>
+        <li>Contrato - ID:        {{ $posto->contrato->id }}        </li>
         <li>Email:                {{ $posto->email }}               </li>
         <li>Celular:              {{ $posto->cell }}                </li>
         <li>Telefone:             {{ $posto->tel }}                 </li>
         <li>Endereço:             {{ $posto->address }}             </li>
-        <li>Bomba:                {{ $posto->bomba }}               </li>
+        <li>Bomba - Modelo:       {{ $posto->bomba->modelo}}        </li>
+        <li>Bomba - ID:           {{ $posto->bomba->id}}            </li>
         <li>Bico:                 {{ $posto->bico}}                 </li>
         <li>Quantidade de Turnos: {{ $posto->turno  }}              </li>
         <li>Ciclo do Turno:       {{ $posto->cicloTurno }}          </li>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bomba;
+use App\Models\Posto;
 use Illuminate\Http\Request;
 
 class BombaController extends Controller

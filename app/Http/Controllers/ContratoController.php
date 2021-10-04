@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contrato;
+use App\Models\Posto;
 use Illuminate\Http\Request;
 
 class ContratoController extends Controller
@@ -83,7 +84,7 @@ class ContratoController extends Controller
     {
         //Visualizar Contratos
         $contrato = Contrato::findOrFail($id);
-        // dd($contrato);
+        //  dd($contrato->posto_id);
         return view('contrato.show', ['contrato' => $contrato]);
 
     }

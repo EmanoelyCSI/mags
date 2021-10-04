@@ -21,7 +21,7 @@ class ContratoSeeder extends Seeder
             'email'           => 'joão_santos.contato@gmail.com',
             'cell'            => '2198645-8261',
             'tel'             => '212546-8965',
-            'address'         => 'R. Estácio de Sá, 87 - Estácio, Rio de Janeiro - RJ, 20211-270'
+            'address'         => 'R. Estácio de Sá, 87 - Estácio, Rio de Janeiro - RJ, 20211-270',
         ]);
 
         Contrato::create([
@@ -31,7 +31,8 @@ class ContratoSeeder extends Seeder
             'email'           =>  'marcos.silva_contato@gmail.com',
             'cell'            =>  '2198745-8272',
             'tel'             =>  '212545-8875',
-            'address'         =>  'R. Maia de Lacerda, 36 - Estácio Rio de Janeiro - RJ 20250-001'
+            'address'         =>  'R. Maia de Lacerda, 36 - Estácio Rio de Janeiro - RJ 20250-001',
+
         ]);
     }
 }
