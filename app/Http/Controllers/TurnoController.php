@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Turno;
+use App\Models\Leitura;
 use Illuminate\Http\Request;
 
 class TurnoController extends Controller

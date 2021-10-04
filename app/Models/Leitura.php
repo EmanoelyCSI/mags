@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-// use App\Models\Turno;
 
 class Leitura extends Model
 {
@@ -31,5 +30,11 @@ class Leitura extends Model
     public function leituraBico()
     {
     return $this->belongsTo(Bico::class, 'bico_id', 'id');
+    }
+
+//-----------------------------------------------------------
+    public function leituraTurno()
+    {
+    return $this->belongsTo(Turno::class, 'turno_id', 'id');
     }
 }

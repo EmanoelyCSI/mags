@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Turno extends Model
 {
     use HasFactory;
+
+    public function leituraTurno()
+    {
+    return $this->hasOne(Leitura::class, 'turno_id', 'id');
+    }
 }

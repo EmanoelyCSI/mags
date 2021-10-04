@@ -18,7 +18,7 @@ class LeituraSeeder extends Seeder
         Leitura::create([
             'bomba_id'    => '1',
             'bico_id'     => '1',
-            // 'turno_id'    => '1',
+            'turno_id'    => '1',
             'leitura'    => '131416',
         ]);
     }
