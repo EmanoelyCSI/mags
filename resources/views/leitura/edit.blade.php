@@ -24,14 +24,14 @@
     {{-- {{ Form::text('name', $leitura->name) }} --}}
     <br/>
     {{ Form::label('bomba_id', 'Bomba') }}
-    {{ Form::select('bomba_id', $bomba) }}
+    {{ Form::select('bomba', $leitura->bomba) }}
 
     <br/>
     {{ Form::label('bico_id', 'Bico') }}
-    {{ Form::text('bico_id', $bico) }}
+    {{ Form::select('bico',$leitura->bico) }}
     <br/>
     {{ Form::label('turno_id', 'Turno') }}
-    {{ Form::text('turno_id', null) }}
+    {{ Form::select('turno', $leitura->turno) }}
     <br/>
     {{ Form::label('leitura', 'Leitura') }}
     {{ Form::text('leitura',  null) }}

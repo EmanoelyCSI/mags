@@ -33,7 +33,7 @@ class Leitura extends Model
     }
 
 //-----------------------------------------------------------
-    public function leituraTurno()
+    public function turno()
     {
     return $this->belongsTo(Turno::class, 'turno_id', 'id');
     }

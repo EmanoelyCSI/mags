@@ -15,7 +15,7 @@
         {{-- <li>Nome:                 {{ $leitura->name }}      </li> --}}
         <li>Bomba:                {{ $leitura->bomba->id}}     </li>
         <li>Bico:                 {{ $leitura->bico->id }}     </li>
-        <li>Turno:                {{ $leitura->turno_id}}   </li>
+        <li>Turno:                {{ $leitura->turno->name}}   </li>
         <li>Leitura:              {{ $leitura->leitura  }}     </li>
 
     </ul>

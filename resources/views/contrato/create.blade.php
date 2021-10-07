@@ -19,20 +19,7 @@
         </div>
     @endif
 
-    {{-- {{ Form::open(array('url' => '/contrato/create')) }} --}}
-
-    <div class="input-group mb-3">
-        <span class="input-group-text" >CNPJ</span>
-        <input type="text" class="form-control" aria-label="cnpj" aria-describedby="inputGroup-sizing-default">
-    </div>
-    {{-- id="inputGroup-sizing-default --}}
-
-
-
-
-
-
-
+    {{ Form::open(array('url' => '/contrato/create')) }}
  
     {{ Form::label('cnpj', 'CNPJ') }}
     {{ Form::text('cnpj', null) }}

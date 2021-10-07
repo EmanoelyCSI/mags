@@ -18,25 +18,26 @@
         </div>
     @endif
 
+
     {{ Form::open(array('url' => '/leitura/create')) }}
  
     {{-- {{ Form::label('name', 'Nome') }} --}}
     {{-- {{ Form::text('name', null) }} --}}
     <br/>
     {{ Form::label('bomba_id', 'Bomba') }}
-    {{ Form::select('bomba_id',$bomba->id) }}
+    {{ Form::select('bomba',$leitura->bomba) }}
     <br/>
 
     {{ Form::label('bico_id', 'Bico') }}
-    {{ Form::select('bico_id', $bico->id) }}
+    {{ Form::text('bico',null ) }}
     <br/>
 
     {{ Form::label('turno_id', 'Turno') }}
-    {{ Form::text('turno_id', $turno_id) }}
+    {{ Form::text('turno', null ) }}
     <br/>
 
     {{ Form::label('leitura', 'Leitura') }}
-    {{ Form::text('leitura', null) }}
+    {{ Form::text('leitura', null ) }}
     <br/>
 
     {{ Form::submit('Enviar') }}

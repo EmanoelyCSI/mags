@@ -155,8 +155,7 @@ class ContratoController extends Controller
     {
         //Deletar contrato
         // dd('DESTROY');
-        $contrato = Contrato::findOrFail($id);
-        $contrato->delete();
+    
  
         return redirect()->route('contrato.index')->with('message', 'Contrato excluído com sucesso!');
     }
