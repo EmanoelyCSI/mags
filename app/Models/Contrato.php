@@ -10,8 +10,7 @@ class Contrato extends Model
 {
     use HasFactory;
     
-    public function contrato()
-    {
+    public function contrato(){
         return $this->hasOne(Posto::class, 'contrato_id', 'id');
     }
 }

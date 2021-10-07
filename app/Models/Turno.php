@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Turno extends Model
 {
-    public function turno()
-    {
-    return $this->hasOne(Leitura::class, 'turno_id', 'id');
+    public function turno(){
+            return $this->hasOne(Leitura::class, 'turno_id', 'id');
     }
 }
