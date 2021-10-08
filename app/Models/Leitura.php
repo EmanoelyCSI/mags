@@ -17,13 +17,13 @@ class Leitura extends Model
     }
 
 
-  public function leituraBomba(){
-            return $this->belongsTo(Bomba::class, 'bomba_id', 'id');
-    }
+    // public function leituraBomba(){
+    //         return $this->belongsTo(Bomba::class, 'bomba_id', 'id');
+    // }
 
-    public function leituraBico(){
-            return $this->belongsTo(Bico::class, 'bico_id', 'id');
-    }
+    // public function leituraBico(){
+    //         return $this->belongsTo(Bico::class, 'bico_id', 'id');
+    // }
 
 
     public function turno(){
