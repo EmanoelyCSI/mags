@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 class Bico extends Model
 {
     public function bomba(){
-        return $this->belongsTo(Bomba::class, 'bomba_id', 'id');
+        return $this->hasOne(Bomba::class, 'id', 'bomba_id');
     }
     
-    public function leituraBico(){
-        return $this->hasOne(Leitura::class, 'bico_id', 'id');
+    public function leitura(){
+        return $this->hasMany(Leitura::class, 'bico_id', 'id');
     }
 }

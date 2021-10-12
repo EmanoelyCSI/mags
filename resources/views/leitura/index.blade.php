@@ -20,7 +20,7 @@
                 <th>Posto</th>
                 <th>Data</th>
                 <th>Status</th>
-                <th>testando</th>
+                <th></th>
                 <th></th>
                
 
