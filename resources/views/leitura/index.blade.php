@@ -30,8 +30,7 @@
  
           @foreach($leitura as $key => $value)
             <tr>
-                {{-- <td>{{ $value->name }}</td> --}}
-                <td>{{ $value->posto_id }}</td>
+                {{-- <td>{{ $value->posto->name }}</td> --}}
                 <td>{{ $value->updated_at }}</td>
                 <td></td>
                 <td></td>

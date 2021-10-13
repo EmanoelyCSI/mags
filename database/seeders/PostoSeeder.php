@@ -22,10 +22,10 @@ class PostoSeeder extends Seeder
             'tel'         => '212546-8965',
             'address'     => 'R. Estácio de Sá, 87 - Estácio, Rio de Janeiro - RJ, 20211-270',
             'contrato_id' => '1',
-            // 'gerente_id'  => '1',
-            'bomba_id'       => '4',
-            // 'bico'        => '2',
-            // 'turno'       => '4',
+            'gerente_id'  => '1',
+            'bomba_id'    => '4',
+            'bico_id'        => '2',
+            'turno_id'       => '4',
             // 'cicloTurno'  => '6 horas',
         ]);
 
@@ -37,10 +37,10 @@ class PostoSeeder extends Seeder
             'tel'           => '212545-8875',
             'address'       => 'R. Humaitá,136 - Humaitá Rio de Janeiro - RJ 22261-004',
             'contrato_id'   => '2',
-            // 'gerente_id'    => '2',
-            'bomba_id'         => '2',
-            // 'bico'          => '2',
-            // 'turno'         => '3',
+            'gerente_id'    => '2',
+            'bomba_id'      => '2',
+            'bico_id'          => '2',
+            'turno_id'         => '3',
             // 'cicloTurno'    => '8 horas',
         ]);
     }

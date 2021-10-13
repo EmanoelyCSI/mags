@@ -14,12 +14,15 @@ class LeituraController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        // Listar todos as Leituras
+    {   
         $leituras = Leitura::orderBy('updated_at', 'ASC')->get();
-        //dd($postos);
         return view('leitura.index', ['leitura' => $leituras]);
 
+        /*$leitura = Leitura::findOrFail(1);
+        dd($leitura->bico->bomba->posto->contrato->proprietario->email);  //Testando relacionamento laravel
+        */
+ 
+        
     }
 
     /**

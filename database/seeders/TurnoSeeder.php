@@ -16,23 +16,23 @@ class TurnoSeeder extends Seeder
     {
         Turno::create([
             'name'              => 'Manhã',
-            // 'horario_inicio'    => '06:00',
-            // 'horario_fim'       => '12:00',
-            // 'posto_id'          => '3',
+            'horario_inicio'    => '06:00',
+            'horario_fim'       => '12:00',
+            'posto_id'          => '3',
         ]);
 
         Turno::create([
             'name'              => 'Tarde',
-            // 'horario_inicio'    => '12:00',
-            // 'horario_fim'       => '18:00',
-            // 'posto_id'          => '3',
+            'horario_inicio'    => '12:00',
+            'horario_fim'       => '18:00',
+            'posto_id'          => '3',
         ]);
 
         Turno::create([
             'name'              => 'Noite',
-            // 'horario_inicio'    => '18:00',
-            // 'horario_fim'       => '00:00',
-            // 'posto_id'          => '3',
+            'horario_inicio'    => '18:00',
+            'horario_fim'       => '00:00',
+            'posto_id'          => '3',
         ]);
     }
 }

@@ -18,6 +18,6 @@ class Bomba extends Model
 
     /*public function leituraBomba(){
         return $this->hasOne(Leitura::class, 'bomba_id', 'id');
-    }*\
+    }*/
     
 }
