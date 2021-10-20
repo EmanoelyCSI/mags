@@ -51,7 +51,7 @@
     </table>
 
         {{-- Botão para criar contrato --}}
-        <a href="{{ URL::to('contrato/create') }}"><h2>Criar Novo Contrato</h2></a>
+        <a href="{{ URL::to('/register') }}"><h2>Criar Novo Contrato</h2></a>
 
         @if (Session::has('message'))
             <div> {{ Session::get('message') }} </div>      

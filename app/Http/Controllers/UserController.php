@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //Listar contas de administrador
+        //Listar contas 
         $users = User::orderBy('name', 'ASC')->get();
         // dd($users);
         return view('dashboard.index', ['users'=> $users]);
