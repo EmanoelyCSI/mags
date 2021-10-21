@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Leitura extends Model
 {
+
+    use HasFactory;
+
     /*public function bomba(){
             return $this->hasOne(Bomba::class, 'id', 'bomba_id');
     }*/

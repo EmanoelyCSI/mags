@@ -15,6 +15,17 @@ class ContratoController extends Controller
      */
     public function index()
     {
+
+        $contrato = Contrato::findorFail(1);
+
+        //dd($contrato->posto->bomba->name);
+        dd($contrato->posto->bomba->bico);
+
+        foreach ($contrato->posto->bomba->bico as $key => $value) {
+            echo($value->name);
+        }
+
+
         // Listar contratos
         $contratos = Contrato::orderBy('cnpj', 'ASC')->get();
         return view('contrato.index', ['contratos' => $contratos]);

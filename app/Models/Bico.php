@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bico extends Model
 {
+
+    use HasFactory;
+
+    
     public function bomba(){
         return $this->hasOne(Bomba::class, 'id', 'bomba_id');
     }

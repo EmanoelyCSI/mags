@@ -8,12 +8,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bomba extends Model
 {
+
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+    ];
+
     public function posto(){
         return $this->hasOne(Posto::class, 'id', 'posto_id');
     }
+    /*
+    public function bico(){
+        return $this->hasMany(Bico::class, 'bomba_id', 'id');
+    }
+    */
 
     public function bico(){
-        return $this->hasMany(Bico::class, 'bico_id', 'id');
+        return $this->hasMany(Bico::class, 'bomba_id', 'id');
     }
 
     /*public function leituraBomba(){
