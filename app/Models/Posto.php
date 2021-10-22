@@ -12,10 +12,6 @@ class Posto extends Model
 
         use HasFactory;
 
-        protected $fillable = [
-                'name',
-            ];
- 
         public function contrato(){
                 return $this->hasOne(Contrato::class, 'id', 'contrato_id');
         }

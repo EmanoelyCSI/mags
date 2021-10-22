@@ -12,7 +12,7 @@ class Contrato extends Model
     use HasFactory;
     
     public function posto(){
-        return $this->belongsTo(Posto::class, 'id', 'contrato_id'); // Não é posto_id,e sim contrato_id.
+        return $this->belongsTo(Posto::class, 'id', 'contrato_id');
     }
 
     public function proprietario(){

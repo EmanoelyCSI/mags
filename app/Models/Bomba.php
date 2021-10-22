@@ -12,16 +12,15 @@ class Bomba extends Model
 
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-    ];
+    public function bico(){
+        return $this->hasMany(Bico::class, 'bomba_id', 'id');
+        //return $this->belongsTo(Bico::class, 'id', 'bomba_id');
+    }
+
 
     public function posto(){
         return $this->hasOne(Posto::class, 'id', 'posto_id');
     }
 
-    public function bico(){
-        return $this->hasMany(Bico::class, 'bomba_id', 'id');
-    }
 
 }
