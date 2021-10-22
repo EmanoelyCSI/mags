@@ -18,6 +18,13 @@ class ContratoController extends Controller
     public function index()
     {
 
+        /*
+        De contrato estou chegando em bomba
+        De bomba estou chegando em bico
+        De bico estou chegando em leitura
+        Mas não consigo chegar direto
+        */
+
         $contrato = Contrato::findorFail(1);
 
         //dd($contrato->posto->bomba->name);
