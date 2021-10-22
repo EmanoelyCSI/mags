@@ -11,10 +11,6 @@ class Leitura extends Model
 
     use HasFactory;
 
-    /*public function bomba(){
-            return $this->hasOne(Bomba::class, 'id', 'bomba_id');
-    }*/
-
     public function bico(){ 
         return $this->hasOne(Bico::class, 'id', 'bico_id');
     }
@@ -23,7 +19,4 @@ class Leitura extends Model
         return $this->hasOne(Turno::class, 'id', 'turno_id');
     }
 
-    /*public function leituraBico(){
-             return $this->belongsTo(Bico::class, 'bico_id', 'id');
-      }*/
 }

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contrato extends Model
 {
+
     use HasFactory;
     
     public function posto(){
@@ -17,4 +18,5 @@ class Contrato extends Model
     public function proprietario(){
         return $this->hasOne(User::class, 'id', 'proprietario_id');
     }
+
 }
