@@ -19,11 +19,19 @@ class ContratoController extends Controller
         $contrato = Contrato::findorFail(1);
 
         //dd($contrato->posto->bomba->name);
-        dd($contrato->posto->bomba->bico);
+        //dd($contrato->posto->bomba->bico);
 
-        foreach ($contrato->posto->bomba->bico as $key => $value) {
-            echo($value->name);
+        /*
+        foreach ($contrato->posto->bomba as $key => $value) {
+            //dd($value->bico);
+            foreach ($value->bico as $key => $value) {
+                //echo($value->name);
+                foreach ($value->leitura as $key => $value) {
+                    echo($value->leitura . '<br>');
+                }
+            }
         }
+        */
 
 
         // Listar contratos
