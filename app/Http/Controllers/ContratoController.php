@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Contrato;
 use App\Models\Posto;
+//use App\Models\Bomba;
+//use App\Models\Bico;
 use Illuminate\Http\Request;
 
 class ContratoController extends Controller
@@ -19,7 +21,8 @@ class ContratoController extends Controller
         $contrato = Contrato::findorFail(1);
 
         //dd($contrato->posto->bomba->name);
-        //dd($contrato->posto->bomba->bico);
+        //dd($contrato->posto->bomba->bico->leitura->leitura);
+        dd($contrato->posto->bomba->bico);
 
         /*
         foreach ($contrato->posto->bomba as $key => $value) {
