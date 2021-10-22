@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Contrato;
 use App\Models\Posto;
-//use App\Models\Bomba;
-//use App\Models\Bico;
+use App\Models\Bomba;
+use App\Models\Bico;
 use Illuminate\Http\Request;
 
 class ContratoController extends Controller
@@ -22,7 +22,15 @@ class ContratoController extends Controller
 
         //dd($contrato->posto->bomba->name);
         //dd($contrato->posto->bomba->bico->leitura->leitura);
-        dd($contrato->posto->bomba->bico);
+        //dd($contrato->posto->bomba);
+
+        //$bomba = Bomba::findOrFail(1);
+        //dd($bomba->bico);
+
+
+        $bico = Bico::findOrFail(1);
+        dd($bico->leitura);
+
 
         /*
         foreach ($contrato->posto->bomba as $key => $value) {
