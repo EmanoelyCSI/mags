@@ -33,15 +33,17 @@ class ContratoController extends Controller
         //dd($contrato->posto->bomba->bico->leitura->leitura);
         //dd($contrato->posto->bomba);
 
+        //funciona
         $bomba = Bomba::findOrFail(1);
         dd($bomba->bico);
 
-
+        //funciona
         // $bico = Bico::findOrFail(1);
         // dd($bico->leitura);
 
 
         /*
+        //funciona
         foreach ($contrato->posto->bomba as $key => $value) {
             //dd($value->bico);
             foreach ($value->bico as $key => $value) {
