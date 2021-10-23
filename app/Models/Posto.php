@@ -12,6 +12,8 @@ class Posto extends Model
 
         use HasFactory;
 
+        protected $table = 'postos';
+
         public function contrato(){
                 return $this->hasOne(Contrato::class, 'id', 'contrato_id');
         }

@@ -12,15 +12,18 @@ class Bomba extends Model
 
     use HasFactory;
 
-    public function bico(){
-        return $this->hasMany(Bico::class, 'bomba_id', 'id');
-        //return $this->belongsTo(Bico::class, 'id', 'bomba_id');
+    protected $table = 'bombas';
+
+    public function teste(){
+        return 'TESTE';
     }
 
+    public function bico(){
+        return $this->hasMany(Bico::class, 'bomba_id', 'id');
+    }
 
     public function posto(){
         return $this->hasOne(Posto::class, 'id', 'posto_id');
     }
-
 
 }

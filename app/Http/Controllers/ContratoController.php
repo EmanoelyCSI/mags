@@ -27,7 +27,7 @@ class ContratoController extends Controller
 
         $contrato = Contrato::findorFail(1);
 
-        dd($contrato->posto->bomba->bico->leitura->leitura);
+        dd($contrato->posto->bomba->bico->name);
 
         //dd($contrato->posto->bomba->name);
         //dd($contrato->posto->bomba->bico->leitura->leitura);

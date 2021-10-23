@@ -11,6 +11,8 @@ class Bico extends Model
 {
 
     use HasFactory;
+
+    protected $table = 'bicos';
     
     public function bomba(){
         return $this->hasOne(Bomba::class, 'id', 'bomba_id');
@@ -19,4 +21,5 @@ class Bico extends Model
     public function leitura(){
         return $this->hasMany(Leitura::class, 'bico_id', 'id');
     }
+
 }

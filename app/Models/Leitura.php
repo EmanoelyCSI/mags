@@ -11,6 +11,8 @@ class Leitura extends Model
 
     use HasFactory;
 
+    protected $table = 'leituras';
+
     public function bico(){ 
         return $this->hasOne(Bico::class, 'id', 'bico_id');
     }
