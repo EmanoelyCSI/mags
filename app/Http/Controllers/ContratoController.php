@@ -27,18 +27,18 @@ class ContratoController extends Controller
 
         $contrato = Contrato::findorFail(1);
 
-        dd($contrato->posto->bomba->bico->name);
+        //dd($contrato->posto->bomba->bico);
 
         //dd($contrato->posto->bomba->name);
         //dd($contrato->posto->bomba->bico->leitura->leitura);
         //dd($contrato->posto->bomba);
 
-        //$bomba = Bomba::findOrFail(1);
-        //dd($bomba->bico);
+        $bomba = Bomba::findOrFail(1);
+        dd($bomba->bico);
 
 
-        $bico = Bico::findOrFail(1);
-        dd($bico->leitura);
+        // $bico = Bico::findOrFail(1);
+        // dd($bico->leitura);
 
 
         /*

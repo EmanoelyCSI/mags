@@ -14,10 +14,6 @@ class Bomba extends Model
 
     protected $table = 'bombas';
 
-    public function teste(){
-        return 'TESTE';
-    }
-
     public function bico(){
         return $this->hasMany(Bico::class, 'bomba_id', 'id');
     }
