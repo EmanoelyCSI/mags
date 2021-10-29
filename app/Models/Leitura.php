@@ -21,4 +21,8 @@ class Leitura extends Model
         return $this->hasOne(Turno::class, 'id', 'turno_id');
     }
 
+    public function bomba(){
+        return $this->hasOne(Bomba::class, 'id', 'bomba_id');
+    }
+
 }

@@ -27,17 +27,18 @@ class ContratoController extends Controller
 
         $contrato = Contrato::findorFail(1);
 
-        //dd($contrato->posto->bomba->bico);
 
-        //dd($contrato->posto->bomba->name);
+        // dd($contratos->posto->bomba->bico->leitura);
+
+        // dd($contrato->posto->bomba->name);
         //dd($contrato->posto->bomba->bico->leitura->leitura);
         //dd($contrato->posto->bomba);
 
         //funciona
-        $bomba = Bomba::findOrFail(1);
-        dd($bomba->bico);
+        // $bomba = Bomba::findOrFail(1);
+        // dd($bomba->bico);
 
-        //funciona
+        // //funciona
         // $bico = Bico::findOrFail(1);
         // dd($bico->leitura);
 
@@ -57,8 +58,8 @@ class ContratoController extends Controller
 
 
         // Listar contratos
-        $contratos = Contrato::orderBy('cnpj', 'ASC')->get();
-        return view('contrato.index', ['contratos' => $contratos]);
+        // $contratos = Contrato::orderBy('cnpj', 'ASC')->get();
+        // return view('contrato.index', ['contratos' => $contratos]);
         //dd('teste');
     }
 
