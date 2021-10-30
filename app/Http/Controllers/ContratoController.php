@@ -57,9 +57,9 @@ class ContratoController extends Controller
         */
 
 
-        // Listar contratos
-        // $contratos = Contrato::orderBy('cnpj', 'ASC')->get();
-        // return view('contrato.index', ['contratos' => $contratos]);
+        //Listar contratos
+        $contratos = Contrato::orderBy('cnpj', 'ASC')->get();
+        return view('contrato.index', ['contratos' => $contratos]);
         //dd('teste');
     }
 
