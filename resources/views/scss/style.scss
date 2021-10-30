@@ -1,4 +1,8 @@
-$theme-colors: ("azul": #060A6F);
-$theme-colors:("teste":#ff0000);
+$theme-colors:("teste":#ff0000,
+    "royal-blue": #03053E,
+    "navy-blue": #060A6F,
+    "blue-gray": #646887,
+    "silver-send": #C4CAD0,
+    "magnolia": #FCF7FF);
 
 @import "~bootstrap/scss/bootstrap";
