@@ -3836,17 +3836,17 @@ textarea.form-control-lg {
 }
 
 .nav-tabs {
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 2em solid #ff0000;
 }
 .nav-tabs .nav-link {
-  margin-bottom: -1px;
+  margin-bottom: -2em;
   background: none;
-  border: 1px solid transparent;
+  border: 2em solid transparent;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
-  border-color: #e9ecef #e9ecef #dee2e6;
+  border-color: #e9ecef #e9ecef #ff0000;
   isolation: isolate;
 }
 .nav-tabs .nav-link.disabled {
@@ -3861,7 +3861,7 @@ textarea.form-control-lg {
   border-color: #dee2e6 #dee2e6 #fff;
 }
 .nav-tabs .dropdown-menu {
-  margin-top: -1px;
+  margin-top: -2em;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
