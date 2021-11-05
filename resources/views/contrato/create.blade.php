@@ -28,20 +28,22 @@
 
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Nome Completo" aria-label="Nome" aria-describedby="basic-addon1">
+            <div id="basic-addon3" aria-describedby="basic-addon3" class="form-control">
+                {{ Form::label('cnpj', 'CNPJ') }}
+                {{ Form::text('cnpj', null) }}
+            </div>
+
+            {{-- <input type="text" class="form-control" placeholder="CNPJ" id="basic-addon3" aria-describedby="basic-addon3"> --}}
+        </div>
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Celular" aria-label="cell">
+            <input type="text" class="form-control" placeholder="Telefone" aria-label="tel">
         </div>
         
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon2">
             <span class="input-group-text" id="basic-addon2">@exemplo.com</span>
-        </div>
-        
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="CNPJ" id="basic-addon3" aria-describedby="basic-addon3">
-        </div>
-        
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Celular" aria-label="cell">
-            <input type="text" class="form-control" placeholder="Telefone" aria-label="tel">
         </div>
         
         <div class="input-group mb-3">
@@ -76,7 +78,7 @@
  
     {{ Form::close() }}
 
-    <div id="progress" class="">
+    <div id="progress" class="container-fluid container-lg">
         <div class="position-relative m-4">
             <div class="progress" style="height: 1px;">
             <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
