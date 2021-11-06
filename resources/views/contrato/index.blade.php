@@ -26,19 +26,32 @@
     </header>
     <!-- Container Usuário --> 
     <div id="container-user" class="container-fluid p-2">
-        <div id="box-user"  class="container-lg d-flex m-auto px-0 flex-row-reverse">
+        <div id="box-user"  class="container-lg d-flex px-0 flex-row-reverse">
             <div class="my-2">
                 <svg id="Capa_1" enable-background="new 0 0 512 512" height="50" viewBox="0 0 512 512" width="50" xmlns="http://www.w3.org/2000/svg"><g><path d="m50 256c0 113.588 92.411 205.999 206 205.999s205.999-92.411 205.999-205.999-92.411-205.999-205.999-205.999-206 92.411-206 205.999zm92.429 147.193c3.558-39.587 35.676-74.014 80.219-85.683 10.154 4.701 21.447 7.343 33.352 7.343s23.198-2.643 33.352-7.343c44.544 11.668 76.661 46.096 80.219 85.683-31.44 24.314-70.842 38.806-113.571 38.806s-82.131-14.492-113.571-38.806zm113.571-98.34c-32.905 0-59.675-26.769-59.675-59.675s26.77-59.676 59.675-59.676 59.675 26.771 59.675 59.676-26.77 59.675-59.675 59.675zm185.999-48.853c0 51.336-20.906 97.88-54.651 131.568-4.152-18.435-13.287-35.643-26.993-50.555-13.345-14.518-30.652-26.109-49.984-33.672 15.555-14.55 25.304-35.234 25.304-58.163 0-43.934-35.742-79.676-79.675-79.676s-79.675 35.742-79.675 79.676c0 22.929 9.749 43.613 25.304 58.163-19.332 7.563-36.639 19.154-49.984 33.672-13.707 14.912-22.842 32.12-26.993 50.555-33.745-33.688-54.652-80.232-54.652-131.568 0-102.561 83.439-185.999 186-185.999s185.999 83.438 185.999 185.999z"/><path d="m302.819 4.273c-5.431-1.006-10.647 2.585-11.651 8.016s2.585 10.646 8.016 11.65c111.725 20.655 192.816 118.25 192.816 232.061 0 130.131-105.869 236-236 236s-236-105.869-236-236c0-113.811 81.091-211.406 192.817-232.06 5.431-1.004 9.02-6.22 8.016-11.65-1.004-5.432-6.219-9.026-11.651-8.016-121.208 22.406-209.182 128.272-209.182 251.726 0 68.38 26.628 132.667 74.981 181.02 48.352 48.351 112.639 74.98 181.019 74.98s132.667-26.629 181.019-74.98c48.353-48.353 74.981-112.64 74.981-181.02 0-123.454-87.974-229.32-209.181-251.727z"/><circle cx="256" cy="10" r="10"/></g></svg>
             </div>
-            
-            <div id="txt-user" class="p-1">
-                <h4 class="text-end" >MAGS</h4>
+
+            <div id="txt-user" class="mx-1">
+                <h4 class="text-end">MAGS</h4>
                 <h6>Administrador</h6>
             </div>
+        </div>
+       
+         <div id="menu-dorpdown" class="container-lg d-flex flex-row-reverse">
+             <div id="ghost-1" class="px-4 my-0"></div>
+            <div class="btn-group">
+                <button type="button" class="btn p-0" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        width="26" height="26"
+                        viewBox="0 0 172 172"
+                        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646887"><path d="M143.27734,51.52161c-1.51229,0.03575 -2.94918,0.66766 -3.99765,1.75807l-53.27969,53.27969l-53.27969,-53.27969c-1.07942,-1.10959 -2.56163,-1.73559 -4.10963,-1.73568c-2.33303,0.00061 -4.43306,1.41473 -5.31096,3.57628c-0.8779,2.16155 -0.3586,4.6395 1.31331,6.26669l57.33333,57.33333c2.23904,2.23811 5.86825,2.23811 8.10729,0l57.33333,-57.33333c1.70419,-1.63875 2.22781,-4.1555 1.31865,-6.33798c-0.90916,-2.18248 -3.06468,-3.58317 -5.42829,-3.52739z"></path></g></g></svg>
+                </button>
 
-            <div id="user-options" class="d-flex bg-teste">
-               
-                
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><button class="dropdown-item" type="button">Action</button></li>
+                  <li><button class="dropdown-item" type="button">Another action</button></li>
+                  <li><button class="dropdown-item" type="button">Something else here</button></li>
+                </ul>
             </div>
         </div>
     </div>
