@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Listando Bombas</title>
-</head>
-<body>
-   
-    <script>
-        function ConfirmDelete() {
-            return confirm('Tem certeza que deseja excluir este registro?');
-        }
-    </script>
+@extends('components.layout')
+
+@section('title', 'Bombas')
+
+@section('content')
 
     <table class="table no-margin">
         <thead>
@@ -56,11 +46,4 @@
         {{-- Botão para criar contrato --}}
         <a href="{{ URL::to('bomba/create') }}"><h2>Criar</h2></a>
 
-        @if (Session::has('message'))
-            <div> {{ Session::get('message') }} </div>      
-        @endif
-
-    
-
-</body>
-</html>
+@endsection

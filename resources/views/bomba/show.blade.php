@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Visualizar</title>
-</head>
-<body>
-    
+@extends('components.layout')
+
+@section('title', 'Bombas')
+
+@section('content')
+
         <h2>Visualizar</h2>
     <ul>
         <li>ID:                   {{ $bomba->id    }}     </li>
@@ -21,5 +17,5 @@
     </ul>
     
     <a href="{{ URL::to('bomba/') }}">Voltar</a>
-</body>
-</html>
+
+@endsection

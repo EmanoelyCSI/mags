@@ -9,6 +9,9 @@ use App\Http\Controllers\BombaController;
 use App\Http\Controllers\BicoController;
 use App\Http\Controllers\TurnoController;
 use App\Http\Controllers\ContatoController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EstoqueController;
+
 
 
 
@@ -130,6 +133,34 @@ Route::get('/turno/{id}/edit', [TurnoController::class, 'edit'])->name('turno.ed
 Route::put('/turno/{id}', [TurnoController::class, 'update'])->name('turno.update');
 
 Route::delete('/turno/{id}', [TurnoController::class, 'destroy'])->name('turno.destroy');
+
+
+// ------------------------ DASHBOARD------------------------
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/dashboard/create', [DashboardController::class, 'create'])->name('dashboard.create');
+Route::post('/dashboard/create', [DashboardController::class, 'store'])->name('dashboard.store');
+
+Route::get('/dashboard/{id}', [DashboardController::class, 'show'])->name('dashboard.show');
+
+Route::get('/dashboard/{id}/edit', [DashboardController::class, 'edit'])->name('dashboard.edit');
+Route::put('/dashboard/{id}', [DashboardController::class, 'update'])->name('dashboard.update');
+
+Route::delete('/dashboard/{id}', [DashboardController::class, 'destroy'])->name('dashboard.destroy');
+
+
+// ------------------------ ESTOQUE ------------------------
+Route::get('/estoque', [EstoqueController::class, 'index'])->name('estoque.index');
+
+Route::get('/estoque/create', [EstoqueController::class, 'create'])->name('estoque.create');
+Route::post('/estoque/create', [EstoqueController::class, 'store'])->name('estoque.store');
+
+Route::get('/estoque/{id}', [EstoqueController::class, 'show'])->name('estoque.show');
+
+Route::get('/estoque/{id}/edit', [EstoqueController::class, 'edit'])->name('estoque.edit');
+Route::put('/estoque/{id}', [EstoqueController::class, 'update'])->name('estoque.update');
+
+Route::delete('/estoque/{id}', [EstoqueController::class, 'destroy'])->name('estoque.destroy');
 
 });
 

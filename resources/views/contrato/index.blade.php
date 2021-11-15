@@ -1,10 +1,9 @@
+@extends('components.layout')
 
-    
-    @extends('components.layout')
+ @section('title', 'Cadastros')
 
-    @section('title', 'Cadastros')
+@section('content')
 
-    @section('content')
     <!-- Contúdo Principal da Página --> 
     <div class="container">
         <h1>Contratos</h1>
@@ -25,10 +24,10 @@
                 </table>
     
                 {{-- Botão para criar contrato --}}
-                <a class="btn btn-royal-blue col-12" href="{{ URL::to('/register') }}">Criar Novo Contrato</a>
+                <a class="btn btn-royal-blue col-12" href="{{ URL::to('/contrato/create') }}">Criar Novo Contrato</a>
     
                 </div>
             </div>
         </div>
     
-        @endsection
+@endsection
