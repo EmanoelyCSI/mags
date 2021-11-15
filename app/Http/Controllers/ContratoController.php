@@ -129,6 +129,8 @@ class ContratoController extends Controller
         //  dd($contrato->posto_id);
         return view('contrato.show', ['contrato' => $contrato]);
 
+
+
     }
 
     /**

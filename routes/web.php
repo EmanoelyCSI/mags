@@ -8,6 +8,8 @@ use App\Http\Controllers\LeituraController;
 use App\Http\Controllers\BombaController;
 use App\Http\Controllers\BicoController;
 use App\Http\Controllers\TurnoController;
+use App\Http\Controllers\ContatoController;
+
 
 
 
@@ -22,8 +24,8 @@ use App\Http\Controllers\TurnoController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/resources', function () {
+    return view('contato');
 });
 
 Route::get('/dashboard', function () {
@@ -125,3 +127,7 @@ Route::get('/turno/{id}/edit', [TurnoController::class, 'edit'])->name('turno.ed
 Route::put('/turno/{id}', [TurnoController::class, 'update'])->name('turno.update');
 
 Route::delete('/turno/{id}', [TurnoController::class, 'destroy'])->name('turno.destroy');
+
+
+// ------------------------ CONTATO ------------------------
+Route::get('contato', [ContatoController::class, 'index'])->name('contato');
