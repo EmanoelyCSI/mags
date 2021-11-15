@@ -16,7 +16,7 @@
     <header class="container-fluid bg-royal-blue">
         <div class="container-lg d-flex justify-content-between px-0">
             <div class="d-flex my-4">
-                <img src="/imgs/logo.png" alt="Logo Mags">
+                <img class="col-3" src="{{ asset('/site/imgs/logo.png')}}" alt="Logo Mags">
             </div>
 
             <div class="d-flex my-4">
@@ -29,7 +29,7 @@
 
     
     <!-- Rodapé -->
-<footer class="container-fluid fixed-bottom p-2">
+<footer class="container-fluid p-2">
    <hr class="text-blue-gray">
    <h6 class="text-center text-royal-blue text-opacity-75">Todos os direitos reservados</h6>
 </footer>

@@ -16,9 +16,9 @@
     <header class="container-fluid bg-royal-blue">
         <div class="container-lg d-flex justify-content-between px-0">
             <div class="d-flex my-4">
-                <img src="/imgs/logo.png" alt="Logo Mags">
+                <img class="col-3" src="{{ asset('/site/imgs/logo.png')}}" alt="Logo Mags">
             </div>
-
+            
             <div class="d-flex my-4">
                 <a class="btn text-magnolia" href="{{ URL::to('/contato') }}">Contato</a>
             </div>
@@ -48,9 +48,16 @@
                 </button>
 
                 <ul class="dropdown-menu dropdown-menu-end">
-                  <li><button class="dropdown-item" type="button">Action</button></li>
-                  <li><button class="dropdown-item" type="button">Another action</button></li>
-                  <li><button class="dropdown-item" type="button">Something else here</button></li>
+                  <li><button class="dropdown-item" type="button">
+                      <a href="{{ URL::to('/logout') }}">Perfil</a>
+                  </button></li>
+                  <li><button class="dropdown-item" type="button">
+                    {{-- <form method="POST" action="http://localhost/MAGS/public/logout">
+                        <input type="hidden" name="_token" value="kuzERUk6tUDE2XWb2LU7u9N1CvYRWgBytTA4Fp4M">
+                            <a class="block py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" href="http://localhost/MAGS/public/login" onclick="event.preventDefault();
+                                        this.closest('form').submit();">Log Out</a>
+                    </form> --}}
+                </button></li>
                 </ul>
             </div>
         </div>
@@ -92,7 +99,6 @@
         <hr class="text-blue-gray">
         <h6 class="text-center text-royal-blue text-opacity-75">Todos os direitos reservados</h6>
     </footer>
-
 
 
 

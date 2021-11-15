@@ -38,6 +38,9 @@ Route::get('/contact', function () {
 
 require __DIR__.'/auth.php';
 
+
+Route::middleware(['auth'])->group(function () {
+
 // ------------------------ USUÁRIOS ------------------------
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
 
@@ -127,6 +130,8 @@ Route::get('/turno/{id}/edit', [TurnoController::class, 'edit'])->name('turno.ed
 Route::put('/turno/{id}', [TurnoController::class, 'update'])->name('turno.update');
 
 Route::delete('/turno/{id}', [TurnoController::class, 'destroy'])->name('turno.destroy');
+
+});
 
 
 // ------------------------ CONTATO ------------------------
