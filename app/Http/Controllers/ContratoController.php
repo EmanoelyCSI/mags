@@ -6,6 +6,7 @@ use App\Models\Contrato;
 use App\Models\Posto;
 use App\Models\Bomba;
 use App\Models\Bico;
+//use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ContratoController extends Controller
@@ -26,7 +27,17 @@ class ContratoController extends Controller
         */
 
         $contrato = Contrato::findorFail(1);
-
+       
+        /* $cards = DB::select('select leituras.bico_id, leituras.leitura,leituras.turno_id
+        from leituras
+        inner join bicos on bicos.id = leituras.bico_id 
+        inner join bombas on bombas.id = bicos.bomba_id
+        inner join postos on postos.id = bombas.posto_id
+        inner join contratos on contratos.id = postos.contrato_id
+        inner join users on postos.gerente_id = users.id
+        inner join users u2 on contratos.proprietario_id = u2.id -- alias
+        where contratos.id = 1');
+        */
 
         // dd($contratos->posto->bomba->bico->leitura);
 
