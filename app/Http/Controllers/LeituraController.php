@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Leitura;
 use App\Models\Turno;
+use App\Models\Posto;
+use App\Models\Bico;
+
 use Illuminate\Http\Request;
 
 class LeituraController extends Controller
@@ -43,10 +46,12 @@ class LeituraController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+
+       
     {
         // Armazenar Leituras
         $message = [
-            'bomba_id.required' => 'O campo Bomba é obrigatório!',
+            // 'bomba_id.required' => 'O campo Bomba é obrigatório!',
             'bico_id.required'  => 'O campo Bico é obrigatório!',
             'turno_id.required' => 'O campo Turno é obrigatório!', 
             'leitura.required'  => 'O campo Leitura é obrigatório!', 
@@ -54,20 +59,32 @@ class LeituraController extends Controller
         ];
  
         $validateData = $request->validate([
-            'bomba_id'  =>  'required', //o campo não pode ser vazio
+            // 'bomba_id'  =>  'required', //o campo não pode ser vazio
             'bico_id'   =>  'required', //o campo não pode ser vazio 
             'turno_id'  =>  'required', //o campo não pode ser vazio  
             'leitura'   =>  'required|min:6' //o campo não pode ser vazio e deve ter no mínimo 6 caracteres  
-         ], $message);
-
+         ], $message); 
+        
         $leitura = new Leitura;
         // $leitura->name   =  $request->name;
-        $leitura->bomba_id  =  $request->bomba_id;
+        // $leitura->bomba_id  =  $request->bomba_id;
         $leitura->bico_id   =  $request->bico_id;
         $leitura->turno_id  =  $request->turno_id;
         $leitura->leitura   =  $request->leitura;
         $leitura->save();
- 
+
+
+        // dd($leitura->bico->bomba->posto->id);
+        $posto = Posto::findOrFail($leitura->bico->bomba->posto->id);
+        $posto->quantidade = $posto->quantidade - $leitura->leitura;
+        $posto->save();
+        
+
+        /*$quantidade = $posto->quantidade - $request->leitura;
+
+        Posto::where('id', $leitura->bico->bomba->posto->id)
+        ->update(['quantidade' => $quantidade]);
+        */
         return redirect()->route('leitura.index')->with('message', 'Leitura criado com sucesso!');
     }
 

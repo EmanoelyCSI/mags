@@ -22,11 +22,11 @@
     {{ Form::open(array('url' => '/contrato/create')) }}
 
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Nome Completo" aria-label="Nome" aria-describedby="basic-addon1">
-            <div id="basic-addon3" aria-describedby="basic-addon3" class="form-control">
+            {{-- <input type="text" class="form-control" placeholder="Nome Completo" aria-label="Nome" aria-describedby="basic-addon1">
+            <div id="basic-addon3" aria-describedby="basic-addon3" class="form-control"> --}}
                 {{ Form::label('cnpj', 'CNPJ') }}
                 {{ Form::text('cnpj', null) }}
-            </div>
+            {{-- </div> --}}
 
             {{-- <input type="text" class="form-control" placeholder="CNPJ" id="basic-addon3" aria-describedby="basic-addon3"> --}}
         </div>

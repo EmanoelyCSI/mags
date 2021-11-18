@@ -95,7 +95,7 @@
         @yield('content')
 
          <!-- Rodapé -->
-    <footer class="container-fluid fixed-bottom p-2">
+    <footer class="container-fluid  p-2"> <!-- mudar para relative -->
         <hr class="text-blue-gray">
         <h6 class="text-center text-royal-blue text-opacity-75">Todos os direitos reservados</h6>
     </footer>

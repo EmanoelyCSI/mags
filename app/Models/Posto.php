@@ -14,6 +14,8 @@ class Posto extends Model
 
         protected $table = 'postos';
 
+        protected $fillable = ['quantidade'];
+
         public function contrato(){
                 return $this->hasOne(Contrato::class, 'id', 'contrato_id');
         }
