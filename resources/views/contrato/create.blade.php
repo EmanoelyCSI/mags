@@ -22,27 +22,33 @@
     {{ Form::open(array('url' => '/contrato/create')) }}
 
         <div class="input-group mb-3">
+            {{ Form::text('name', '', ['class' => 'form-control', 'aria-label' => 'name', 'placeholder' => 'Nome Completo' ])}}
+            {{ Form::text('cnpj', '' ,['class' => 'form-control', 'placeholder' => 'CNPJ'])}}
             {{-- <input type="text" class="form-control" placeholder="Nome Completo" aria-label="Nome" aria-describedby="basic-addon1">
             <div id="basic-addon3" aria-describedby="basic-addon3" class="form-control"> --}}
-                {{ Form::label('cnpj', 'CNPJ') }}
-                {{ Form::text('cnpj', null) }}
+                {{-- {{ Form::label('cnpj', 'CNPJ') }} --}}
+                {{-- {{ Form::text('cnpj', null) }} --}}
             {{-- </div> --}}
 
             {{-- <input type="text" class="form-control" placeholder="CNPJ" id="basic-addon3" aria-describedby="basic-addon3"> --}}
         </div>
 
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Celular" aria-label="cell">
-            <input type="text" class="form-control" placeholder="Telefone" aria-label="tel">
+            {{ Form::text('cell', '' ,  ['class'  => 'form-control', 'arial-label' => 'cell','placeholder' => 'Celular'])}}
+            {{ Form::text('tel',  '' ,  ['class'  => 'form-control', 'arial-label' => 'tel' ,'placeholder' => 'Telefone'])}}
+            {{-- <input type="text" class="form-control" placeholder="Celular" aria-label="cell"> --}}
+            {{-- <input type="text" class="form-control" placeholder="Telefone" aria-label="tel"> --}}
         </div>
         
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon2">
+            {{ Form::text('email', '' ,  ['class'  => 'form-control', 'arial-label' => 'email' ,'placeholder' => 'Email'])}}
+            {{-- <input type="text" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon2"> --}}
             <span class="input-group-text" id="basic-addon2">@exemplo.com</span>
         </div>
         
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Endereço" aria-label="Endereço">
+            {{ Form::text('address', '' ,  ['class'  => 'form-control', 'arial-label' => 'address' ,'placeholder' => 'Endereço'])}}
+            {{-- <input type="text" class="form-control" placeholder="Endereço" aria-label="Endereço"> --}}
         </div>
         
     </div>
