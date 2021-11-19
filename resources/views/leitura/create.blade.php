@@ -14,30 +14,34 @@
         </div>
     @endif
 
-    <div id="conteudo" class="d-flex justify-content-center p-0">
-        <div id="box-form" class="d-flex w-25 p-4 border border-2 rounded-3 border-silver-send flex-column">
+    <div id="conteudo" class="container p-0">
+        <div id="box-form" class="p-4">
+            <h3 class="bg-navy-blue text-magnolia fw-normal rounded p-2">Lançar Leituras</h3>
             {{ Form::open(array('url' => '/leitura/create')) }}
-        
-            {{-- {{ Form::label('name', 'Nome') }} --}}
-            {{-- {{ Form::text('name', null) }} --}}
-            <br/>
-            {{ Form::label('bomba_id', 'Bomba',  ['class' => 'form-label'] ) }}
-            {{ Form::text('bomba',null,  ['class' => 'form-control'] ) }}
-            <br/>
+                <div id="box" class="">
+                    {{ Form::label('name', 'Nome', ['class' => 'form-label'] ) }}
+                    {{ Form::text('name', null,  ['class' => 'form-control'] ) }}
 
-            {{ Form::label('bico_id', 'Bico',  ['class' => ''] ) }}
-            {{ Form::text('bico',null, ['class' => 'form-control'] ) }}
-            <br/>
+                    {{ Form::label('turno_id', 'Turno',  ['class' => 'form-label'] ) }}
+                    {{ Form::text('turno', null, ['class' => 'form-control'] ) }}
+                </div>
+           
+                <div id="box" class="">
+                    {{ Form::label('bomba_id', 'Bomba',  ['class' => 'form-label'] ) }}
+                    {{ Form::text('bomba',null,  ['class' => 'form-control'] ) }}
 
-            {{ Form::label('turno_id', 'Turno',  ['class' => 'form-label'] ) }}
-            {{ Form::text('turno', null, ['class' => 'form-control'] ) }}
-            <br/>
+                    {{ Form::label('bico_id', 'Bico',  ['class' => ''] ) }}
+                    {{ Form::text('bico',null, ['class' => 'form-control'] ) }}
+                </div>
+         
+                <div id="box" class="">
+                    
+                    {{ Form::label('leitura', 'Leitura', ['class' => 'form-label'] ) }}
+                    {{ Form::text('leitura', null, ['class' => 'form-control'] ) }}
 
-            {{ Form::label('leitura', 'Leitura', ['class' => 'form-label'] ) }}
-            {{ Form::text('leitura', null, ['class' => 'form-control'] ) }}
-            <br/>
+                    {{ Form::submit('Enviar', ['class' => 'btn btn-navy-blue']  ) }}
+                </div>
 
-            {{ Form::submit('Enviar', ['class' => 'btn btn-navy-blue']  ) }}
         
             {{ Form::close() }}
         </div>

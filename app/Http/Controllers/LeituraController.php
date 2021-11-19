@@ -73,18 +73,10 @@ class LeituraController extends Controller
         $leitura->leitura   =  $request->leitura;
         $leitura->save();
 
-
-        // dd($leitura->bico->bomba->posto->id);
         $posto = Posto::findOrFail($leitura->bico->bomba->posto->id);
         $posto->quantidade = $posto->quantidade - $leitura->leitura;
         $posto->save();
         
-
-        /*$quantidade = $posto->quantidade - $request->leitura;
-
-        Posto::where('id', $leitura->bico->bomba->posto->id)
-        ->update(['quantidade' => $quantidade]);
-        */
         return redirect()->route('leitura.index')->with('message', 'Leitura criado com sucesso!');
     }
 

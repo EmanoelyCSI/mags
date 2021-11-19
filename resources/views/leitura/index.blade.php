@@ -4,54 +4,47 @@
 
 @section('content')
    
-    <script>
-        function ConfirmDelete() {
-            return confirm('Tem certeza que deseja excluir este registro?');
-        }
-    </script>
+<div id="conteudo" class="container p-0">
 
-    <table class="table no-margin">
-        <thead>
-            <tr>
-                <th>Posto</th>
-                <th>Data</th>
-                <th>Status</th>
-                <th></th>
-                <th></th>
-               
+    <div id="box-lista" class="table-responsive-lg">
+        <table class="table border-silver-send">
+            <thead>
+                <tr class="fs-5">
+                    <th class="fw-normal">Posto</th>
+                    <th class="fw-normal">Data</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            @foreach($leitura as $key => $value)
+                <tr>
+                    {{-- <td>{{ $value->posto->name }}</td> --}}
+                    <td>{{ $value->updated_at }}</td>
+                    <td></td>
 
-            </tr>
-        </thead>
-        <tbody>
- 
-          @foreach($leitura as $key => $value)
-            <tr>
-                {{-- <td>{{ $value->posto->name }}</td> --}}
-                <td>{{ $value->updated_at }}</td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href="{{ URL::to('leitura/' . $value->id) }}">Visualizar</a>
-                </td>
+                    <td>
+                        <a class="text-royal-blue text-decoration-none" href="{{ URL::to('leitura/' . $value->id) }}">Visualizar</a>
+                    </td>
 
-                <td>
-                    <a href="{{ URL::to('leitura/' . $value->id . '/edit') }}">Editar</a>
-                </td>
+                   <!-- <td>
+                        <a href="{{ URL::to('leitura/' . $value->id . '/edit') }}">Editar</a>
+                    </td>
+                    -->
+                </tr>
+            @endforeach
+    
+            </tbody>
+        </table>
 
-                {{-- <td>        
-                    {{ Form::open(array('url' => 'leitura/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
-                    {{ Form::hidden('_method', 'DELETE') }}
-                    {{ Form::submit('Excluir', array('class' => 'btn btn-danger')) }}
-                    {{ Form::close() }}
-                </td> --}}
-
-            </tr>
-           @endforeach
- 
-        </tbody>
-    </table>
-
-        {{-- Botão para criar contrato --}}
-        <a href="{{ URL::to('leitura/create') }}"><h2>Criar</h2></a>
+        <dix id="box-btn" class="d-flex w-25 justify-content-between">
+            <a class="btn btn-md text-royal-blue" href="{{ URL::to('#') }}">Mostrar mais</a>
+            <!-- Botão para gerar relatório -->
+            <a class="btn btn-royal-blue btn-md text-magnolia" href="{{ URL::to('leitura/create') }}">Gerar Relatório</a>
+        </dix>
+    </div>
+</div>
+     
+      
 
 @endsection
