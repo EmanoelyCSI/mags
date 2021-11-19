@@ -23,10 +23,6 @@ class PostoSeeder extends Seeder
             'address'     => 'R. Estácio de Sá, 87 - Estácio, Rio de Janeiro - RJ, 20211-270',
             'contrato_id' => '1',
             'gerente_id'  => '1',
-            //'bomba_id'    => '4',
-            //'bico_id'        => '2',
-            'turno_id'       => '4',
-            // 'cicloTurno'  => '6 horas',
         ]);
 
         Posto::create([
@@ -38,10 +34,6 @@ class PostoSeeder extends Seeder
             'address'       => 'R. Humaitá,136 - Humaitá Rio de Janeiro - RJ 22261-004',
             'contrato_id'   => '2',
             'gerente_id'    => '2',
-            //'bomba_id'      => '2',
-            //'bico_id'          => '2',
-            'turno_id'         => '3',
-            // 'cicloTurno'    => '8 horas',
         ]);
     }
 }

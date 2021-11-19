@@ -49,8 +49,6 @@
             </svg>
             ', ['type' => 'submit', 'class' => 'btn btn-royal-blue float-end my-2 col-3 fs-5'] )  }}
         
-        
-
             {{ Form::close() }}
 
         @if (Session::has('message'))
