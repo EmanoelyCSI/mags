@@ -14,13 +14,13 @@
 <body>
     <!-- Topo da página -->
     <header class="container-fluid bg-royal-blue">
-        <div class="container-lg d-flex justify-content-between px-0">
+        <div class="container-lg d-flex justify-content-between px-0 align-items-center">
             <div class="d-flex my-4">
                 <img class="col-3" src="{{ asset('/site/imgs/logo.png')}}" alt="Logo Mags">
             </div>
-
+            
             <div class="d-flex my-4">
-                <a class="btn text-magnolia" href="{{ URL::to('/contato') }}">Contato</a>
+                <a class="btn text-magnolia fs-5" href="{{ URL::to('/contato') }}">Contato</a>
             </div>
         </div>
     </header>
@@ -29,10 +29,10 @@
 
     
     <!-- Rodapé -->
-<footer class="container-fluid p-2">
-   <hr class="text-blue-gray">
-   <h6 class="text-center text-royal-blue text-opacity-75">Todos os direitos reservados</h6>
-</footer>
+    <footer class="container-fluid p-2">
+        <hr class="text-blue-gray">
+        <h6 class="text-center text-royal-blue text-opacity-75">Todos os direitos reservados</h6>
+    </footer>
 
 
 

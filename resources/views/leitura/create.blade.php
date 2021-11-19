@@ -16,7 +16,7 @@
 
     <div id="conteudo" class="container p-0">
         <div id="box-form" class="p-4">
-            <h3 class="bg-navy-blue text-magnolia fw-normal rounded p-2">Lançar Leituras</h3>
+            <h3 class="bg-royal-blue text-magnolia fw-normal rounded p-2">Lançar Leituras</h3>
             {{ Form::open(array('url' => '/leitura/create')) }}
                 <div id="box" class="">
                     {{ Form::label('name', 'Nome', ['class' => 'form-label'] ) }}
@@ -39,7 +39,7 @@
                     {{ Form::label('leitura', 'Leitura', ['class' => 'form-label'] ) }}
                     {{ Form::text('leitura', null, ['class' => 'form-control'] ) }}
 
-                    {{ Form::submit('Enviar', ['class' => 'btn btn-navy-blue']  ) }}
+                    {{ Form::submit('Enviar', ['class' => 'btn btn-royal-blue']  ) }}
                 </div>
 
         

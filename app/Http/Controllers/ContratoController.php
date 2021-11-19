@@ -100,7 +100,6 @@ class ContratoController extends Controller
             'cnpj.min'                 => 'O campo CNPJ precisa ter no mínimo :min caracteres!',
             'name.required'            => 'O campo nome é obrigatório!',
             'name.min'                 => 'O campo nome precisa ter no mínimo :min caracteres!',
-            'proprietario_id.required' => 'O campo Proprietário é obrigatório!',
             'email.required'           => 'O campo Email é obrigatório!', 
             'cell.required'            => 'O campo Celular é obrigatório!', 
             'cell.min'                 => 'O campo Celular precisa ter no mínimo :min caracteres!', 
@@ -109,7 +108,6 @@ class ContratoController extends Controller
         $validateData = $request->validate([
             'cnpj'            =>  'required|min:14', // o mínimo de 14 caracteres e o campo não pode ser vazio
             'name'            =>  'required|min:10', // o campo não pode ser vazio e ter o mínimo de 10 caracteres para criar o nome 
-            'proprietario_id' =>  'required',        // o campo não pode ser vazio 
             'email'           =>  'required', 
             'cell'            =>  'required|min:9', 
          ], $message);
@@ -117,7 +115,6 @@ class ContratoController extends Controller
         $contrato = new Contrato;
         $contrato->cnpj             =  $request->cnpj;
         $contrato->name             =  $request->name;
-        // $contrato->proprietario_id  =  $request->proprietario_id;
         $contrato->email            =  $request->email;
         $contrato->cell             =  $request->cell;
         $contrato->tel              =  $request->tel;
@@ -172,7 +169,6 @@ class ContratoController extends Controller
             'cnpj.min'                  => 'O campo CNPJ precisa ter no mínimo :min caracteres!',
             'name.required'             => 'O campo nome é obrigatório!',
             'name.min'                  => 'O campo nome precisa ter no mínimo :min caracteres!',
-            'proprietario_id.required'  => 'O campo Proprietário é obrigatório!',
             'email.required'            => 'O campo Email é obrigatório!', 
             'cell.required'             => 'O campo Celular é obrigatório!', 
             'cell.min'                  => 'O campo Celular precisa ter no mínimo :min caracteres!', 
@@ -181,7 +177,6 @@ class ContratoController extends Controller
         $validateData = $request->validate([
             'cnpj'                => 'required|min:14',   // o mínimo de 14 caracteres e o campo não pode ser vazio
             'name'                =>  'required|min:10',  // o campo não pode ser vazio e ter o mínimo de 10 caracteres para criar o nome 
-            'proprietario_id'     =>  'required',         // o campo não pode ser vazio 
             'email'               =>  'required',             
             'cell'                =>  'required|min:9',        
          ], $message);
@@ -189,7 +184,6 @@ class ContratoController extends Controller
          $contrato = Contrato::findOrFail($id);
          $contrato->cnpj            =    $request->cnpj;
          $contrato->name            =    $request->name;
-         $contrato->proprietario_id =    $request->proprietario_id;
          $contrato->email           =    $request->email;
          $contrato->cell            =    $request->cell;
          $contrato->tel             =    $request->tel;
