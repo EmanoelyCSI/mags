@@ -4,46 +4,35 @@
 
 @section('content')
 
-    <table class="table no-margin">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Bomba</th>
-                <th></th>
+    <!-- Contúdo Principal da Página --> 
+    <div class="container">
+        <h1>Bicos</h1>
+            <div id="box-lista" class="table-responsive-lg">
+                <table class="table border-silver-send">
+                    <tbody>
+                        @foreach($bico as $key => $value)
+                            <tr>
+                                <td>{{ $value->name}}</td>
+                                {{-- <td>{{ $value->status}}</td> --}}
+    
+                                <td>
+                                    <a class="link-royal-blue  text-decoration-none" href="{{ URL::to('bico/' . $value->id) }}">Visualizar</a>
+                                </td>
 
-            </tr>
-        </thead>
-        <tbody>
- 
-          @foreach($bico as $key => $value)
-            <tr>
-                <td>{{ $value->id }}</td>
-                <td>{{ $value->name }}</td>
-                {{-- <td>{{ $value->bomba->name }}</td> --}}
-                <td></td>
-                <td>
-                    <a href="{{ URL::to('bico/' . $value->id) }}">Visualizar</a>
-                </td>
+                                <td>
+                                    <a class="link-royal-blue  text-decoration-none" href="{{ URL::to('bico/' . $value->id . '/edit') }}">Editar</a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+    
+                <!-- Botão para criar contrato -->
+                <a class="btn btn-royal-blue col-12" href="{{ URL::to('/bico/create') }}">Criar Novo Bico</a>
+    
+                </div>
+            </div>
+        </div>
 
-                <td>
-                    <a href="{{ URL::to('bico/' . $value->id . '/edit') }}">Editar</a>
-                </td>
-
-                {{-- <td>        
-                    {{ Form::open(array('url' => 'leitura/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
-                    {{ Form::hidden('_method', 'DELETE') }}
-                    {{ Form::submit('Excluir', array('class' => 'btn btn-danger')) }}
-                    {{ Form::close() }}
-                </td> --}}
-
-            </tr>
-           @endforeach
- 
-        </tbody>
-    </table>
-
-        {{-- Botão para criar contrato --}}
-        <a href="{{ URL::to('bico/create') }}"><h2>Criar</h2></a>
-        
+    
 @endsection
