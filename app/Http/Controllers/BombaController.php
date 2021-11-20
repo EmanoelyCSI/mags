@@ -16,22 +16,22 @@ class BombaController extends Controller
      */
     public function index()
     {
-        // Listar todos as Bombas
-        // $bombas= Bomba::orderBy('id', 'ASC')->get();
+        //Listar todos as Bombas
+        $bombas= Bomba::orderBy('id', 'ASC')->get();
         // dd($bombas->bico);
-        // return view('bomba.index', ['bomba' => $bombas]);
+        return view('bomba.index', ['bomba' => $bombas]);
 
 
        
-        foreach ($bombas->bico as $key => $value) {
-            //dd($value->bico);
-            foreach ($value->bico as $key => $value) {
-                echo($value->name);
-                foreach ($value->leitura as $key => $value) {
-                    echo($value->leitura . '<br>');
-                }
-            }
-        }
+        // foreach ($bomba->bico as $key => $value) {
+        //     //dd($value->bico);
+        //     foreach ($value->bico as $key => $value) {
+        //         echo($value->name);
+        //         foreach ($value->leitura as $key => $value) {
+        //             echo($value->leitura . '<br>');
+        //         }
+        //     }
+        // }
     }
 
     /**
