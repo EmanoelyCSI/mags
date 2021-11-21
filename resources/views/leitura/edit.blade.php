@@ -13,16 +13,16 @@
 
             {{ Form::text('posto', $leitura->posto, ['class' => 'form-control me-1', 'id'=> 'posto-name', 'placeholder' => 'Posto']) }}
 
-            {{-- {{ Form::text('bomba_id', $leitura->bomba->id,  ['class' => 'form-control ', 'id'=> 'bomba', 'placeholder' => 'Bomba']) }} --}}
+            {{ Form::select('bomba_id', $bombas,null, array('class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Bomba')) }}
         </div>
 
         <div id="box2" class="d-flex my-1 ">
-            {{ Form::text('bico', $leitura->bico->name, ['class' => 'form-control me-1', 'id'=> 'bico-name', 'placeholder' => 'Bico']) }}
+            {{ Form::select('bico_id', $bicos,null, array('class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Bico')) }}
 
 
-            {{ Form::text('turno', $leitura->turno->name, ['class' => 'form-control me-1', 'id'=> 'turno-name', 'placeholder' => 'Turno']) }}
+            {{ Form::select('turno_id', $turnos,null, array('class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Turno')) }}
 
-            {{ Form::text('leitura', null,  ['class' => 'form-control ', 'id'=> 'leitura', 'placeholder' => 'leitura']) }}
+            {{ Form::text('leitura', null,  ['class' => 'form-control ', 'id'=> 'leitura', 'placeholder' => 'Leitura']) }}
         </div>
 
         {{ Form::button('Enviar <svg class="mx-2" width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">

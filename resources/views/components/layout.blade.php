@@ -70,20 +70,42 @@
         </div>
     </div>
 
+    @php
+        ($profile = Auth::user()->profile)
+    @endphp
+
+    @if ($profile == 'gerente')
+   
     <!-- Menu de Navegação--> 
     <div class="container-fluid p-2">
         <ul class="nav nav-tabs container-lg nav-tabs-royal-blue">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{{ URL::to('/dashboard') }}">Planilhas</a>
+            <a class="nav-link" href="{{ URL::to('/leitura') }}">Planilhas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ URL::to('/contrato') }}">Cadastros</a>
+                <a class="nav-link" aria-current="page" href="{{ URL::to('/leitura/create') }}">Leitura</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ URL::to('/estoque') }}">Estoque</a>
-            </li>
-          </ul>
+        </ul>
         </div>
+    @else
+
+        <!-- Menu de Navegação--> 
+        <div class="container-fluid p-2">
+            <ul class="nav nav-tabs container-lg nav-tabs-royal-blue">
+                <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{{ URL::to('/dashboard') }}">Planilhas</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="{{ URL::to('/contrato') }}">Cadastros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ URL::to('/estoque') }}">Estoque</a>
+                </li>
+            </ul>
+            </div>
+    @endif
+     
+   
     <!-- Barra de pesquisa -->
 
         {{-- <div id="search" class="container-fluid">

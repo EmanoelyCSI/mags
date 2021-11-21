@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Leitura;
+
+
 
 class DashboardController extends Controller
 {
@@ -13,6 +17,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        if (Auth::user()->profile == 'gerente') {
+            $leituras = Leitura::orderBy('updated_at', 'ASC')->get();
+            return view('leitura.index', ['leitura' => $leituras]);
+        }
         return view('dashboard.index');
     }
 

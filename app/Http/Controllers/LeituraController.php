@@ -6,6 +6,8 @@ use App\Models\Leitura;
 use App\Models\Turno;
 use App\Models\Posto;
 use App\Models\Bico;
+use App\Models\Bomba;
+
 
 use Illuminate\Http\Request;
 
@@ -36,7 +38,10 @@ class LeituraController extends Controller
     public function create()
     {
         //Criar posto
-        return view('leitura.create');
+        $bombas  = Bomba::pluck('name', 'id');
+        $bicos   = Bico::pluck('name', 'id');
+        $turnos  = Turno::pluck('name', 'id');
+        return view('leitura.create', ['bombas' => $bombas, 'bicos' =>$bicos, 'turnos' => $turnos ]);
     }
 
     /**
@@ -62,7 +67,7 @@ class LeituraController extends Controller
             // 'bomba_id'  =>  'required', //o campo não pode ser vazio
             'bico_id'   =>  'required', //o campo não pode ser vazio 
             'turno_id'  =>  'required', //o campo não pode ser vazio  
-            'leitura'   =>  'required|min:6' //o campo não pode ser vazio e deve ter no mínimo 6 caracteres  
+            'leitura'   =>  'required|min:4' //o campo não pode ser vazio e deve ter no mínimo 6 caracteres  
          ], $message); 
         
         $leitura = new Leitura;
@@ -104,7 +109,11 @@ class LeituraController extends Controller
     {
         //Editar Leitura
         $leitura = Leitura::findOrFail($id);
-        return view('leitura.edit', ['leitura' => $leitura]);
+        
+        $bombas  = Bomba::pluck('name', 'id');
+        $bicos   = Bico::pluck('name', 'id');
+        $turnos  = Turno::pluck('name', 'id');
+        return view('leitura.edit', ['bombas' => $bombas, 'bicos' =>$bicos, 'turnos' => $turnos ]);
 
     }
     
@@ -130,7 +139,7 @@ class LeituraController extends Controller
         'bomba_id'  =>  'required', //o campo não pode ser vazio
         'bico_id'   =>  'required', //o campo não pode ser vazio 
         'turno_id'  =>  'required', //o campo não pode ser vazio  
-        'leitura'   =>  'required|min:6' //o campo não pode ser vazio e deve ter no mínimo 6 caracteres  
+        'leitura'   =>  'required|min:4' //o campo não pode ser vazio e deve ter no mínimo 6 caracteres  
      ], $message);
 
     $leitura = Leitura::findOrFail($id);
@@ -139,6 +148,10 @@ class LeituraController extends Controller
     $leitura->turno_id  =   $request->turno_id;
     $leitura->leitura   =   $request->leitura;
     $leitura->save();
+
+    $posto = Posto::findOrFail($leitura->bico->bomba->posto->id);
+    $posto->quantidade = $posto->quantidade - $leitura->leitura;
+    $posto->save();
 
     return redirect()->route('leitura.index')->with('message', 'Leitura editada com sucesso!');
 

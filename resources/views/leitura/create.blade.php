@@ -24,13 +24,14 @@
                 <div id="box" class="d-flex my-1">
                     {{ Form::text('posto_id', null,  ['class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Posto'] ) }} <!-- identificar pelo usuário a qual posto ele pertence -->
 
-                    {{ Form::text('turno', null, ['class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Turno']) }} <!-- select com os turnos relacionadas aos posto -->
+                    {{ Form::select('turno_id', $turnos,null, array('class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Turno')) }}
                 </div>
            
                 <div id="box" class="d-flex my-1">
-                    {{ Form::text('bomba',null, ['class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Bomba'] ) }} <!-- select com as bombas relacionadas aos posto -->
+                    {{ Form::select('bomba_id', $bombas,null, array('class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Bomba')) }} 
 
-                    {{ Form::text('bico',null, ['class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Bico'] ) }} <!-- select com os bicos relacionadas aos posto -->
+                
+                    {{ Form::select('bico_id', $bicos,null, array('class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Bico')) }}
                 </div>
          
                 <div id="box" class="d-flex my-1">
