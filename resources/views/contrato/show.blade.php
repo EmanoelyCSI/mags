@@ -74,7 +74,7 @@
                     <li class="list-group">Criação:              {{ Carbon\Carbon::parse($contrato->create_at)->format('d/m/Y H:i') }}</li>
                     <li class="list-group">Última modificação:   {{ Carbon\Carbon::parse($contrato->update_at)->format('d/m/Y H:i') }} </li>
                 </ul>
-                <div id="box" class="d-flex w-50 float-end justify-content-end bg-magnolia">
+                <div id="box" class="d-flex w-50 float-end justify-content-end">
                         <!-- boão de editar-->
                         <a class="text-decoration-none" href="{{ URL::to('contrato/' . $contrato->id . '/edit') }}">
                             <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -132,20 +132,5 @@
 @endsection
 
     
-                        {{-- <td>
-                            <a href="{{ URL::to('contrato/' . $value->id . '/edit') }}">Editar</a>
-                        </td> --}}
-        
-                        {{-- <td>        
-                            {{ Form::open(array('url' => 'contrato/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
-                            {{ Form::hidden('_method', 'DELETE') }}
-                            {{ Form::submit('Excluir', array('class' => 'btn btn-danger')) }}
-                            {{ Form::close() }}
-                        </td> --}}
 
 
-{{-- 
-                        <svg width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.902 5.23292C7.76017 5.07417 7.51647 5.06036 7.35764 5.20222L4.38552 7.85734V0.385527C4.38552 0.17265 4.21293 0 4 0C3.78712 0 3.61447 0.172591 3.61447 0.385527V7.85734L0.642357 5.20225C0.483609 5.06039 0.239882 5.07423 0.0979935 5.23295C-0.0438061 5.39176 -0.0301114 5.63549 0.128666 5.77731L3.35788 8.66202C3.54088 8.82556 3.77038 8.90729 3.99997 8.90729C4.22947 8.90729 4.459 8.82556 4.64206 8.66211L7.87127 5.77731C8.0301 5.6354 8.04383 5.39167 7.902 5.23292Z" fill="#060A6F"/>
-                            </svg>
-                             --}}

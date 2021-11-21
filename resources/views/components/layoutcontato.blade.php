@@ -16,7 +16,7 @@
     <header class="container-fluid bg-royal-blue">
         <div class="container-lg d-flex justify-content-between px-0 align-items-center">
             <div class="d-flex my-4">
-                <img class="col-3" src="{{ asset('/site/imgs/logo.png')}}" alt="Logo Mags">
+                <a href="{{ URL::to('/dashboard') }}"><img class="col-3" src="{{ asset('/site/imgs/logo.png')}}" alt="Logo Mags"></a>
             </div>
             
             <div class="d-flex my-4">
