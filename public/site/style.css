@@ -34,12 +34,14 @@
   --bs-blue-gray: #646887;
   --bs-silver-send: #C4CAD0;
   --bs-magnolia: #FCF7FF;
+  --bs-whatsapp: #2CB742;
   --bs-teste-rgb: 255, 0, 0;
   --bs-royal-blue-rgb: 3, 5, 62;
   --bs-navy-blue-rgb: 6, 10, 111;
   --bs-blue-gray-rgb: 100, 104, 135;
   --bs-silver-send-rgb: 196, 202, 208;
   --bs-magnolia-rgb: 252, 247, 255;
+  --bs-whatsapp-rgb: 44, 183, 66;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-body-rgb: 33, 37, 41;
@@ -3193,6 +3195,36 @@ textarea.form-control-lg {
   border-color: #FCF7FF;
 }
 
+.btn-whatsapp {
+  color: #000;
+  background-color: #2CB742;
+  border-color: #2CB742;
+}
+.btn-whatsapp:hover {
+  color: #000;
+  background-color: #4cc25e;
+  border-color: #41be55;
+}
+.btn-check:focus + .btn-whatsapp, .btn-whatsapp:focus {
+  color: #000;
+  background-color: #4cc25e;
+  border-color: #41be55;
+  box-shadow: 0 0 0 0.25rem rgba(37, 156, 56, 0.5);
+}
+.btn-check:checked + .btn-whatsapp, .btn-check:active + .btn-whatsapp, .btn-whatsapp:active, .btn-whatsapp.active, .show > .btn-whatsapp.dropdown-toggle {
+  color: #000;
+  background-color: #56c568;
+  border-color: #41be55;
+}
+.btn-check:checked + .btn-whatsapp:focus, .btn-check:active + .btn-whatsapp:focus, .btn-whatsapp:active:focus, .btn-whatsapp.active:focus, .show > .btn-whatsapp.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(37, 156, 56, 0.5);
+}
+.btn-whatsapp:disabled, .btn-whatsapp.disabled {
+  color: #000;
+  background-color: #2CB742;
+  border-color: #2CB742;
+}
+
 .btn-outline-teste {
   color: #ff0000;
   border-color: #ff0000;
@@ -3340,6 +3372,31 @@ textarea.form-control-lg {
 }
 .btn-outline-magnolia:disabled, .btn-outline-magnolia.disabled {
   color: #FCF7FF;
+  background-color: transparent;
+}
+
+.btn-outline-whatsapp {
+  color: #2CB742;
+  border-color: #2CB742;
+}
+.btn-outline-whatsapp:hover {
+  color: #000;
+  background-color: #2CB742;
+  border-color: #2CB742;
+}
+.btn-check:focus + .btn-outline-whatsapp, .btn-outline-whatsapp:focus {
+  box-shadow: 0 0 0 0.25rem rgba(44, 183, 66, 0.5);
+}
+.btn-check:checked + .btn-outline-whatsapp, .btn-check:active + .btn-outline-whatsapp, .btn-outline-whatsapp:active, .btn-outline-whatsapp.active, .btn-outline-whatsapp.dropdown-toggle.show {
+  color: #000;
+  background-color: #2CB742;
+  border-color: #2CB742;
+}
+.btn-check:checked + .btn-outline-whatsapp:focus, .btn-check:active + .btn-outline-whatsapp:focus, .btn-outline-whatsapp:active:focus, .btn-outline-whatsapp.active:focus, .btn-outline-whatsapp.dropdown-toggle.show:focus {
+  box-shadow: 0 0 0 0.25rem rgba(44, 183, 66, 0.5);
+}
+.btn-outline-whatsapp:disabled, .btn-outline-whatsapp.disabled {
+  color: #2CB742;
   background-color: transparent;
 }
 
@@ -4861,6 +4918,15 @@ textarea.form-control-lg {
   color: #514f52;
 }
 
+.alert-whatsapp {
+  color: #1a6e28;
+  background-color: #d5f1d9;
+  border-color: #c0e9c6;
+}
+.alert-whatsapp .alert-link {
+  color: #155820;
+}
+
 @-webkit-keyframes progress-bar-stripes {
   0% {
     background-position-x: 1rem;
@@ -5218,6 +5284,20 @@ textarea.form-control-lg {
   color: #fff;
   background-color: #656366;
   border-color: #656366;
+}
+
+.list-group-item-whatsapp {
+  color: #1a6e28;
+  background-color: #d5f1d9;
+}
+.list-group-item-whatsapp.list-group-item-action:hover, .list-group-item-whatsapp.list-group-item-action:focus {
+  color: #1a6e28;
+  background-color: #c0d9c3;
+}
+.list-group-item-whatsapp.list-group-item-action.active {
+  color: #fff;
+  background-color: #1a6e28;
+  border-color: #1a6e28;
 }
 
 .btn-close {
@@ -6304,6 +6384,13 @@ textarea.form-control-lg {
   color: #fdf9ff;
 }
 
+.link-whatsapp {
+  color: #2CB742;
+}
+.link-whatsapp:hover, .link-whatsapp:focus {
+  color: #56c568;
+}
+
 .ratio {
   position: relative;
   width: 100%;
@@ -6716,6 +6803,10 @@ textarea.form-control-lg {
 
 .border-magnolia {
   border-color: #FCF7FF !important;
+}
+
+.border-whatsapp {
+  border-color: #2CB742 !important;
 }
 
 .border-white {
@@ -7545,6 +7636,11 @@ textarea.form-control-lg {
   color: rgba(var(--bs-magnolia-rgb), var(--bs-text-opacity)) !important;
 }
 
+.text-whatsapp {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-whatsapp-rgb), var(--bs-text-opacity)) !important;
+}
+
 .text-black {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-black-rgb), var(--bs-text-opacity)) !important;
@@ -7624,6 +7720,11 @@ textarea.form-control-lg {
 .bg-magnolia {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-magnolia-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-whatsapp {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-whatsapp-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-black {

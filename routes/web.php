@@ -27,9 +27,7 @@ use App\Http\Controllers\EstoqueController;
 |
 */
 
-Route::get('/resources', function () {
-    return view('contato');
-});
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -133,6 +131,7 @@ Route::delete('/turno/{id}', [TurnoController::class, 'destroy'])->name('turno.d
 
 // ------------------------ DASHBOARD------------------------
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
 
 Route::get('/dashboard/create', [DashboardController::class, 'create'])->name('dashboard.create');
 Route::post('/dashboard/create', [DashboardController::class, 'store'])->name('dashboard.store');
