@@ -12,7 +12,7 @@
 
         <div id="box" class="d-flex my-1">
 
-            {{ Form::text('bomba', null, ['class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Identificação Bomba']) }}
+            {{ Form::text('bomba_id', null, ['class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Identificação Bomba']) }}
 
             {{ Form::text('modelo', null, ['class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Modelo']) }} 
 
