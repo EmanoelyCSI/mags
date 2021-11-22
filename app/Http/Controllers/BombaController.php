@@ -43,6 +43,8 @@ class BombaController extends Controller
     {
         //Criar Bomba
         return view('bomba.create');
+
+        // dd('teste');
     }
 
     /**

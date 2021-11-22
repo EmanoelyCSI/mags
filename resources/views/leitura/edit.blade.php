@@ -7,7 +7,7 @@
 
         <h4 class="bg-royal-blue text-magnolia fw-normal rounded p-2">Editar Leitura</h4>
 
-        {{ Form::model($leitura, array('route' => array('leitura.update', $leitura->id), 'method' => 'PUT' )) }}
+        {{ Form::model($leitura, array('route' => array('leitura.update', $turnos->id), 'method' => 'PUT' )) }}
 
         <div id="box1" class="d-flex my-1 ">
 

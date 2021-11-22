@@ -48,8 +48,8 @@
     {{ Form::text('gerente_id', null) }} --}}
     <br/>
 
-    {{ Form::label('bomba_id', 'Bomba') }}
-    {{ Form::text('bomba_id', null) }}
+    {{-- {{ Form::label('bomba_id', 'Bomba') }}
+    {{ Form::text('bomba_id', null) }} --}}
     <br/>
 
     {{ Form::label('bico_id', 'Bico') }}

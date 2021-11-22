@@ -8,7 +8,7 @@
 
             <h4 class="bg-royal-blue text-magnolia fw-normal rounded p-2">Atualizar Bomba</h4>
 
-            {{ Form::model($bomba, array('route' => array('bico.update', $bomba->id), 'method' => 'PUT' )) }}
+            {{ Form::model($bomba, array('route' => array('bomba.update', $bomba->id), 'method' => 'PUT' )) }}
 
             <div id="box1" class="d-flex my-1 ">
 
