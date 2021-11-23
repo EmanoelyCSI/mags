@@ -55,19 +55,23 @@ class BombaController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         // Armazenar Bombas
         $message = [
-            'bomba.required'    => 'O campo Bomba é obrigatório!',
+            'name.required'    => 'O campo Bomba é obrigatório!',
             'modelo.required'   => 'O campo Modelo é obrigatório!',
             'posto_id.required' => 'O campo Posto é obrigatório!',
         ];
  
         $validateData = $request->validate([
-            'bomba'    =>  'required', //o campo não pode ser vazio
+            'name'    =>  'required', //o campo não pode ser vazio
             'modelo'   =>  'required', //o campo não pode ser vazio 
             'posto_id' =>  'required', //o campo não pode ser vazio 
  
          ], $message);
+
+
+        //  dd('teste');
 
         $bomba = new Bomba;
         $bomba->name      =  $request->name;
@@ -88,7 +92,7 @@ class BombaController extends Controller
     {
         //Visualizar Bombas
         $bomba = Bomba::findOrFail($id);
-        // dd($posto);
+        // dd($bomba);
         return view('bomba.show', ['bomba' => $bomba]);
     }
 

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Posto;
 use App\Models\Contrato;
+use App\Models\User;
 use App\Models\Bomba;
 use Illuminate\Http\Request;
+
 
 class PostoController extends Controller
 {
@@ -17,7 +19,7 @@ class PostoController extends Controller
     public function index()
     {
         // Listar todos os postos
-        $postos = Posto::orderBy('cnpj', 'ASC')->get();
+        $postos = Posto::orderBy('id', 'DESC')->get();
         //dd($postos);
         return view('posto.index', ['posto' => $postos]);
 
@@ -31,8 +33,9 @@ class PostoController extends Controller
     public function create()
     {
         //Criar posto
-        $contratos = Contrato::orderBy('cnpj', 'ASC')->pluck('name', 'id');
-        return view('posto.create',['contratos' => $contratos]);
+        $users      = User::pluck('name', 'id');        
+        $contratos  = Contrato::orderBy('id', 'DESC')->pluck('name', 'id');
+        return view('posto.create',['contratos' => $contratos, 'users' => $users]);
     }
 
     /**
@@ -52,10 +55,6 @@ class PostoController extends Controller
             'email.required'      => 'O campo Email é obrigatório!', 
             'cell.required'       => 'O campo Celular é obrigatório!', 
             'cell.min'            => 'O campo Celular precisa ter no mínimo :min caracteres!',
-            'bomba.required'      => 'O campo Bomba é obrigatório!',
-            'bico.required'       => 'O campo Bico é obrigatório!',
-            'turno.required'      => 'O campo Turno é obrigatório!',
-            'cicloTurno.required' => 'O campo Ciclo do Turno é obrigatório!', 
         ];
  
         $validateData = $request->validate([
@@ -64,11 +63,7 @@ class PostoController extends Controller
             'email'          =>  'required',        // o campo não pode ser vazio 
             'cell'           =>  'required|min:9', 
             'contrato_id'    =>  'required',
-            // 'gerente_id'     =>  'required',
-            'bomba_id'       =>  'required', 
-            'bico_id'        =>  'required', 
-            'turno_id'       =>  'required', 
-            'cicloTurno'     =>  'required' 
+            'gerente_id'     =>  'required',
          ], $message);
 
         $posto = new Posto;
@@ -79,11 +74,7 @@ class PostoController extends Controller
         $posto->tel         =   $request->tel;
         $posto->address     =   $request->address;
         $posto->contrato_id =   $request->contrato_id;
-        // $posto->gerente_id  =   $request->gerente_id;
-        $posto->bomba_id    =   $request->bomba_id;
-        $posto->bico_id     =   $request->bico_id;
-        $posto->turno_id    =   $request->turno_id;
-        $posto->cicloTurno  =   $request->cicloTurno;
+        $posto->gerente_id  =   $request->gerente_id;
         $posto->save();
  
         return redirect()->route('posto.index')->with('message', 'Posto criado com sucesso!');
@@ -99,7 +90,7 @@ class PostoController extends Controller
     {
          //Visualizar Postos
          $posto = Posto::findOrFail($id);
-         // dd($posto);
+        //  dd($posto->bomba);
          return view('posto.show', ['posto' => $posto]);
     }
 
@@ -112,9 +103,10 @@ class PostoController extends Controller
     public function edit($id)
     {
         //Editar Posto
-        $posto  = Posto::findOrFail($id);
-        $contratos = Contrato::orderBy('cnpj', 'ASC')->pluck('name', 'id');
-        return view('posto.create',['contratos' => $contratos],);
+        $posto      = Posto::findOrFail($id);
+        $users     = User::where('profile', 'gerente')->pluck('name', 'id');
+        $contratos  = Contrato::orderBy('id', 'DESC')->pluck('name', 'id');
+        return view('posto.edit',['posto' => $posto,  'contratos' => $contratos, 'users' => $users]);
 
       
     
@@ -138,10 +130,6 @@ class PostoController extends Controller
             'email.required'      => 'O campo Email é obrigatório!', 
             'cell.required'       => 'O campo Celular é obrigatório!', 
             'cell.min'            => 'O campo Celular precisa ter no mínimo :min caracteres!',
-            'bomba.required'      => 'O campo Bomba é obrigatório!',
-            'bico.required'       => 'O campo Bico é obrigatório!',
-            'turno.required'      => 'O campo Turno é obrigatório!',
-            'cicloTurno.required' => 'O campo Ciclo do Turno é obrigatório!', 
         ];
  
         $validateData = $request->validate([
@@ -151,10 +139,6 @@ class PostoController extends Controller
             'cell'           =>  'required|min:9', 
             'contrato_id'    =>  'required',
             'gerente_id'     =>  'required',
-            'bomba_id'       =>  'required', 
-            'bico_id'        =>  'required', 
-            'turno_id'       =>  'required', 
-            'cicloTurno'     =>  'required' 
          ], $message);
 
         $posto = Posto::findOrFail($id);
@@ -166,10 +150,6 @@ class PostoController extends Controller
         $posto->address     =   $request->address;
         $posto->contrato_id =   $request->contrato_id;
         $posto->gerente_id  =   $request->gerente_id;
-        $posto->bomba_id    =   $request->bomba_id;
-        $posto->bico_id     =   $request->bico_id;
-        $posto->turno_id    =   $request->turno_id;
-        $posto->cicloTurno  =   $request->cicloTurno;
         $posto->save();
  
         return redirect()->route('posto.index')->with('message', 'Posto editado com sucesso!');
