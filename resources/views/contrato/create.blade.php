@@ -23,25 +23,36 @@
 
         <h4 class="bg-royal-blue text-magnolia fw-normal rounded p-2">Cadastrar Contrato</h4>
         
-        <div id="box1" class="d-flex my-1 ">
-
-            {{ Form::text('name',null, ['class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Nome Completo']) }}
-
-            {{ Form::text('cnpj',null, ['class' => 'form-control ', 'id'=> 'cnpj', 'placeholder' => 'CNPJ'] ) }}
+        <div class="d-flex my-1">
+            <div id="box1" class="form-floating w-50 me-1">
+                {{ Form::text('name',null, ['class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Nome Completo']) }}
+                {{ Form::label('nome do completo', null, ['for'=>'name']) }}
+            </div>
+            <div id="box2" class="form-floating w-50">
+                {{ Form::text('cnpj',null, ['class' => 'form-control ', 'id'=> 'cnpj', 'placeholder' => 'CNPJ'] ) }}
+                {{ Form::label('CNPJ', null, ['for'=>'cnpj']) }}
+            </div>
         </div>
 
-        <div id="box2" class="d-flex my-1">
+        <div id="box3" class="form-floating my-1">
             {{ Form::text('email', null, ['class' => 'form-control', 'id'=> 'email', 'placeholder' => 'E-mail'] ) }}
+            {{ Form::label('email', null, ['for'=>'email']) }}
         </div>
 
-        <div id="box3" class="d-flex my-1">
-            {{ Form::text('cell',null, ['class' => 'form-control me-1', 'id'=> 'cel','placeholder' => 'Celular']) }}
-
-            {{ Form::text('tel',null, ['class' => 'form-control', 'id'=> 'tel' , 'placeholder' => 'Tel. Comercial']) }}
+        <div class="d-flex my-1">
+            <div id="box4" class="form-floating w-50 me-1">
+                {{ Form::text('cell',null, ['class' => 'form-control me-1', 'id'=> 'cell','placeholder' => 'Celular']) }}
+                {{ Form::label('celular', null, ['for'=>'cell']) }}
+            </div>
+            <div id="box5" class="form-floating w-50">
+                {{ Form::text('tel',null, ['class' => 'form-control', 'id'=> 'tel' , 'placeholder' => 'Telefone']) }}
+                {{ Form::label('Telefone', null, ['for'=>'tel']) }}
+            </div>
         </div>
 
-        <div id="box4" class="d-flex my-1">
+        <div id="box4" class="form-floating my-1">
             {{ Form::text('address',null,  ['class' => 'form-control', 'id'=> 'address' , 'placeholder' => 'Endereço'] ) }}
+            {{ Form::label('Endereço', null, ['for'=>'address']) }}
         </div>
 
         {{ Form::button('Enviar <svg class="mx-2" width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -22,25 +22,36 @@
 
         {{ Form::model($contrato, array('route' => array('contrato.update', $contrato->id), 'method' => 'PUT' )) }}
 
-        <div id="box1" class="d-flex my-1 ">
-
-            {{ Form::text('name',  $contrato->name, ['class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Ex:Marcos da Silva dos Santos ']) }}
-
-            {{ Form::text('cnpj', $contrato->cnpj, ['class' => 'form-control ', 'id'=> 'cnpj', 'placeholder' => 'Ex: 05.418.078/0001-92'] ) }}
+        <div class="d-flex my-1">
+            <div id="box1" class="form-floating w-50 me-1">
+                {{ Form::text('name',  $contrato->name, ['class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'nome completo']) }}
+                {{ Form::label('nome completo', null, ['for'=>'name']) }}
+            </div>
+            <div id="box2" class="form-floating w-50">
+                {{ Form::text('cnpj', $contrato->cnpj, ['class' => 'form-control ', 'id'=> 'cnpj', 'placeholder' => 'cnpj'] ) }}
+                {{ Form::label('CNPJ', null, ['for'=>'cnpj']) }}
+            </div>
         </div>
 
-        <div id="box2" class="d-flex my-1">
-            {{ Form::text('email',  $contrato->email, ['class' => 'form-control', 'id'=> 'email', 'placeholder' => 'Ex: marcos.silva_contato@gmail.com'] ) }}
+        <div id="box3" class="form-floating my-1">
+            {{ Form::text('email',  $contrato->email, ['class' => 'form-control', 'id'=> 'email', 'placeholder' => 'email'] ) }}
+            {{ Form::label('email', null, ['for'=>'email']) }}
         </div>
 
-        <div id="box3" class="d-flex my-1">
-            {{ Form::text('cell', $contrato->cell, ['class' => 'form-control me-1', 'id'=> 'cel','placeholder' => 'Ex:2198745-8272']) }}
-
-            {{ Form::text('tel',  $contrato->tel, ['class' => 'form-control', 'id'=> 'tel' , 'placeholder' => 'Ex: 212545-8875']) }}
+        <div class="d-flex my-1">
+            <div id="box3" class="form-floating w-50 me-1">
+                {{ Form::text('cell', $contrato->cell, ['class' => 'form-control me-1', 'id'=> 'cell','placeholder' => 'celular']) }}
+                {{ Form::label('celular', null, ['for'=>'cell']) }}
+            </div>
+            <div id="box4" class="form-floating w-50">
+                {{ Form::text('tel',  $contrato->tel, ['class' => 'form-control', 'id'=> 'tel' , 'placeholder' => 'telefone']) }}
+                {{ Form::label('telefone', null, ['for'=>'tel']) }}
+            </div>
         </div>
 
-        <div id="box4" class="d-flex my-1">
-            {{ Form::text('address',  $contrato->address,  ['class' => 'form-control', 'id'=> 'address' , 'placeholder' => 'Ex: R. Maia de Lacerda, 36'] ) }}
+        <div id="box5" class="form-floating my-1">
+            {{ Form::text('address',  $contrato->address,  ['class' => 'form-control', 'id'=> 'address' , 'placeholder' => 'endereço'] ) }}
+            {{ Form::label('endereço', null, ['for'=>'address']) }}
         </div>
 
         {{ Form::button('Enviar <svg class="mx-2" width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -62,9 +62,9 @@
                                 onclick="event.preventDefault();
                                             this.closest('form').submit();">
                             {{ __('Log Out') }}
-                      </a>
-                    </form>
-                  </li>
+                        </a>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>
