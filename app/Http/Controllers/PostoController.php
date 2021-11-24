@@ -7,6 +7,8 @@ use App\Models\Contrato;
 use App\Models\User;
 use App\Models\Bomba;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 
 class PostoController extends Controller
@@ -33,9 +35,17 @@ class PostoController extends Controller
     public function create()
     {
         //Criar posto
-        $users      = User::pluck('name', 'id');        
+        $posto      = Posto::orderBy('id', 'DESC')->get();
+        $users      = User::where('profile', 'gerente')->pluck('name', 'id');
         $contratos  = Contrato::orderBy('id', 'DESC')->pluck('name', 'id');
-        return view('posto.create',['contratos' => $contratos, 'users' => $users]);
+        return view('posto.create',['posto' => $posto, 'contratos' => $contratos, 'users' => $users]);
+
+        // $posto = Posto::findOrFail(1);
+        // dd($posto->contrato->name);
+
+        // foreach ($posto->contrato_id as $key => $value) {
+        //    echo($value->name);
+        // }
     }
 
     /**
@@ -104,7 +114,7 @@ class PostoController extends Controller
     {
         //Editar Posto
         $posto      = Posto::findOrFail($id);
-        $users     = User::where('profile', 'gerente')->pluck('name', 'id');
+        $users      = User::where('profile', 'gerente')->pluck('name', 'id');
         $contratos  = Contrato::orderBy('id', 'DESC')->pluck('name', 'id');
         return view('posto.edit',['posto' => $posto,  'contratos' => $contratos, 'users' => $users]);
 
