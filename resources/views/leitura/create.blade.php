@@ -21,22 +21,31 @@
 
             <h4 class="bg-royal-blue text-magnolia fw-normal rounded p-2">Leitura</h4>
 
-                <div id="box" class="d-flex my-1">
-                    {{ Form::text('posto_id', null,  ['class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Posto'] ) }} <!-- identificar pelo usuário a qual posto ele pertence -->
-
-                    {{ Form::select('turno_id', $turnos,null, array('class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Turno')) }}
+                <div class="d-flex">
+                    <div id="box1" class="form-floating w-50 me-1">
+                        {{ Form::text('posto_id', null,  ['class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Posto'] ) }} <!-- identificar pelo usuário a qual posto ele pertence -->
+                        {{ Form::label('nome do posto', null, ['for'=>'name']) }}
+                    </div>
+                    <div id="box2" class="form-floating w-50">
+                        {{ Form::select('turno_id', $turnos,null, array('class' => 'form-select me-1', 'id'=> 'turno')) }}
+                        {{ Form::label('turno_id', 'turno', ['for'=>'turno']) }}
+                    </div>
                 </div>
-           
-                <div id="box" class="d-flex my-1">
-                    {{ Form::select('bomba_id', $bombas,null, array('class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Bomba')) }} 
 
-                
-                    {{ Form::select('bico_id', $bicos,null, array('class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Bico')) }}
+                <div class="d-flex my-1">
+                    <div id="box3" class="form-floating w-50">
+                        {{ Form::select('bomba_id', $bombas,null, array('class' => 'form-select me-1', 'id'=> 'bomba', 'placeholder' => 'Bomba')) }} 
+                        {{ Form::label('bomba_id', 'bomba', ['for'=>'bomba']) }}
+                    </div>
+                    <div id="box4" class="form-floating w-50">
+                        {{ Form::select('bico_id', $bicos,null, array('class' => 'form-select', 'id'=> 'bico', 'placeholder' => 'Bico')) }}
+                        {{ Form::label('bico_id', 'bico', ['for'=>'bico']) }}
+                    </div>
                 </div>
-         
-                <div id="box" class="d-flex my-1">
-                    
-                    {{ Form::text('leitura', null, ['class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Leitura'] ) }}
+              
+                <div id="box5" class="form-floating my-1">
+                    {{ Form::text('leitura', null, ['class' => 'form-control me-1', 'id'=> 'leitura', 'placeholder' => 'Leitura'] ) }}
+                    {{ Form::label('leitura', null, ['for'=>'leitura']) }}
                 </div>
 
                 {{ Form::button('Enviar <svg class="mx-2" width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">

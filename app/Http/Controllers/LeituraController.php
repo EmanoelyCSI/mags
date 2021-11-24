@@ -37,7 +37,7 @@ class LeituraController extends Controller
      */
     public function create()
     {
-        //Criar posto
+        //Criar leitura
         $bombas  = Bomba::pluck('name', 'id');
         $bicos   = Bico::pluck('name', 'id');
         $turnos  = Turno::pluck('name', 'id');
@@ -113,7 +113,7 @@ class LeituraController extends Controller
         $bombas  = Bomba::pluck('name', 'id');
         $bicos   = Bico::pluck('name', 'id');
         $turnos  = Turno::pluck('name', 'id');
-        return view('leitura.edit', ['bombas' => $bombas, 'bicos' =>$bicos, 'turnos' => $turnos ]);
+        return view('leitura.edit', ['leitura' => $leitura, 'bombas' => $bombas, 'bicos' =>$bicos, 'turnos' => $turnos ]);
 
     }
     
@@ -149,9 +149,9 @@ class LeituraController extends Controller
     $leitura->leitura   =   $request->leitura;
     $leitura->save();
 
-    // $posto = Posto::findOrFail($leitura->bico->bomba->posto->id);
-    // $posto->quantidade = $posto->quantidade - $leitura->leitura;
-    // $posto->save();
+    $posto = Posto::findOrFail($leitura->bico->bomba->posto->id);
+    $posto->quantidade = $posto->quantidade - $leitura->leitura;
+    $posto->save();
 
     return redirect()->route('leitura.index')->with('message', 'Leitura editada com sucesso!');
 

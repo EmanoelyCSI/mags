@@ -27,9 +27,8 @@
         <div id="box3" class="form-floating">
             {{ Form::text('email', $posto->email, ['class' => 'form-control', 'id'=> 'email', 'placeholder' => 'E-mail'] ) }}
             {{ Form::label('E-mail', null, ['for'=>'email']) }}
-
         </div>
-
+        
         <div class="d-flex my-1">
             <div id="box4" class="form-floating w-50 me-1">
                 {{ Form::text('cell',$posto->cell, ['class' => 'form-control me-1', 'id'=> 'cell','placeholder' => 'Celular']) }}
