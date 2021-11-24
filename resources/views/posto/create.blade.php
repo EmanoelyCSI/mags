@@ -12,8 +12,8 @@
         
         <div class="d-flex my-1">
             <div id="box1" class=" form-floating w-50 me-1">
-                {{ Form::text('name',null, ['class' => 'form-control', 'id'=> 'name', 'placeholder' => 'Nome Completo']) }}
-                {{ Form::label('nome completo', null, ['for'=>'name']) }}
+                {{ Form::text('name',null, ['class' => 'form-control', 'id'=> 'name', 'placeholder' => 'nome do posto']) }}
+                {{ Form::label('nome do posto', null, ['for'=>'name']) }}
             </div>
 
             <div id="box2" class="d-flex  form-floating w-50">
@@ -29,7 +29,7 @@
         </div>
 
         <div class="d-flex my-1">
-            <div id="box4" class="form-floating w-50">
+            <div id="box4" class="form-floating w-50 me-1">
                 {{ Form::text('cell',null, ['class' => 'form-control me-1', 'id'=> 'cell','placeholder' => 'Celular']) }}
                 {{ Form::label('Celular', null, ['for'=>'cell']) }}
             </div>
@@ -40,13 +40,13 @@
             </div>
         </div>
 
-        <div id="box6" class=" form-floating">
+        <div id="box6" class=" form-floating my-1">
             {{ Form::text('address',null,  ['class' => 'form-control', 'id'=> 'address' , 'placeholder' => 'Endereço'] ) }}
             {{ Form::label('Endereço', null, ['for'=>'address']) }}
         </div>
 
         <div class="d-flex">
-            <div id="box7" class="form-floating w-50">
+            <div id="box7" class="form-floating w-50 me-1">
                 {{ Form::select('contrato_id', $contratos, null,array('class' => 'form-select', 'id'=>'contrato')) }}
                 {{ Form::label('contrato_id', 'Contrato', ['for'=>'contrato']) }}
             </div>
