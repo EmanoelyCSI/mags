@@ -10,12 +10,15 @@
 
         <h4 class="bg-royal-blue text-magnolia fw-normal rounded p-2">Cadastrar Bico</h4>
 
-        <div id="box" class="d-flex my-1">
-
-            {{ Form::text('name', null, ['class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'Identificação Bico']) }}
-
-            {{ Form::text('bomba_id', null, ['class' => 'form-control', 'id'=> 'name', 'placeholder' => 'Bomba']) }} <!-- Mudar de null para bomba_id -->
-
+        <div class="d-flex my-1">
+            <div id="box1" class="form-floating w-50 me-1">
+                {{ Form::text('name', null, ['class' => 'form-control me-1', 'id'=> 'bico', 'placeholder' => 'bico']) }}
+                {{ Form::label('bico', 'bico', ['for'=>'bico']) }}
+            </div>
+            <div id="box2" class="form-floating w-50">
+                {{ Form::text('bomba_id', null, ['class' => 'form-control', 'id'=> 'bomba', 'placeholder' => 'bomba']) }} <!-- Mudar de null para bomba_id -->
+                {{ Form::label('bomba_id', 'bomba', ['for'=>'bomba']) }}
+            </div>
         </div>
 
         {{ Form::button('Enviar <svg class="mx-2" width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">

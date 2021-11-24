@@ -10,11 +10,16 @@
 
         {{ Form::model($bico, array('route' => array('bico.update', $bico->id), 'method' => 'PUT' )) }}
     
-        <div id="box1" class="d-flex my-1 ">
+        <div class="d-flex my-1 ">
+            <div id="box1" class="d-flex">
+                {{ Form::text('name', $bico->name, ['class' => 'form-control me-1', 'id'=> 'bico', 'placeholder' => 'Bico']) }}
+                {{ Form::label('bico', null, ['for'=>'bico']) }}
+            </div>
 
-            {{ Form::text('name', $bico->name, ['class' => 'form-control me-1', 'id'=> 'bico-name', 'placeholder' => 'Bico']) }}
-
-            {{ Form::text('bomba_id', $bico->bomba->id,  ['class' => 'form-control ', 'id'=> 'bomba', 'placeholder' => 'id']) }}
+            <div id="box2" class="">
+                {{ Form::text('bomba_id', $bico->bomba->id,  ['class' => 'form-control ', 'id'=> 'bomba', 'placeholder' => 'id']) }}
+                {{ Form::label('bico', null, ['for'=>'bico']) }}
+            </div>
         </div>
 
         {{ Form::button('Enviar <svg class="mx-2" width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
