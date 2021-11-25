@@ -11,14 +11,14 @@
         {{ Form::model($bico, array('route' => array('bico.update', $bico->id), 'method' => 'PUT' )) }}
     
         <div class="d-flex my-1 ">
-            <div id="box1" class="d-flex">
-                {{ Form::text('name', $bico->name, ['class' => 'form-control me-1', 'id'=> 'bico', 'placeholder' => 'Bico']) }}
+            <div id="box1" class="form-floating w-50 me-1">
+                {{ Form::text('name', $bico->name, ['class' => 'form-control', 'id'=> 'bico', 'placeholder' => 'Bico']) }}
                 {{ Form::label('bico', null, ['for'=>'bico']) }}
             </div>
 
-            <div id="box2" class="">
+            <div id="box2" class="form-floating w-50">
                 {{ Form::text('bomba_id', $bico->bomba->id,  ['class' => 'form-control ', 'id'=> 'bomba', 'placeholder' => 'id']) }}
-                {{ Form::label('bico', null, ['for'=>'bico']) }}
+                {{ Form::label('bomba', null, ['for'=>'bomba']) }}
             </div>
         </div>
 

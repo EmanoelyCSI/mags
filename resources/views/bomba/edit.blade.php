@@ -10,13 +10,21 @@
 
             {{ Form::model($bomba, array('route' => array('bomba.update', $bomba->id), 'method' => 'PUT' )) }}
 
-            <div id="box1" class="d-flex my-1 ">
+            <div class="d-flex my-1 ">
+                <div id="box1" class="form-floating w-50 me-1">
+                    {{ Form::text('name', $bomba->name, ['class' => 'form-control me-1', 'id'=> 'name', 'placeholder' => 'name']) }}
+                    {{ Form::label('name', null, ['for'=>'name']) }}
+                </div>
 
-                {{ Form::text('name', $bomba->name, ['class' => 'form-control me-1', 'id'=> 'bomba-name', 'placeholder' => 'Bomba']) }}
+                <div id="box2" class="form-floating w-50  me-1">
+                    {{ Form::text('modelo', $bomba->modelo,  ['class' => 'form-control me-1', 'id'=> 'modelo', 'placeholder' => 'Modelo']) }}
+                    {{ Form::label('modelo', null, ['for'=>'modelo']) }}
+                </div>
 
-                {{ Form::text('modelo', $bomba->modelo,  ['class' => 'form-control me-1', 'id'=> 'modelo', 'placeholder' => 'Modelo']) }}
-
-                {{ Form::text('posto_id', $bomba->posto->id,  ['class' => 'form-control', 'id'=> 'posto', 'placeholder' => 'Posto']) }}
+                <div id="box3" class="form-floating w-50  me-1">
+                    {{ Form::text('posto_id', $bomba->posto->id,  ['class' => 'form-control', 'id'=> 'posto', 'placeholder' => 'Posto']) }}
+                    {{ Form::label('posto', null, ['for'=>'posto']) }}
+                </div>
             </div>
 
             {{ Form::button('Enviar <svg class="mx-2" width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">

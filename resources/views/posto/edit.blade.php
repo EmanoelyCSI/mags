@@ -18,7 +18,7 @@
                 {{ Form::label('nome do posto', null, ['for'=>'name']) }}
             </div>
 
-            <div id="box2" class="d-flex  form-floating w-50">
+            <div id="box2" class="form-floating w-50">
                 {{ Form::text('cnpj',$posto->cnpj, ['class' => 'form-control ', 'id'=> 'cnpj', 'placeholder' => 'CNPJ'] ) }}
                 {{ Form::label('CNPJ', null, ['for'=>'cnpj']) }}
             </div>
