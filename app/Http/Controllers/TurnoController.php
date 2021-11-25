@@ -19,7 +19,17 @@ class TurnoController extends Controller
     {
         // Listar todos os Turnos
         
+
         $turnos  = Turno::orderBy('id', 'ASC')->get();
+
+        
+
+        // foreach ($turnos as $key => $value) {
+        //     echo($value->posto->name);
+        // }
+
+        // dd($turnos);
+
         $postos  = Posto::orderBy('id', 'DESC')->pluck('name', 'id');
         return view('turno.index', ['turnos' => $turnos, 'postos' => $postos]);
         

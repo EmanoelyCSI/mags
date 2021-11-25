@@ -3,6 +3,7 @@
 @section('title', 'Bicos')
 
 @section('content')
+
  <!-- Conteúdo da página --> 
  <div id="conteudo" class="container">
 

@@ -14,4 +14,9 @@ class Turno extends Model
     public function turno(){
             return $this->hasOne(Leitura::class, 'turno_id', 'id');
     }
+
+    public function posto(){
+        return $this->hasOne(Posto::class, 'id', 'posto_id');
+    }
+
 }

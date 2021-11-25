@@ -4,52 +4,44 @@
 
 @section('content')
 
-    <table class="table no-margin">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Posto</th>
-                <th>Nome</th>
-                <th>Inicio do Turno</th>
-                <th>Fim do Turno</th>
-                <th></th>
-                <th></th>
+  <!-- Contúdo Principal da Página --> 
+  <div class="container">
+    <h1>Turnos</h1>
+        <div id="box-lista" class="table-responsive-lg">
+            <table class="table border-silver-send">
+                <tbody>
+                    @foreach($turnos as $key => $value)
+                        <tr>
+                            <td>{{ $value->posto->name }}</td>
+                            <td>{{ $value->id }}</td>
+                            <td>{{ $value->name}}</td>
+                            <td>{{ $value->horario_inicio }}</td>
+                            <td>{{ $value->horario_fim }}</td>
 
-            </tr>
-        </thead>
-        <tbody>
- 
-          @foreach($turnos as $key => $value)
-            <tr>
-                <td>{{ $value->id }}</td>
-                <td>{{ $value->postos->name }}</td>
-                <td>{{ $value->name }}</td>
-                {{-- <td>{{ $value->horario_inicio }}</td>
-                <td>{{ $value->horario_fim }}</td> --}}
-                
-                <td></td>
-                <td>
-                    <a href="{{ URL::to('turno/' . $value->id) }}">Visualizar</a>
-                </td>
+                            <td>
+                                <a class="link-royal-blue  text-decoration-none" href="{{ URL::to('turno/' . $value->id) }}">Visualizar</a>
+                            </td>
 
-                <td>
-                    <a href="{{ URL::to('turno/' . $value->id . '/edit') }}">Editar</a>
-                </td>
+                            <td>
+                                <a class="link-royal-blue  text-decoration-none" href="{{ URL::to('turno/' . $value->id . '/edit') }}">Editar</a>
+                            </td>
 
-                <td>        
-                    {{ Form::open(array('url' => 'turno/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
-                    {{ Form::hidden('_method', 'DELETE') }}
-                    {{ Form::submit('Excluir', array('class' => 'btn btn-danger')) }}
-                    {{ Form::close() }}
-                </td>
+                            <td>        
+                                {{ Form::open(array('url' => 'turno/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
+                                {{ Form::hidden('_method', 'DELETE') }}
+                                {{ Form::submit('Excluir', array('class' => 'btn link-royal-blue  text-decoration-none p-0 m-0')) }}
+                                {{ Form::close() }}
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
 
-            </tr>
-           @endforeach
- 
-        </tbody>
-    </table>
+            <!-- Botão para criar contrato -->
+            <a class="btn btn-royal-blue col-12" href="{{ URL::to('turno/create') }}">Criar Posto</a>
 
-        {{-- Botão para criar contrato --}}
-        <a href="{{ URL::to('turno/create') }}"><h2>Criar</h2></a>
+            </div>
+        </div>
+    </div>
 
 @endsection

@@ -48,6 +48,6 @@
     
         {{ Form::close() }}
     </div>
-    <a href="{{ URL::to('bico/') }}">Voltar</a>
+    <a href="{{ URL::to('turno/') }}">Voltar</a>
     
 @endsection
