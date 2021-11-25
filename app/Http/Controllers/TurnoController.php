@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Turno;
 use App\Models\Leitura;
+use App\Models\Posto;
+
 use Illuminate\Http\Request;
 
 class TurnoController extends Controller
@@ -29,7 +31,8 @@ class TurnoController extends Controller
     public function create()
     {
         //Criar Turno
-        return view('turno.create');
+        $postos  = Posto::orderBy('id', 'DESC')->pluck('name', 'id');
+        return view('turno.create', ['postos' => $postos ]);
     }
 
     /**
@@ -43,21 +46,23 @@ class TurnoController extends Controller
         // Armazenar Turnos
         $message = [
             'name.required'             => 'O campo Nome do Turno é obrigatório!',
-            // 'horario_inicio.required'   => 'O campo Inicio do Turno é obrigatório!',
-            // 'horario_fim.required'      => 'O campo Fim do Turno é obrigatório!',
+            'horario_inicio.required'   => 'O campo Inicio do Turno é obrigatório!',
+            'horario_fim.required'      => 'O campo Fim do Turno é obrigatório!',
         ];
  
         $validateData = $request->validate([
             'name'              =>  'required', //o campo não pode ser vazio
-            // 'horario_inicio'    =>  'required', //o campo não pode ser vazio 
-            // 'horario_fim'       =>  'required', //o campo não pode ser vazio 
+            'horario_inicio'    =>  'required', //o campo não pode ser vazio 
+            'horario_fim'       =>  'required', //o campo não pode ser vazio 
  
          ], $message);
 
         $turno = new Turno;
         $turno->name            =  $request->name;
-        // $turno->horario_inicio  =  $request->horario_inicio;
-        // $turno->horario_fim     =  $request->horario_fim;
+        $turno->horario_inicio  =  $request->horario_inicio;
+        $turno->horario_fim     =  $request->horario_fim;
+        $turno->posto_id        =  $request->posto_id;
+
         $turno->save();
  
         return redirect()->route('turno.index')->with('message', 'Turno criado com sucesso!');
@@ -87,7 +92,8 @@ class TurnoController extends Controller
     {
         //Editar Turno
         $turno = Turno::findOrFail($id);
-        return view('turno.edit', ['turno' => $turno]);
+        $postos  = Posto::orderBy('id', 'DESC')->pluck('name', 'id');
+        return view('turno.edit', ['turno' => $turno, 'postos' => $postos ]);
     }
 
     /**
@@ -101,21 +107,23 @@ class TurnoController extends Controller
     {
         $message = [
             'name.required'             => 'O campo Nome do Turno é obrigatório!',
-            // 'horario_inicio.required'   => 'O campo Inicio do Turno é obrigatório!',
-            // 'horario_fim.required'      => 'O campo Fim do Turno é obrigatório!',
+            'horario_inicio.required'   => 'O campo Inicio do Turno é obrigatório!',
+            'horario_fim.required'      => 'O campo Fim do Turno é obrigatório!',
         ];
  
         $validateData = $request->validate([
             'name'              =>  'required', //o campo não pode ser vazio
-            // 'horario_inicio'    =>  'required', //o campo não pode ser vazio 
-            // 'horario_fim'       =>  'required', //o campo não pode ser vazio 
+            'horario_inicio'    =>  'required', //o campo não pode ser vazio 
+            'horario_fim'       =>  'required', //o campo não pode ser vazio 
  
          ], $message);
 
         $turno = Turno::findOrFail($id);
         $turno->name            =  $request->name;
-        // $turno->horario_inicio  =  $request->horario_inicio;
-        // $turno->horario_fim     =  $request->horario_fim;
+        $turno->horario_inicio  =  $request->horario_inicio;
+        $turno->horario_fim     =  $request->horario_fim;
+        $turno->posto_id        =  $request->posto_id;
+
         $turno->save();
  
         return redirect()->route('turno.index')->with('message', 'Turno editado com sucesso!');
