@@ -30,7 +30,7 @@ class Posto extends Model
         }
 
         public function turno(){
-                return $this->hasMany(Turno::class, 'turno_id', 'id');
+                return $this->hasMany(Turno::class, 'id', 'posto_id');
         }
 
 }

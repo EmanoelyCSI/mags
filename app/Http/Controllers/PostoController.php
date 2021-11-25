@@ -6,6 +6,7 @@ use App\Models\Posto;
 use App\Models\Contrato;
 use App\Models\User;
 use App\Models\Bomba;
+use App\Models\Turno;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 

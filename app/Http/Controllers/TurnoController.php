@@ -18,9 +18,12 @@ class TurnoController extends Controller
     public function index()
     {
         // Listar todos os Turnos
-        $turnos= Turno::orderBy('id', 'ASC')->get();
-        //dd($turnos);
-        return view('turno.index', ['turno' => $turnos]);
+        
+        $turnos  = Turno::orderBy('id', 'ASC')->get();
+        $postos  = Posto::orderBy('id', 'DESC')->pluck('name', 'id');
+        return view('turno.index', ['turnos' => $turnos, 'postos' => $postos]);
+        
+        
     }
 
     /**
@@ -77,9 +80,11 @@ class TurnoController extends Controller
     public function show($id)
     {
         //Visualizar Turnos
-        $turno = Turno::findOrFail($id);
+        $turno  = Turno::findOrFail($id);
+        $postos = Posto::orderBy('id', 'DESC');
+
         // dd($turno);
-        return view('turno.show', ['turno' => $turno]);
+        return view('turno.show', ['turno' => $turno, 'postos' => $postos]);
     }
 
     /**

@@ -19,10 +19,10 @@
         </thead>
         <tbody>
  
-          @foreach($turno as $key => $value)
+          @foreach($turnos as $key => $value)
             <tr>
                 <td>{{ $value->id }}</td>
-                <td>{{ $value->posto_id }}</td>
+                <td>{{ $value->postos->name }}</td>
                 <td>{{ $value->name }}</td>
                 {{-- <td>{{ $value->horario_inicio }}</td>
                 <td>{{ $value->horario_fim }}</td> --}}
