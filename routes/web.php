@@ -72,6 +72,9 @@ Route::get('/posto/{id}', [PostoController::class, 'show'])->name('posto.show');
 Route::get('/posto/{id}/edit', [PostoController::class, 'edit'])->name('posto.edit');
 Route::put('/posto/{id}', [PostoController::class, 'update'])->name('posto.update');
 
+Route::get('postoQuantidade/{id}', [PostoController::class, 'postoQuantidade'])->name('posto.postoQuantidade');
+Route::post('postoQuantidade/{id}', [PostoController::class, 'postoQuantidadeStore'])->name('posto.postoQuantidadeStore');
+
 Route::delete('/posto/{id}', [PostoController::class, 'destroy'])->name('posto.destroy');
 
 // ------------------------ LEITURAS ------------------------

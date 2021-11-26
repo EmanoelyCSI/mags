@@ -38,7 +38,7 @@
             </table>
 
             <!-- Botão para criar contrato -->
-            <a class="btn btn-royal-blue col-12" href="{{ URL::to('turno/create') }}">Criar Posto</a>
+            <a class="btn btn-royal-blue col-12" href="{{ URL::to('turno/create') }}">Criar Turno</a>
 
             </div>
         </div>

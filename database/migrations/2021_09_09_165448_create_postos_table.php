@@ -24,7 +24,7 @@ class CreatePostosTable extends Migration
             $table->string('address');
             $table->integer('contrato_id');
             $table->integer('gerente_id');
-            $table->string('quantidade');
+            $table->integer('quantidade')->nullable();
             $table->timestamps();
         });
     }

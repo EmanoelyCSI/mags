@@ -25,6 +25,10 @@
                                     <a class="link-royal-blue  text-decoration-none" href="{{ URL::to('posto/' . $value->id . '/edit') }}">Editar</a>
                                 </td>
 
+                                <td>
+                                    <a class="btn btn-royal-blue col-12" href="{{ URL::to('postoQuantidade/'. $value->id) }}">Adicionar estoque</a>
+                                </td>
+
                                 <td>        
                                     {{ Form::open(array('url' => 'posto/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
                                     {{ Form::hidden('_method', 'DELETE') }}

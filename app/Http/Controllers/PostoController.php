@@ -41,13 +41,8 @@ class PostoController extends Controller
         $contratos  = Contrato::orderBy('id', 'DESC')->pluck('name', 'id');
         return view('posto.create',['posto' => $posto, 'contratos' => $contratos, 'users' => $users]);
 
-        // $posto = Posto::findOrFail(1);
-        // dd($posto->contrato->name);
-
-        // foreach ($posto->contrato_id as $key => $value) {
-        //    echo($value->name);
-        // }
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -119,8 +114,39 @@ class PostoController extends Controller
         $contratos  = Contrato::orderBy('id', 'DESC')->pluck('name', 'id');
         return view('posto.edit',['posto' => $posto,  'contratos' => $contratos, 'users' => $users]);
 
+    }
+
+    public function postoQuantidade($id)
+    {
+        //Criar Quantidade -- estoque --
+        $posto      = Posto::findOrFail($id);
+        // dd($posto->quantidade);
+        return view('posto.postoQuantidade',['posto' => $posto]);
+
+    }
+
+    public function postoQuantidadeStore(Request $request, $id)
+    {
+        // Armazenar Quantidade -- estoque --
+        $message = [
+            'quantidade' => 'O campo quantidade é obrigatório!',
+        ];
+ 
+        $validateData = $request->validate([
+         
+            'quantidade' =>  'required', // o campo não pode ser vazio 
+         ], $message);
+
+        $posto = Posto::findOrFail($id);
       
-    
+        $posto->quantidade  =   $request->quantidade;
+        $posto->save();
+
+        $posto->quantidade = $posto->quantidade + $quantidade->quantidade;
+        $posto->save();
+
+ 
+        return redirect()->route('posto.index')->with('message', 'Quantidade adicionada com sucesso!');
     }
 
     /**
@@ -165,6 +191,7 @@ class PostoController extends Controller
  
         return redirect()->route('posto.index')->with('message', 'Posto editado com sucesso!');
     }
+
 
     /**
      * Remove the specified resource from storage.
