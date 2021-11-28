@@ -8,6 +8,8 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Leitura;
+use App\Models\Posto;
+
 
 
 class AuthenticatedSessionController extends Controller
@@ -36,9 +38,15 @@ class AuthenticatedSessionController extends Controller
 
         if (Auth::user()->profile == 'gerente') {
             $leituras = Leitura::orderBy('updated_at', 'ASC')->get();
-            return view('leitura.index', ['leitura' => $leituras]);
+            $postos   = Posto::orderBy('updated_at', 'ASC')->get();
+            return view('leitura.index', ['leitura' => $leituras, 'postos' => $postos]);
         }
-        return view('dashboard.index');
+
+        $leituras = Leitura::orderBy('updated_at', 'ASC')->get();
+        $postos   = Posto::orderBy('updated_at', 'ASC')->get();
+        return view('dashboard.index', ['leitura' => $leituras, 'postos' => $postos]);
+
+
     }
 
     /**
