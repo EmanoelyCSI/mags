@@ -9,6 +9,8 @@ use App\Models\Bico;
 //use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
+
+
 class ContratoController extends Controller
 {
     /**
@@ -134,8 +136,10 @@ class ContratoController extends Controller
     {
         //Visualizar Contratos
         $contrato = Contrato::findOrFail($id);
-        //  dd($contrato->posto_id);
-        return view('contrato.show', ['contrato' => $contrato]);
+        $posto = Posto::findOrFail($id);
+
+        //  dd($contrato);
+        return view('contrato.show', ['contrato' => $contrato, 'posto' => $posto]);
 
 
 

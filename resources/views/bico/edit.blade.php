@@ -34,6 +34,4 @@
         <div> {{ Session::get('message') }} </div>      
     @endif
     
-    <a href="{{ URL::to('bico/') }}">Voltar</a>
-
 @endsection

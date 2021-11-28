@@ -93,10 +93,10 @@
         <div class="container-fluid p-2">
             <ul class="nav nav-tabs container-lg nav-tabs-royal-blue">
                 <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="{{ URL::to('/dashboard') }}">Planilhas</a>
+                    <a class="nav-link " aria-current="page" href="{{ URL::to('/dashboard') }}">Planilhas</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="{{ URL::to('/contrato') }}">Cadastros</a>
+                    <a class="nav-link" href="{{ URL::to('/contrato') }}">Cadastros</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ URL::to('/estoque') }}">Estoque</a>
@@ -104,10 +104,33 @@
             </ul>
             </div>
     @endif
-     
-   
-    <!-- Barra de pesquisa -->
 
+    <!-- Botões de voltar --> 
+    <div id="back" class="container-lg">
+        <div class="d-flex flex-row-reverse">
+            <a href="{{ URL::previous() }}"" class="btn">
+                <svg width="35" height="23" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30.0651 8.10385C30.0106 8.10385 2.82037 8.10385 2.82037 8.10385L8.54895 1.683C8.92044 1.26659 8.88403 0.627922 8.46762 0.256438C8.05138 -0.114968 7.41255 -0.0787176 7.04106 0.337766L0.589355 7.56901C-0.196504 8.4501 -0.196425 9.77853 0.589433 10.6594L7.04114 17.8907C7.24083 18.1145 7.51747 18.2284 7.79536 18.2284C8.03473 18.2284 8.27497 18.1438 8.4677 17.972C8.88411 17.6006 8.92044 16.9619 8.54903 16.5455L2.82045 10.1245C2.82045 10.1245 30.0106 10.1245 30.0652 10.1245C34.4291 10.1245 37.9792 13.6749 37.9792 18.0386C37.9792 22.4023 34.429 25.9527 30.0652 25.9527H25.2542C24.6962 25.9527 24.2439 26.4051 24.2439 26.963C24.2439 27.521 24.6962 27.9734 25.2542 27.9734H30.0652C35.5433 27.9734 40 23.5167 40 18.0386C39.9999 12.5606 35.5432 8.10385 30.0651 8.10385Z" fill="#060A6F"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $errors)
+                    <li> {{$errors}} </li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    @if (Session::has('message'))
+        <div> {{ Session::get('message') }} </div>      
+    @endif
+
+    <!-- Barra de pesquisa -->
         {{-- <div id="search" class="container-fluid">
             <form class="d-flex justify-content-start w-25">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -123,18 +146,14 @@
 
         @yield('content')
 
+
+
          <!-- Rodapé -->
-    <footer class="container-fluid p-2"> <!-- mudar para relative -->
+    <div id="ghost" class="p-4 m-2"></div>
+    <footer class="container-fluid position-relative bottom-0"> <!-- mudar para relative -->
         <hr class="text-blue-gray">
-        <h6 class="text-center text-royal-blue text-opacity-75">Todos os direitos reservados</h6>
+        <h6 class="text-center text-royal-blue text-opacity-75 p-2">Todos os direitos reservados</h6>
     </footer>
-
-
-
-    
-    @if (Session::has('message'))
-        <div> {{ Session::get('message') }} </div>      
-    @endif
 
     <script>
         function ConfirmDelete() {

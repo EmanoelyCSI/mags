@@ -22,4 +22,6 @@ class Contrato extends Model
         return $this->hasOne(User::class, 'id', 'proprietario_id');
     }
 
+    
+
 }

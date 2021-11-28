@@ -1,8 +1,30 @@
-@extends('components.layoutcontato')
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href=" {{ asset('site/style.css') }} ">
 
-@section('title', 'Login')
-
-@section('content')
+    <title>@yield('title')</title>
+</head>
+<body>
+    <!-- Topo da página -->
+    <header class="container-fluid bg-royal-blue">
+        <div class="container-lg d-flex justify-content-between px-0 align-items-center">
+            <div class="d-flex my-4">
+                <a href="{{ URL::to('/dashboard') }}"><img class="col-3" src="{{ asset('/site/imgs/logo.png')}}" alt="Logo Mags"></a>
+            </div>
+            
+            <div class="d-flex my-4">
+                <a class="btn text-magnolia fs-5" href="{{ URL::to('/contato') }}">Contato</a>
+            </div>
+        </div>
+    </header>
 
 <div id="conteudo" class="d-flex">
     <div id="ghost" class="container-lg">
@@ -87,4 +109,22 @@
         </div>
     </div>
 </div>
-   @endsection
+         <!-- Rodapé -->
+         <div id="ghost" class="p-5"></div>
+         <footer class="container-fluid position-relative bottom-0"> <!-- mudar para relative -->
+             <hr class="text-blue-gray">
+             <h6 class="text-center text-royal-blue text-opacity-75 p-2">Todos os direitos reservados</h6>
+         </footer>
+     
+         <script>
+             function ConfirmDelete() {
+                 return confirm('Tem certeza que deseja excluir este registro?');
+             }
+         </script>
+     
+         <script src="{{ asset('site/jquery.js')}}"></script>
+         <script src="{{ asset('site/bootstrap.js')}}"></script>
+     
+     </body>
+     </html>
+   

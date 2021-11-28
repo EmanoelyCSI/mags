@@ -22,7 +22,7 @@ class Posto extends Model
         }
 
         public function gerente(){
-                return $this->hasOne(User::class, 'id', 'user_id');
+                return $this->hasOne(User::class, 'id', 'gerente_id');
         }
 
         public function bomba(){

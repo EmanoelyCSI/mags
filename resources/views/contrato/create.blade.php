@@ -3,20 +3,8 @@
 @section('title', 'Contratos')
 
 @section('content')
-    
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $errors)
-                        <li> {{$errors}} </li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
 
-    <a href="{{ URL::to('contrato/') }}">Voltar</a>
-
-  
+    <!-- Conteúdo da página --> 
     <div id="conteudo" class="container p-0 my-4">
 
         {{ Form::open(array('url' => '/contrato/create')) }}
@@ -61,12 +49,8 @@
             ', ['type' => 'submit', 'class' => 'btn btn-royal-blue float-end my-2 col-3 fs-5'] )  }}
         
             {{ Form::close() }}
-
-        @if (Session::has('message'))
-            <div> {{ Session::get('message') }} </div>      
-        @endif
     </div>
-
+@endsection
 {{-- 
     <div id="progress" class="container-fluid container-lg">
         <div class="position-relative m-4">
@@ -78,5 +62,3 @@
             <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill" style="width: 2rem; height:2rem;">3</button>
         </div>
     </div> --}}
-
-@endsection

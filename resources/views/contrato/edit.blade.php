@@ -4,22 +4,11 @@
 
 @section('content')
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $errors)
-                    <li> {{$errors}} </li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
+    <!-- Conteúdo da página --> 
     <div id="conteudo" class="container p-0 my-4">
 
-       
         <h4 class="bg-royal-blue text-magnolia fw-normal rounded p-2">Atualizar Contrato</h4>
         
-
         {{ Form::model($contrato, array('route' => array('contrato.update', $contrato->id), 'method' => 'PUT' )) }}
 
         <div class="d-flex my-1">
@@ -62,12 +51,7 @@
         
 
             {{ Form::close() }}
-
-        @if (Session::has('message'))
-            <div> {{ Session::get('message') }} </div>      
-        @endif
     </div>
-    <a href="{{ URL::to('contrato/') }}">Voltar</a>
 {{-- 
      <!-- Button trigger modal -->
      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">

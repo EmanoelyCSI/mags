@@ -29,9 +29,7 @@ class DashboardController extends Controller
         $postos   = Posto::orderBy('updated_at', 'ASC')->get();
         return view('dashboard.index', ['leitura' => $leituras, 'postos' => $postos]);
 
-
     }
-
     /**
      * Show the form for creating a new resource.
      *
