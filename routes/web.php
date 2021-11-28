@@ -146,6 +146,7 @@ Route::put('/dashboard/{id}', [DashboardController::class, 'update'])->name('das
 
 Route::delete('/dashboard/{id}', [DashboardController::class, 'destroy'])->name('dashboard.destroy');
 
+Route::get('relatorioMensal', [DashboardController::class, 'relatorioMensal'])->name('dashboard.relatorioMensal');
 
 // ------------------------ ESTOQUE ------------------------
 Route::get('/estoque', [EstoqueController::class, 'index'])->name('estoque.index');

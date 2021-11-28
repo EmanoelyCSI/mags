@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Leitura;
 use App\Models\Posto;
+use Carbon\Carbon;
 
 
 
@@ -29,6 +30,18 @@ class DashboardController extends Controller
         $postos   = Posto::orderBy('updated_at', 'ASC')->get();
         return view('dashboard.index', ['leitura' => $leituras, 'postos' => $postos]);
 
+    }
+
+
+    public function relatorioMensal()
+    {
+        $ultimoMes     = Carbon::today()->subDays(30)->format('d-m-Y');
+        $gnvDoMes      = Posto::where('updated_at','>', $ultimoMes)->count();
+        $gnvPerdido    = Posto::where('updated_at','>', $ultimoMes)->count();
+        $totalDePostos = Posto::count();
+
+        // dd($gnvPerdido);
+        return view('dashboard.relatorioMensal');
     }
     /**
      * Show the form for creating a new resource.

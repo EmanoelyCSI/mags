@@ -7,9 +7,7 @@
     <div class="container">
         <div id="box-lista" class="table-responsive-lg">
             <table class="table border-silver-send">
-               <th>Posto</th>
-               <th>Data</th>
-               <th></th>
+                <h1>Relatórios</h1>
                 <tbody>
                     @foreach($postos as $key => $value)
                         <tr>
@@ -17,7 +15,7 @@
                             <td>{{ Carbon\Carbon::parse($value->update_at)->format('d/m/Y') }}</td>
 
                             <td>
-                                <a class="link-royal-blue  text-decoration-none" href="{{ URL::to('/' . $value->id) }}">Visualizar</a>
+                                <a class="link-royal-blue  text-decoration-none" href="{{ URL::to('relatorioMensal') }}">Visualizar</a>
                             </td>
                         </tr>
                     @endforeach
