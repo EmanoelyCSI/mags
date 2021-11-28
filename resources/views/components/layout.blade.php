@@ -76,20 +76,20 @@
 
     @if ($profile == 'gerente')
    
-    <!-- Menu de Navegação--> 
+    <!-- Menu de Navegação GERENTE--> 
     <div class="container-fluid p-2">
         <ul class="nav nav-tabs container-lg nav-tabs-royal-blue">
             <li class="nav-item">
-            <a class="nav-link" href="{{ URL::to('/leitura') }}">Planilhas</a>
+                <a class="nav-link" aria-current="page" href="{{ URL::to('/leitura/create') }}">Leitura</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="{{ URL::to('/leitura/create') }}">Leitura</a>
+                <a class="nav-link" href="{{ URL::to('/dashboard') }}">Planilhas</a>
             </li>
         </ul>
         </div>
     @else
 
-        <!-- Menu de Navegação--> 
+        <!-- Menu de Navegação PADRÃO--> 
         <div class="container-fluid p-2">
             <ul class="nav nav-tabs container-lg nav-tabs-royal-blue">
                 <li class="nav-item">

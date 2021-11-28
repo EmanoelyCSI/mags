@@ -4,5 +4,9 @@
 
 @section('content')
 
+    <!-- Conteúdo -->
+    <div id="conteudo" class="container">
+       
+    </div>
     
 @endsection

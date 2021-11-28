@@ -142,6 +142,9 @@ class PostoController extends Controller
         $posto->quantidade  =   $request->quantidade;
         $posto->save();
 
+
+        $posto = Posto::findOrFail($id);
+        
         $posto->quantidade = $posto->quantidade + $quantidade->quantidade;
         $posto->save();
 

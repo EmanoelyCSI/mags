@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Turno;
 use App\Models\Leitura;
 use App\Models\Posto;
+use App\Models\Dashboard;
+
 
 use Illuminate\Http\Request;
 
@@ -18,11 +20,7 @@ class TurnoController extends Controller
     public function index()
     {
         // Listar todos os Turnos
-        
-
         $turnos  = Turno::orderBy('id', 'ASC')->get();
-
-        
 
         // foreach ($turnos as $key => $value) {
         //     echo($value->posto->name);
