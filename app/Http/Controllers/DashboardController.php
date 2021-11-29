@@ -8,6 +8,8 @@ use App\Models\Leitura;
 use App\Models\Posto;
 use DB;
 use Carbon\Carbon;
+use App\Models\Turno;
+
 
 
 
@@ -34,12 +36,18 @@ class DashboardController extends Controller
     }
 
 
-    public function relatorioMensal()
+    public function relatorioMensal($id)
     {
         $ultimoMes     = Carbon::today()->subDays(30)->format('d-m-Y');
         $gnvDoMes      = Posto::where('updated_at','>', $ultimoMes)->count();
         $gnvPerdido    = Posto::where('updated_at','>', $ultimoMes)->count();
         $totalPostos   = Posto::count();
+
+        $postos     = Posto::findOrFail($id);
+        $turnos     = Turno::findOrFail($id);
+        $leituras   = Leitura::findOrFail($id);
+
+
 
         //contar quantos postos e somar o total de quantidade 
         //select count(postos.id), sum(quantidade) from postos; 
@@ -56,7 +64,7 @@ class DashboardController extends Controller
 
         // dd($totalPostos);
 
-        return view('dashboard.relatorioMensal', ['totalPostos' => $totalPostos]);
+        return view('dashboard.relatorioMensal', ['totalPostos' => $totalPostos, 'postos' => $postos, 'turnos' => $turnos, 'leituras' => $leituras]);
     }
 
     public function estoque()

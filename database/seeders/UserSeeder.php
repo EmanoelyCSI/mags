@@ -61,5 +61,14 @@ class UserSeeder extends Seeder
             'tel'       =>'2125374056',
             'password'  => Hash::make('123456'),
         ]);
+
+        User::create([
+            'name'      =>'Ana Laura Moreira dos Santoas',
+            'email'     =>'ana_l@gmail.com',
+            'profile'   =>'gerente',
+            'cell'      =>'21992749098',
+            'tel'       =>'2125554055',
+            'password'  => Hash::make('123456'),
+        ]);
     }
 }

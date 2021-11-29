@@ -15,7 +15,7 @@
                             <td>{{ Carbon\Carbon::parse($value->update_at)->format('d/m/Y') }}</td>
 
                             <td>
-                                <a class="link-royal-blue  text-decoration-none" href="{{ URL::to('relatorioMensal') }}">Visualizar</a>
+                                <a class="link-royal-blue  text-decoration-none" href="{{ URL::to('relatorioMensal/' . $value->id) }}">Visualizar</a>
                             </td>
                         </tr>
                     @endforeach

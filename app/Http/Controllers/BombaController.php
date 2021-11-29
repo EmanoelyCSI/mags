@@ -120,13 +120,13 @@ class BombaController extends Controller
     {
         // Armazenar Bombas
        $message = [
-        'bomba.required'    => 'O campo Bomba é obrigatório!',
+        'name.required'    => 'O campo Bomba é obrigatório!',
         'modelo.required'   => 'O campo Modelo é obrigatório!',
         'posto_id.required' => 'O campo Modelo é obrigatório!',
     ];
 
     $validateData = $request->validate([
-        'bomba'     =>  'required', //o campo não pode ser vazio
+        'name'     =>  'required', //o campo não pode ser vazio
         'modelo'    =>  'required', //o campo não pode ser vazio
         'posto_id'  =>  'required', //o campo não pode ser vazio 
      ], $message);
@@ -146,8 +146,12 @@ class BombaController extends Controller
      * @param  \App\Models\Bomba  $bomba
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Bomba $bomba)
+    public function destroy($id)
     {
-        //
+        //Dreletar bomba
+        $bomba = Bomba::findOrFail($id);
+        $bomba->delete();
+   
+        return redirect()->route('bomba.index')->with('message', 'Bomba excluída com sucesso!');
     }
 }

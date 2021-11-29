@@ -27,8 +27,6 @@ use App\Http\Controllers\EstoqueController;
 |
 */
 
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -39,6 +37,7 @@ require __DIR__.'/auth.php';
 Route::middleware(['auth'])->group(function () {
 
 // ------------------------ USUÁRIOS ------------------------
+
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
 
 Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
@@ -133,8 +132,10 @@ Route::delete('/turno/{id}', [TurnoController::class, 'destroy'])->name('turno.d
 
 
 // ------------------------ DASHBOARD------------------------
-Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
+
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/dashboard/create', [DashboardController::class, 'create'])->name('dashboard.create');
 Route::post('/dashboard/create', [DashboardController::class, 'store'])->name('dashboard.store');
@@ -146,7 +147,7 @@ Route::put('/dashboard/{id}', [DashboardController::class, 'update'])->name('das
 
 Route::delete('/dashboard/{id}', [DashboardController::class, 'destroy'])->name('dashboard.destroy');
 
-Route::get('relatorioMensal', [DashboardController::class, 'relatorioMensal'])->name('dashboard.relatorioMensal');
+Route::get('relatorioMensal/{id}', [DashboardController::class, 'relatorioMensal'])->name('dashboard.relatorioMensal');
 
 Route::get('estoque', [DashboardController::class, 'estoque'])->name('dashboard.estoque');
 
