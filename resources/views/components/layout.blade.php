@@ -99,7 +99,7 @@
                     <a class="nav-link" href="{{ URL::to('/contrato') }}">Cadastros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ URL::to('/estoque') }}">Estoque</a>
+                    <a class="nav-link" href="{{ URL::to('estoque') }}">Estoque</a>
                 </li>
             </ul>
             </div>

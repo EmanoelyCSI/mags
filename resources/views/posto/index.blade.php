@@ -26,7 +26,7 @@
                                 </td>
 
                                 <td>
-                                    <a class="btn btn-royal-blue col-12" href="{{ URL::to('postoQuantidade/'. $value->id) }}">Adicionar estoque</a>
+                                    <a class="link-royal-blue  text-decoration-none" href="{{ URL::to('postoQuantidade/'. $value->id) }}">Adicionar estoque</a>
                                 </td>
 
                                 <td>        

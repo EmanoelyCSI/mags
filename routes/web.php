@@ -148,18 +148,7 @@ Route::delete('/dashboard/{id}', [DashboardController::class, 'destroy'])->name(
 
 Route::get('relatorioMensal', [DashboardController::class, 'relatorioMensal'])->name('dashboard.relatorioMensal');
 
-// ------------------------ ESTOQUE ------------------------
-Route::get('/estoque', [EstoqueController::class, 'index'])->name('estoque.index');
-
-Route::get('/estoque/create', [EstoqueController::class, 'create'])->name('estoque.create');
-Route::post('/estoque/create', [EstoqueController::class, 'store'])->name('estoque.store');
-
-Route::get('/estoque/{id}', [EstoqueController::class, 'show'])->name('estoque.show');
-
-Route::get('/estoque/{id}/edit', [EstoqueController::class, 'edit'])->name('estoque.edit');
-Route::put('/estoque/{id}', [EstoqueController::class, 'update'])->name('estoque.update');
-
-Route::delete('/estoque/{id}', [EstoqueController::class, 'destroy'])->name('estoque.destroy');
+Route::get('estoque', [DashboardController::class, 'estoque'])->name('dashboard.estoque');
 
 });
 
