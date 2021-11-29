@@ -13,7 +13,7 @@
         
         <div class="d-flex my-1">
             <div id="box2" class="form-floating w-50">
-                {{ Form::text('quantidade',null, ['class' => 'form-control ', 'id'=> 'quantidade', 'placeholder' => 'quantidade'] ) }}
+                {{ Form::text('quantidade',null, ['class' => 'form-control ', 'id'=> 'quantidade', 'placeholder' => 'quantidade']) }}
                 {{ Form::label('quantidade', null, ['for'=>'quantidade']) }}
             </div>
         </div>

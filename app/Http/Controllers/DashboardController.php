@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Leitura;
 use App\Models\Posto;
+use DB;
 use Carbon\Carbon;
 
 
@@ -38,10 +39,27 @@ class DashboardController extends Controller
         $ultimoMes     = Carbon::today()->subDays(30)->format('d-m-Y');
         $gnvDoMes      = Posto::where('updated_at','>', $ultimoMes)->count();
         $gnvPerdido    = Posto::where('updated_at','>', $ultimoMes)->count();
-        $totalDePostos = Posto::count();
+        $totalPostos   = Posto::count();
 
-        // dd($gnvPerdido);
-        return view('dashboard.relatorioMensal');
+        $totalPostos = Posto::select(DB::raw('COUNT(postos.id) as postos'), DB::raw('SUM(quantidade) as quantidade'))->get();
+        //contar quantos postos e somar o total de quantidade 
+        //select count(postos.id), sum(quantidade) from postos; 
+
+
+        //contar a quantidade de postos,turno e leituras e depois agrupar pelo id do posto
+        /*select postos.id, count(turnos.id), count(leituras.id) from postos 
+        inner join turnos on turnos.posto_id = postos.id
+        inner join leituras on leituras.turno_id = turnos.id
+        GROUP BY postos.id;
+        */
+
+
+        //contar postos e filtrar pelo mês
+        //select count(postos.id) from postos where postos.created_at < '2021-11';
+
+
+        // dd($totalPostos);
+        return view('dashboard.relatorioMensal', ['totalPostos' => $totalPostos]);
     }
     /**
      * Show the form for creating a new resource.

@@ -7,6 +7,18 @@
 @extends('adminlte::master')
 <!-- Conteúdo -->
 <div id="conteudo" class="container-lg">
+  
+ @foreach ($totalPostos as $value )
+   Quantidades de postos :  {{$value->postos}}
+   Gax natural total :   {{$value->quantidade}}
+ @endforeach
+    <div id="box" class="">
+        <ul> 
+            {{-- <li>{{  }}</li>
+            <li>{{  }}</li>
+            <li>{{  }}</li> --}}
+        </ul>
+    </div>
 <!-- Main content -->
     <section class="content">
       <div class="container-fluid">

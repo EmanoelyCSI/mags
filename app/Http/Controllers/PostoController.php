@@ -138,16 +138,11 @@ class PostoController extends Controller
          ], $message);
 
         $posto = Posto::findOrFail($id);
-      
-        $posto->quantidade  =   $request->quantidade;
-        $posto->save();
-
-
-        $posto = Posto::findOrFail($id);
         
-        $posto->quantidade = $posto->quantidade + $quantidade->quantidade;
+        $posto->quantidade = $posto->quantidade + $request->quantidade;
         $posto->save();
-
+        
+        // dd();
  
         return redirect()->route('posto.index')->with('message', 'Quantidade adicionada com sucesso!');
     }
