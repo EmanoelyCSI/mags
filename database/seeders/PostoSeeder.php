@@ -17,7 +17,7 @@ class PostoSeeder extends Seeder
         Posto::create([
             'cnpj'        => '07.739.067/0001-91',
             'name'        => 'Shell Estácio',
-            'email'       => ' shell.estacio-contato@gmail.com',
+            'email'       => 'shell.estacio-contato@gmail.com',
             'cell'        => '2198645-8261',
             'tel'         => '212546-8965',
             'address'     => 'R. Estácio de Sá, 87 - Estácio, Rio de Janeiro - RJ, 20211-270',

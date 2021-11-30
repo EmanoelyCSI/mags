@@ -7,22 +7,19 @@
 @extends('adminlte::master')
 <!-- Conteúdo -->
 <div id="conteudo" class="container-lg">
-  
- @foreach ($totalPostos as $value )
-   Quantidades de postos :  {{$value->postos}}
-   Gax natural total :   {{$value->quantidade}}
- @endforeach
-    <div id="box" class="">
-        <ul> 
-            {{-- <li>{{  }}</li>
-            <li>{{  }}</li>
-            <li>{{  }}</li> --}}
-        </ul>
+
+  <div id="box" class="d-flex">
+    <ul> 
+      @foreach ($totalPostos as $value )
+      <li class="list-group"> Total de postos : {{$value->postos}}</li>
+      <li class="list-group">Total de GNV Vendido: {{$value->quantidade}}</li>
+      @endforeach
+      </ul>
     </div>
 <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <div class="row">
+        <div class="row ">
           <div class="col-md-6">
             <!-- AREA CHART -->
             <div class="card card-primary">

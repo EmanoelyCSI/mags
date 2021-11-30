@@ -26,7 +26,7 @@
                     </div>
                 </button>
 
-                <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-posto" type="button" role="tab" aria-controls="v-pills-posto" aria-selected="false">
+                <button class="nav-link" id="v-pills-posto-tab" data-bs-toggle="pill" data-bs-target="#v-pills-posto" type="button" role="tab" aria-controls="v-pills-posto" aria-selected="false">
                    <div id="svg-posto" class="d-flex justify-content-between m-2">
                     <svg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M32.2646 19.5495C32.652 19.5495 32.966 19.2355 32.966 18.8481C32.966 18.4607 32.652 18.1467 32.2646 18.1467C31.8773 18.1467 31.5632 18.4607 31.5632 18.8481C31.5632 19.2355 31.8773 19.5495 32.2646 19.5495Z" fill="#060A6F"/>

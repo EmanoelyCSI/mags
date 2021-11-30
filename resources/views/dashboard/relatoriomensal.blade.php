@@ -15,17 +15,23 @@
 
                     @foreach ($postos->bomba as $value)
                     <tr>
-                        <td>{{$value->name}}</td>
-
+                        <th>{{$value->name}}</th> 
                         @foreach ($value->bico as $value2)
-
-                        <td>{{ $value2->name }}</td>
-
+                            <th>{{ $value2->name }}</th>
                         @endforeach
+                    </tr>
+
+                    <tr>
+                        <td> Turno: {{ $turnos->name }}</td>
+                        <td> {{$leituras->leitura}} </td>
+                        <td> {{$leituras->leitura}} </td>
+                        <td> {{$leituras->leitura}} </td>
+                        <td> {{$leituras->leitura}} </td>
                     </tr>
                     @endforeach 
 
-                    <tr>
+                    
+                    {{-- <tr>
                         <th> {{ $turnos->name }} </th>
                         <td>{{ $leituras->leitura }}</td>
                         <td>{{ $leituras->leitura }}</td>
@@ -36,7 +42,7 @@
                         <td>{{ $leituras->leitura }}</td>
                         <td>{{ $leituras->leitura }}</td>
                         <td>{{ $leituras->leitura }}</td>
-                    </tr>
+                    </tr> --}}
         </table>
 
         <div id="btn" class="float-end">

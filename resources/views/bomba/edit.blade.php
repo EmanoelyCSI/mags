@@ -39,7 +39,4 @@
             <div> {{ Session::get('message') }} </div>      
         @endif
 
-    
-    <a href="{{ URL::to('bomba/') }}">Voltar</a>
-
 @endsection

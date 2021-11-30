@@ -47,8 +47,6 @@ class DashboardController extends Controller
         $turnos     = Turno::findOrFail($id);
         $leituras   = Leitura::findOrFail($id);
 
-
-
         //contar quantos postos e somar o total de quantidade 
         //select count(postos.id), sum(quantidade) from postos; 
 

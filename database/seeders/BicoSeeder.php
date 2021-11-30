@@ -16,12 +16,42 @@ class BicoSeeder extends Seeder
     public function run()
     {
         Bico::create([
-            'name'        => 'Bico 1',
+            'name'        => 'Bico A',
             'bomba_id'    => '1',
         ]);
 
         Bico::create([
-            'name'        => 'Bico 2',
+            'name'        => 'Bico B',
+            'bomba_id'    => '1',
+        ]);
+
+        Bico::create([
+            'name'        => 'Bico C',
+            'bomba_id'    => '1',
+        ]);
+
+        Bico::create([
+            'name'        => 'Bico D',
+            'bomba_id'    => '1',
+        ]);
+
+        Bico::create([
+            'name'        => 'Bico E',
+            'bomba_id'    => '2',
+        ]);
+
+        Bico::create([
+            'name'        => 'Bico F',
+            'bomba_id'    => '2',
+        ]);
+
+        Bico::create([
+            'name'        => 'Bico G',
+            'bomba_id'    => '2',
+        ]);
+
+        Bico::create([
+            'name'        => 'Bico H',
             'bomba_id'    => '2',
         ]);
 

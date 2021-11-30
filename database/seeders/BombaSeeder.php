@@ -15,7 +15,13 @@ class BombaSeeder extends Seeder
     public function run()
     {
         Bomba::create([
-            'name'        => 'Bomba A',
+            'name'        => 'Bomba A1',
+            'modelo'      => 'Prime PMD ',
+            'posto_id'    => '1',
+        ]);
+
+        Bomba::create([
+            'name'        => 'Bomba B2',
             'modelo'      => 'Prime PMD ',
             'posto_id'    => '1',
         ]);
