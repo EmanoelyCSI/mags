@@ -20,7 +20,7 @@ class TurnoController extends Controller
     public function index()
     {
         // Listar todos os Turnos
-        $turnos  = Turno::orderBy('id', 'ASC')->get();
+        $turnos  = Turno::orderBy('id', 'DESC')->get();
 
         // foreach ($turnos as $key => $value) {
         //     echo($value->posto->name);
@@ -106,6 +106,7 @@ class TurnoController extends Controller
         //Editar Turno
         $turno = Turno::findOrFail($id);
         $postos  = Posto::orderBy('id', 'DESC')->pluck('name', 'id');
+        
         return view('turno.edit', ['turno' => $turno, 'postos' => $postos ]);
     }
 

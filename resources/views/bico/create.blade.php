@@ -28,6 +28,5 @@
     
         {{ Form::close() }}
     </div>
-        <a href="{{ URL::to('bico/') }}">Voltar</a>
     
 @endsection

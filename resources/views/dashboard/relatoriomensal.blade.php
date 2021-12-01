@@ -39,7 +39,7 @@
             <div class="">
                 <div class="card card-white collapsed-card">
                   <div class="card-header ">
-                    <h3 class="card-title text-navy-blue">Expandable</h3>
+                    <h3 class="card-title text-navy-blue">Dados</h3>
     
                     <div class="card-tools">
                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus text-navy-blue"></i>

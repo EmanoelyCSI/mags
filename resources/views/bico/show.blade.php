@@ -11,8 +11,6 @@
             <ul>
                 <li class="list-group">ID:                   {{ $bico->id    }}        </li>
                 <li class="list-group">Nome:                 {{ $bico->name  }}        </li>
-                <li class="list-group">Bomba-Nome:           {{ $bico->bomba->name}}   </li>
-                <li class="list-group">Bomba-Modelo:         {{ $bico->bomba->modelo}} </li>
                 <li class="list-group">Bomba-ID:             {{ $bico->bomba->id}}     </li>
                 <li class="list-group">Criação:              {{ Carbon\Carbon::parse($bico->create_at)->format('d/m/Y H:i') }} </li>
                 <li class="list-group">Última modificação:   {{ Carbon\Carbon::parse($bico->update_at)->format('d/m/Y H:i') }} </li>
@@ -40,6 +38,5 @@
             </div>
         </div>
 
-    <a href="{{ URL::to('bico/') }}">Voltar</a>
 
 @endsection

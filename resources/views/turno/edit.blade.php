@@ -16,7 +16,7 @@
 
     <div id="conteudo" class="container p-0 my-4">
 
-        {{ Form::open(array('url' => '/turno/create')) }}
+        {{ Form::model($turno, array('route' => array('turno.update', $turno->id), 'method' => 'PUT' )) }}
 
         <h4 class="bg-royal-blue text-magnolia fw-normal rounded p-2">Atualizar Turno</h4>
         
@@ -49,11 +49,5 @@
     
         {{ Form::close() }}
     </div>
-
-    @if (Session::has('message'))
-        <div> {{ Session::get('message') }} </div>      
-    @endif
     
-    <a href="{{ URL::to('turno/') }}">Voltar</a>
-
 @endsection

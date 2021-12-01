@@ -66,6 +66,4 @@
         {{ Form::close() }}
     </div>
 
-    <a href="{{ URL::to('posto/') }}">Voltar</a>
-
 @endsection

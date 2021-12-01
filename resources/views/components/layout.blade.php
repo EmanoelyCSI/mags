@@ -117,17 +117,23 @@
     </div>
 
     @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $errors)
-                    <li> {{$errors}} </li>
-                @endforeach
-            </ul>
-        </div>
+      <div id="conteudo" class="container-lg">
+        @foreach ($errors->all() as $errors)
+        <div class="alert alert-teste alert-dismissible fade show" role="alert">
+              {{$errors}} 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        @endforeach
+      </div>
     @endif
 
     @if (Session::has('message'))
-        <div> {{ Session::get('message') }} </div>      
+        <div id="conteudo" class="container-lg my-2">
+            <div class="alert alert-whatsapp  alert-dismissible fade show" role="alert">
+                {{ Session::get('message') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>  
+        </div>    
     @endif
 
     <!-- Barra de pesquisa -->

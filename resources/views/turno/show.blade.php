@@ -9,11 +9,10 @@
 
     <div id="box" class="d-flex mx-4 my-2 fs-5 justify-content-center">
             <ul>
-                <li class="list-group">ID:                   {{ $turno->id    }}        </li>
-                <li class="list-group">Nome:                 {{ $turno->potos  }}        </li>
-                <li class="list-group">Bomba-Nome:           {{ $turno->name}}   </li>
-                <li class="list-group">Bomba-Modelo:         {{ $turno->horario_inicio }} </li>
-                <li class="list-group">Bomba-ID:             {{ $turno->horario_fim }}     </li>
+                <li class="list-group">ID:                   {{ $turno->id}}              </li>
+                <li class="list-group">Nome:                 {{ $turno->name}}            </li>
+                <li class="list-group">Início do Turno:      {{ $turno->horario_inicio }} </li>
+                <li class="list-group">Fim do Turno:         {{ $turno->horario_fim }}    </li>
                 <li class="list-group">Criação:              {{ Carbon\Carbon::parse($turno->create_at)->format('d/m/Y H:i') }} </li>
                 <li class="list-group">Última modificação:   {{ Carbon\Carbon::parse($turno->update_at)->format('d/m/Y H:i') }} </li>
             </ul>
@@ -40,6 +39,4 @@
             </div>
         </div>
         
-    <a href="{{ URL::to('turno/') }}">Voltar</a>
-
 @endsection

@@ -7,20 +7,11 @@
 @extends('adminlte::master')
 <!-- Conteúdo -->
 <div id="conteudo" class="container-lg">
-
-  <div id="box" class="d-flex">
-    <ul class="fs-4 px-1"> 
-      @foreach ($totalPostos as $value )
-      <li class="list-group"> Total de postos : {{$value->postos}}</li>
-      <li class="list-group">Total de GNV Vendido: {{$value->quantidade}}</li>
-      @endforeach
-      </ul>
-    </div>
 <!-- Main content -->
-    <section class="content">
+    <section class="d-flex bd-highlight">
       <div class="container-fluid">
         <div class="row ">
-          <div class="col-md-6">
+          <div class="flex-fill bd-highlight">
             <!-- AREA CHART -->
             <div class="card card-primary">
               <div class="card-header bg-royal-blue">
@@ -44,9 +35,46 @@
           <!-- /.col (RIGHT) -->
         </div>
         <!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.container-fluid -->
+      <div class="col-lg-3 col-6 ">
+        <!-- small card -->
+        <div class="small-box bg-royal-blue">
+          <div class="inner">
+            <h3 class="text-magnolia">Postos</h3>
+            <p class="text-magnolia">
+              @foreach ($totalPostos as $value )
+                Total de Postos: {{$value->postos}}
+              @endforeach
+            </p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-stats-bars"></i>
+          </div>
+          <a href="{{ URL::to('posto') }}" class="small-box-footer">
+            Mais Informações <i class="fas fa-arrow-circle-right"></i>
+          </a>
+        </div>
+        
+        <div class="">
+          <!-- small card -->
+          <div class="small-box bg-royal-blue">
+            <div class="inner">
+              <h3 class="text-magnolia">GNV</h3>
+              <p class="text-magnolia">
+                @foreach ($totalPostos as $value )
+                  Total de GNV Vendido: {{$value->quantidade}}
+                @endforeach
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- ./col -->
+        </div>
+      </div>
+      <!-- ./col -->
     </section>
-</div>
+
 <!-- ChartJS -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
