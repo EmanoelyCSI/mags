@@ -86,14 +86,18 @@ class DashboardController extends Controller
         $subDt3 = Carbon::today()->subMonths(3)->locale('pt_br')->month;
         $subDt4 = Carbon::today()->subMonths(4)->locale('pt_br')->month;
         $subDt5 = Carbon::today()->subMonths(5)->locale('pt_br')->month;
-
+        
         foreach ($postos as $key => $value) {
-           $value->quantidade;
+          $quantidade[] = $value->quantidade;
         } 
 
-        // dd($subDt2 );
+        $gnv = Posto::select(DB::raw('SUM(quantidade) as quantidade'))->groupBy('updated_at')->where('updated_at','>', $ultimoMes)->get();
+
+
+        // dd($gnv );
+
         return view('dashboard.estoque', 
-        ['totalPostos' => $totalPostos, 'ultimoMes' => $ultimoMes, 'dt' => $dt, 'subDt1' => $subDt1, 'subDt2' => $subDt2,'subDt3' => $subDt3,'subDt4' => $subDt4, 'subDt5' => $subDt5, 'postos' => $postos]);
+        ['totalPostos' => $totalPostos, 'ultimoMes' => $ultimoMes, 'dt' => $dt, 'subDt1' => $subDt1, 'subDt2' => $subDt2,'subDt3' => $subDt3,'subDt4' => $subDt4, 'subDt5' => $subDt5, 'postos' => $postos, 'quantidade' => $quantidade, 'gnv' => '$gnv']);
     }
 
     /**

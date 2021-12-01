@@ -75,7 +75,7 @@
           pointStrokeColor    : 'rgba(60,141,188,1)',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : [28, 48, 40, 19, 86, 27, 90]
+          data                : [29900, 48000, 40000, 10900, 80006, 20700, 90000]
         },
         {
           label               : 'GNV perdido',
@@ -86,11 +86,10 @@
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                :  [24, 28, 10, 19, 56, 27, 90]
+          data                :  [{{$quantidade[0]}}, {{$quantidade[1]}},{{$quantidade[2]}},{{$quantidade[3]}}, {{$quantidade[4]}}, {{$quantidade[5]}}]
         },
       ]
     }
-
     var areaChartOptions = {
       maintainAspectRatio : false,
       responsive : true,
