@@ -7,46 +7,66 @@
 @extends('adminlte::master')
 <!-- Conteúdo -->
 <div id="conteudo" class="container-lg">
-        <table class="table table-bordered">  
-                    <tr>
-                        <th> {{$postos->updated_at->format('d/m/Y')}} </th>
-                        <th class="colspan="3"> {{$postos->name}} </th>
-                    </tr>
+    
+    <h3 class=" py-2">{{$postos->name}}</h3>
 
+    <div class="d-flex bd-highlight">
+        <div id="container-table" class="table-responsive w-50 me-1 ">
+            <table class="table table-bordered border-magnolia table-borderless">  
+                <thead>
+                    <th colspan="2" class="bg-navy-blue text-magnolia align-center"> {{$postos->updated_at->format('d/m/Y')}} </th>
+                </thead>
                     @foreach ($postos->bomba as $value)
-                    <tr>
-                        <th>{{$value->name}}</th> 
-                        @foreach ($value->bico as $value2)
-                            <th>{{ $value2->name }}</th>
-                        @endforeach
-                    </tr>
+                        <tr>
+                            <th colspan="2">{{$value->name}}</th> 
+                        </tr>
+                            @foreach ($value->bico as $value2)
+                            <tr>
+                                <td colspan="2" class="bg-magnolia">{{ $value2->name }}</td>
+                            </tr>
+                                @foreach ($value2->leitura as $value3)
+                            <tr>
+                                    <td> Turno: {{ $value3->turno->name }}</td>
+                                    <td> Dado: {{ $value3->leitura }}</td>
+                                </tr>
+                                @endforeach
+                            @endforeach
+                    @endforeach   
+            </table>
+        </div>
 
-                    <tr>
-                        <td> Turno: {{ $turnos->name }}</td>
-                        <td> {{$leituras->leitura}} </td>
-                        <td> {{$leituras->leitura}} </td>
-                        <td> {{$leituras->leitura}} </td>
-                        <td> {{$leituras->leitura}} </td>
-                    </tr>
-                    @endforeach 
+        <div id="box" class="flex-fill bd-highlight">
+            <div class="">
+                <div class="card card-white collapsed-card">
+                  <div class="card-header ">
+                    <h3 class="card-title text-navy-blue">Expandable</h3>
+    
+                    <div class="card-tools">
+                      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus text-navy-blue"></i>
+                      </button>
+                    </div>
+                    <!-- /.card-tools -->
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group">GNV em Estoque: {{$postos->quantidade}} </li>
+                        <li class="list-group">Total de GNV abastecido: {{$gnvDoMes->quantidade}} </li>
+                        <li class="list-group">Total de leituras por bico: {{$leiturasDoMes}} </li>
+                    </ul>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+              </div>
+              <!-- /.col -->           
+        </div>
+    
+    </div>    
 
-                    
-                    {{-- <tr>
-                        <th> {{ $turnos->name }} </th>
-                        <td>{{ $leituras->leitura }}</td>
-                        <td>{{ $leituras->leitura }}</td>
-                        <td>{{ $leituras->leitura }}</td>
-                    </tr>
-                    <tr>
-                        <th> {{ $turnos->name }} </th>
-                        <td>{{ $leituras->leitura }}</td>
-                        <td>{{ $leituras->leitura }}</td>
-                        <td>{{ $leituras->leitura }}</td>
-                    </tr> --}}
-        </table>
-
-        <div id="btn" class="float-end">
-            <a href="https://docs.google.com/spreadsheets/u/0/" class="btn btn-navy-blue">Exportar <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+   
+    <div id="btn" class="float-end">
+        <a href="https://docs.google.com/spreadsheets/u/0/" class="btn btn-navy-blue">Exportar <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_174_35)">
                 <path d="M22.0339 3.03851L19.1266 0.132962C19.0414 0.0478337 18.926 0 18.8055 0H5.35941C5.10857 0 4.90515 0.203373 4.90515 0.454261V15.0797H3.36066C2.10826 15.0797 1.08936 16.0986 1.08936 17.351V20.9851C1.08936 22.2375 2.10826 23.2564 3.36066 23.2564H15.3531H21.7128C21.9636 23.2564 22.1671 23.0531 22.1671 22.8022V13.6773C22.1671 13.4264 21.9636 13.223 21.7128 13.223C21.462 13.223 21.2585 13.4264 21.2585 13.6773V22.3479H17.169C17.4548 21.968 17.6245 21.496 17.6245 20.9851V17.351C17.6245 16.0986 16.6055 15.0797 15.3531 15.0797H5.81367V0.908522H18.3513V3.3598C18.3513 3.61069 18.5547 3.81407 18.8055 3.81407H21.2585V9.58895C21.2585 9.83984 21.462 10.0432 21.7128 10.0432C21.9636 10.0432 22.1671 9.83984 22.1671 9.58895V3.3598C22.1671 3.23929 22.1191 3.12368 22.0339 3.03851ZM16.7159 17.351V20.9851C16.7159 21.7366 16.1046 22.3479 15.3531 22.3479H3.36066C2.60922 22.3479 1.99788 21.7366 1.99788 20.9851V17.351C1.99788 16.5996 2.60922 15.9883 3.36066 15.9883H15.3531C16.1046 15.9883 16.7159 16.5996 16.7159 17.351ZM19.2598 1.55048L20.6157 2.90554H19.2598V1.55048Z" fill="#FCF7FF"/>
                 <path d="M21.7131 11.1792C21.5936 11.1792 21.4764 11.2274 21.3919 11.3123C21.3074 11.3968 21.2588 11.5135 21.2588 11.6335C21.2588 11.7529 21.3074 11.8701 21.3919 11.9546C21.4764 12.0391 21.5936 12.0877 21.7131 12.0877C21.8325 12.0877 21.9497 12.0391 22.0342 11.9546C22.1187 11.8701 22.1673 11.7529 22.1673 11.6335C22.1673 11.514 22.1187 11.3968 22.0342 11.3123C21.9497 11.2274 21.8325 11.1792 21.7131 11.1792Z" fill="#FCF7FF"/>
@@ -62,6 +82,7 @@
                 </clipPath>
                 </defs>
                 </svg></a>
-        </div>
+    </div>
 </div>
+
 @endsection

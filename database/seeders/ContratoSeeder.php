@@ -34,5 +34,49 @@ class ContratoSeeder extends Seeder
             'address'         =>  'R. Maia de Lacerda, 36 - Estácio Rio de Janeiro - RJ 20250-001',
 
         ]);
+
+        Contrato::create([
+            'cnpj'            =>  '06.428.058/0001-96',
+            'name'            =>  'Marcela da Cunha dos Santos',
+            'proprietario_id' =>  '7',
+            'email'           =>  'posto.planeta_saturno@gmail.com',
+            'cell'            =>  '2198645-8276',
+            'tel'             =>  '212565-8876',
+            'address'         =>  'R. Santa Clara - Copacabana, Rio de Janeiro - RJ, 22041-012',
+
+        ]);
+
+        Contrato::create([
+            'cnpj'            =>  '03.438.038/0001-93',
+            'name'            =>  'Antônio Pereira Cardoso',
+            'proprietario_id' =>  '8',
+            'email'           =>  'posto.petrobras_lagoa@gmail.com',
+            'cell'            =>  '2193745-8373',
+            'tel'             =>  '212535-8873',
+            'address'         =>  'Av. Borges de Medeiros, S/N - Lagoa, Rio de Janeiro - RJ, 22470-001',
+
+        ]);
+
+        Contrato::create([
+            'cnpj'            =>  '07.478.077/0001-97',
+            'name'            =>  'Célia Regina Campos',
+            'proprietario_id' =>  '9',
+            'email'           =>  'posto.br_petrobras@gmail.com',
+            'cell'            =>  '2197745-8277',
+            'tel'             =>  '212575-8877',
+            'address'         =>  'Tv. Dr. Araújo, 99 - Praca da Bandeira, Rio de Janeiro - RJ, 20270-070',
+
+        ]);
+
+        Contrato::create([
+            'cnpj'            =>  '01.411.071/0001-91',
+            'name'            =>  'Alex Ribeio Gomes',
+            'proprietario_id' =>  '10',
+            'email'           =>  'posto_bandeira-branca@gmail.com',
+            'cell'            =>  '219815-8271',
+            'tel'             =>  '212515-8871',
+            'address'         =>  'R. Itapiru, 484 - Catumbi, Rio de Janeiro - RJ, 20000-000',
+
+        ]);
     }
 }

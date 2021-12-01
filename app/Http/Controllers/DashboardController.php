@@ -42,10 +42,13 @@ class DashboardController extends Controller
         $gnvDoMes      = Posto::where('updated_at','>', $ultimoMes)->count();
         $gnvPerdido    = Posto::where('updated_at','>', $ultimoMes)->count();
         $totalPostos   = Posto::count();
+        $leiturasDoMes = Leitura::where('created_at','>', $ultimoMes)->groupBy('bico_id')->count();
 
         $postos     = Posto::findOrFail($id);
         $turnos     = Turno::findOrFail($id);
         $leituras   = Leitura::findOrFail($id);
+
+        $gnvDoMes = Posto::select(DB::raw('COUNT(postos.id) as postos'), DB::raw('SUM(quantidade) as quantidade'))->groupBy('postos.id')->findOrFail($id);
 
         //contar quantos postos e somar o total de quantidade 
         //select count(postos.id), sum(quantidade) from postos; 
@@ -60,16 +63,23 @@ class DashboardController extends Controller
         //contar postos e filtrar pelo mês
         //select count(postos.id) from postos where postos.created_at < '2021-11';
 
+        //contar quantos turnos e agrupar pelo id do posto
+        //select postos.id, count(turnos.id) as 'turnos' from postos inner join turnos on turnos.posto_id = postos.id group by postos.id;
+
+
         // dd($totalPostos);
 
-        return view('dashboard.relatorioMensal', ['totalPostos' => $totalPostos, 'postos' => $postos, 'turnos' => $turnos, 'leituras' => $leituras]);
+        return view('dashboard.relatorioMensal', ['totalPostos' => $totalPostos, 'postos' => $postos, 'turnos' => $turnos, 'leituras' => $leituras, 'gnvDoMes' => $gnvDoMes, 'leiturasDoMes' => $leiturasDoMes ]);
     }
+
 
     public function estoque()
     {
         $ultimoMes   = Carbon::today()->subMonth(30)->format('d-m-Y');
         $totalPostos = Posto::select(DB::raw('COUNT(postos.id) as postos'), DB::raw('SUM(quantidade) as quantidade'))->get();
-        
+
+        $postos      = Posto::orderBy('id', 'ASC')->get();
+   
         $dt = Carbon::today()->month;
         $subDt1 = Carbon::today()->subMonths(1)->locale('pt_br')->month;
         $subDt2 = Carbon::today()->subMonths(2)->locale('pt_br')->month;
@@ -77,9 +87,13 @@ class DashboardController extends Controller
         $subDt4 = Carbon::today()->subMonths(4)->locale('pt_br')->month;
         $subDt5 = Carbon::today()->subMonths(5)->locale('pt_br')->month;
 
+        foreach ($postos as $key => $value) {
+           $value->quantidade;
+        } 
+
         // dd($subDt2 );
         return view('dashboard.estoque', 
-        ['totalPostos' => $totalPostos, 'ultimoMes' => $ultimoMes, 'dt' => $dt, 'subDt1' => $subDt1, 'subDt2' => $subDt2,'subDt3' => $subDt3,'subDt4' => $subDt4, 'subDt5' => $subDt5]);
+        ['totalPostos' => $totalPostos, 'ultimoMes' => $ultimoMes, 'dt' => $dt, 'subDt1' => $subDt1, 'subDt2' => $subDt2,'subDt3' => $subDt3,'subDt4' => $subDt4, 'subDt5' => $subDt5, 'postos' => $postos]);
     }
 
     /**

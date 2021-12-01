@@ -9,7 +9,7 @@
 <div id="conteudo" class="container-lg">
 
   <div id="box" class="d-flex">
-    <ul> 
+    <ul class="fs-4 px-1"> 
       @foreach ($totalPostos as $value )
       <li class="list-group"> Total de postos : {{$value->postos}}</li>
       <li class="list-group">Total de GNV Vendido: {{$value->quantidade}}</li>
@@ -86,7 +86,7 @@
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [12, 59, 80, 81, 56, 55, 40]
+          data                :  [24, 28, 10, 19, 56, 27, 90]
         },
       ]
     }
