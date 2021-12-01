@@ -115,17 +115,16 @@
             </a>
         </div>
     </div>
-
+    <div id="conteudo" class="container-lg">
     @if ($errors->any())
-      <div id="conteudo" class="container-lg">
         @foreach ($errors->all() as $errors)
         <div class="alert alert-teste alert-dismissible fade show" role="alert">
               {{$errors}} 
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
+        </div>
         @endforeach
-      </div>
     @endif
+    </div>
 
     @if (Session::has('message'))
         <div id="conteudo" class="container-lg my-2">
