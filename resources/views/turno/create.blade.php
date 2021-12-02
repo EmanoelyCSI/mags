@@ -4,16 +4,6 @@
 
 @section('content')
     
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $errors)
-                    <li> {{$errors}} </li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
     <div id="conteudo" class="container p-0 my-4">
 
         {{ Form::open(array('url' => '/turno/create')) }}
@@ -48,6 +38,5 @@
     
         {{ Form::close() }}
     </div>
-    <a href="{{ URL::to('turno/') }}">Voltar</a>
     
 @endsection

@@ -117,7 +117,7 @@
     </div>
 
     @if ($errors->any())
-      <div id="conteudo" class="container-lg">
+    <div id="conteudo" class="container-lg">
         @foreach ($errors->all() as $errors)
         <div class="alert alert-teste alert-dismissible fade show" role="alert">
               {{$errors}} 
@@ -126,6 +126,8 @@
         @endforeach
       </div>
     @endif
+
+
 
     @if (Session::has('message'))
         <div id="conteudo" class="container-lg my-2">
